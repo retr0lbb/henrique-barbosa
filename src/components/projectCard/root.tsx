@@ -1,4 +1,6 @@
-import { Tags } from "./tags";
+"use client";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 interface RootProps {
   title: string;
@@ -7,9 +9,41 @@ interface RootProps {
   children?: React.ReactNode;
 }
 
-function root(props: RootProps) {
+export function Root(props: RootProps) {
+  const rootRef = useRef(null);
+  const inView = useInView(rootRef, { once: false, margin: "-50px" });
+
   return (
-    <div className="flex h-full flex-col gap-1 cursor-pointer break-inside-avoid pb-10">
+    <motion.div
+      ref={rootRef}
+      initial={{
+        opacity: 0,
+        y: 100,
+        scale: 0.8,
+      }}
+      animate={
+        inView
+          ? {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }
+          : {
+              opacity: 0,
+              y: 100,
+              scale: 0.8,
+            }
+      }
+      transition={{
+        duration: 0.4,
+        ease: "easeOut",
+      }}
+      whileHover={{
+        scale: 1.02,
+        transition: { duration: 0.3 },
+      }}
+      className="flex h-full flex-col gap-1 cursor-pointer break-inside-avoid pb-10"
+    >
       <div className="bg-gray-600 rounded-2xl aspect-square">Imagem</div>
 
       <div className="w-full flex items-center justify-start pt-3 px-2">
@@ -23,8 +57,6 @@ function root(props: RootProps) {
           {props.children}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
-
-export const ProjectCard = { Root: root, Tag: Tags };
