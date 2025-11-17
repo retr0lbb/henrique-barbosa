@@ -1,12 +1,13 @@
+/** biome-ignore-all lint/correctness/useHookAtTopLevel: Needless */
 "use client";
 
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
+import { Slide } from "./Slide";
 
 export function OnScrollAnimateGrid() {
   const containerRef = useRef(null);
-
-  const years = [2020, 2021, 2022, 2023, 2024];
+  const years = [2020, 2021, 2022, 2023, 2024, 2025];
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -30,26 +31,17 @@ export function OnScrollAnimateGrid() {
           style={{ x: useTransform(x, (value) => `${value}dvw`) }}
           className="flex h-full"
         >
-          <BasicGrid year={2024} />
+          {years.map((year, index) => (
+            <Slide
+              key={year}
+              year={year}
+              index={index}
+              totalSlides={years.length}
+              scrollYProgress={scrollYProgress}
+            />
+          ))}
         </motion.div>
       </div>
     </section>
-  );
-}
-
-export function BasicGrid(props: { year: number }) {
-  return (
-    <div className="flex shrink-0 w-dvw h-dvh items-center justify-center px-8 relative bg-zinc-950">
-      <div className="top-7 absolute flex w-full h-full flex-col">
-        <h1 className="text-8xl px-10 text-zinc-200 pb-4">{props.year}</h1>
-        <div className="w-full h-0.5 bg-blue-700"></div>
-      </div>
-
-      <div>
-        <p className="text-zinc-200">
-          Neste ano, eu precisei transar forcadamente
-        </p>
-      </div>
-    </div>
   );
 }

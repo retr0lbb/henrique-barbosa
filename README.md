@@ -38,11 +38,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 # TODO List
 
-- [ ] Add page transitions
-- [ ] add slides to about section
+- [ ] Add page transitions(Later)
+- [✅] add slides to about section
 - [ ] add micro projects and other work experiences
 - [ ] add a navigation (Placeholder)
 - [ ] add any effect on text on hero section
 - [ ] add meteor shower background effect
 - [ ] add ascii art effects (FIREEE)
+
+- [ ] Refactor the Slide and on-Scroll animate to make it better 
 

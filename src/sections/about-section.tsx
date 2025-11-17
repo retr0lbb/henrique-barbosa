@@ -1,4 +1,4 @@
-import { OnScrollAnimateGrid } from "@/components/on-scroll-animate";
+import { OnScrollAnimateGrid } from "@/components/scrollSlides/on-scroll-animate";
 
 export function AboutSection() {
   return (
