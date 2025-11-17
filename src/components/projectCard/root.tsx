@@ -42,12 +42,14 @@ export function Root(props: RootProps) {
         scale: 1.02,
         transition: { duration: 0.3 },
       }}
-      className="flex h-full flex-col gap-1 cursor-pointer break-inside-avoid pb-10"
+      className="flex h-full flex-col gap-1 cursor-pointer break-inside-avoid pb-10 group"
     >
       <div className="bg-gray-600 rounded-2xl aspect-square">Imagem</div>
 
       <div className="w-full flex items-center justify-start pt-3 px-2">
-        <h1 className="text-2xl text-zinc-200 font-medium">{props.title}</h1>
+        <h1 className="text-2xl text-zinc-200 font-medium group-hover:underline">
+          {props.title}
+        </h1>
       </div>
 
       <div className="w-full flex flex-col gap-3">

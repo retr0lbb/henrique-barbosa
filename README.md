@@ -40,6 +40,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 - [ ] Add page transitions
 - [ ] add slides to about section
+- [ ] add micro projects and other work experiences
 - [ ] add a navigation (Placeholder)
 - [ ] add any effect on text on hero section
 - [ ] add meteor shower background effect
