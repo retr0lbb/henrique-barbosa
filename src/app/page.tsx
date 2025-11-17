@@ -1,6 +1,7 @@
 import { BottomSideNavigation } from "@/components/navigator";
 import { AboutSection } from "@/sections/about-section";
 import { HeroSection } from "@/sections/hero-section";
+import { ProjectSection } from "@/sections/projects-section";
 import { FaHouse, FaUser } from "react-icons/fa6";
 import { IoGrid } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
@@ -10,7 +11,7 @@ export default function Home() {
     <div className="w-full h-full flex flex-col">
       <HeroSection />
       <AboutSection />
-      <HeroSection />
+      <ProjectSection />
 
       <BottomSideNavigation.Root>
         <BottomSideNavigation.Nav>

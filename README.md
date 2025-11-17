@@ -39,8 +39,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # TODO List
 
 - [ ] Add page transitions
-- [ ] add a navigation
+- [ ] add slides to about section
+- [ ] add a navigation (Placeholder)
 - [ ] add any effect on text on hero section
 - [ ] add meteor shower background effect
-- [ ] add ascii art effects
+- [ ] add ascii art effects (FIREEE)
 
