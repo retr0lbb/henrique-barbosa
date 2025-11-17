@@ -5,11 +5,13 @@ export function Slide({
   index,
   totalSlides,
   scrollYProgress,
+  children,
 }: {
   year: number;
   index: number;
   totalSlides: number;
   scrollYProgress: any;
+  children: React.ReactNode;
 }) {
   // Calcula quando este slide específico está visível
   const slideStart = index / totalSlides;
