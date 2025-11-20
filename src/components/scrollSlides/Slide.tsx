@@ -7,7 +7,7 @@ export function Slide({
   scrollYProgress,
   children,
 }: {
-  year: number;
+  year: string;
   index: number;
   totalSlides: number;
   scrollYProgress: any;

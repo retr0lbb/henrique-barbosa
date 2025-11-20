@@ -33,7 +33,7 @@ export function OnScrollAnimateGrid() {
         >
           <Slide
             key={2016}
-            year={2016}
+            year={"About me"}
             index={1}
             totalSlides={years.length}
             scrollYProgress={scrollYProgress}
