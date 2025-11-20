@@ -1,8 +1,7 @@
 import { Scroller } from "@/components/scrollingHistory/scroller";
 import { ScrollSection } from "@/components/scrollingHistory/scrollSection";
 import Image from "next/image";
-import Me from "@/assets/images/Ryan_Gosling_v4.webp";
-import Background from "@/assets/images/pixel-art-computer-linux-pixels-code-hd-wallpaper-preview.jpg";
+import Fursuit from "@/assets/images/fursuit.jpg";
 import Link from "next/link";
 
 export function AboutSection() {
@@ -13,44 +12,30 @@ export function AboutSection() {
       </h1>
       <Scroller>
         <ScrollSection isOnStart>
-          <div className="w-full h-full grid grid-cols-2 grid-rows-2 place-items-center gap-8 p-10">
-            <div className="aspect-square max-w-[450px] object-cover rounded-xl overflow-hidden">
+          <div className="w-full h-full grid grid-cols-5 grid-rows-5 gap-4 p-10">
+            <div className="col-span-2 row-span-2 aspect-square w-full h-full bg-linear-to-bl from-zinc-200/5 to-zinc-200/10 border border-zinc-200/15 rounded-lg">
               <Image
-                alt="Ryan Gosling"
-                className="w-full h-full object-cover"
-                src={Me}
+                alt="fusito"
+                className="w-full h-full object-cover p-4 rounded-full"
+                src={Fursuit}
               />
             </div>
 
-            <div className="object-cover rounded-xl overflow-hidden">
-              <Image
-                alt="Ryan Gosling"
-                className="w-full h-full object-cover"
-                src={Background}
-              />
-            </div>
+            <div className="col-span-3 flex items-center justify-center gap-8 flex-col h-full bg-white/5 border border-zinc-200/10 px-5 backdrop-blur-lg">
+              <h1 className="text-6xl text-zinc-200 font-bold">
+                Henrique Barbosa Sampaio
+              </h1>
 
-            <div className="w-full h-full overflow-hidden flex items-center justify-center flex-col col-span-2 gap-10 p-2">
-              <p className="text-3xl text-zinc-200 text-center">
-                Hello my name is{" "}
-                <strong className="animate-pulse text-blue-500">
-                  Henrique Barbosa
-                </strong>
-                , And I'm a Software Developer, If you want to Know more about
-                me Keep Scrolling
+              <p className="text-2xl font-bold text-zinc-400">
+                Software Developer | Web Developer | Much More
               </p>
-
-              <div className="flex flex-col w-full items-center justify-center gap-8">
-                <p className="text-xl text-zinc-400 w-full text-center">
-                  If you've seen enough, lets cut the chase and take a look at
-                  my{" "}
-                  <Link
-                    href={"/"}
-                    className="text-zinc-200 hover:underline hover:text-zinc-50 transition-all"
-                  >
-                    projects
-                  </Link>
-                </p>
+            </div>
+            <div className="col-span-3 row-span-2 flex items-center justify-center gap-8 flex-col h-full bg-white/5 border border-zinc-200/10 px-5 py-4">
+              <h1 className="text-4xl text-zinc-200">Work Experience</h1>
+              <div className="flex flex-1 items-center justify-center flex-col">
+                <div className="w-full h-auto p-4 bg-linear-to-bl from-zinc-200/5 to-zinc-200/10 border border-white/25 backdrop-blur-2xl">
+                  <p className="text-zinc-200">Nubank</p>
+                </div>
               </div>
             </div>
           </div>
