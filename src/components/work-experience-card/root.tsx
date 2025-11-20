@@ -10,7 +10,7 @@ interface RootProps {
 
 export function Root(props: RootProps) {
   return (
-    <div className="w-full h-auto p-4 bg-linear-to-bl from-zinc-200/5 to-zinc-200/10 border border-white/25 backdrop-blur-2xl space-y-4">
+    <div className="w-full h-auto p-4 bg-zinc-200/10 border border-white/25 backdrop-blur-2xl space-y-4">
       <div className="flex items-center justify-between gap-8">
         <div className="space-y-2">
           <p className="text-zinc-200 text-xl font-bold">
@@ -22,7 +22,7 @@ export function Root(props: RootProps) {
         </div>
 
         <div className="flex items-center gap-2">
-          <CiCalendar size={20} className="text-zinc-400" />
+          <CiCalendar className="text-zinc-400 size-6 md:size-8" />
           <p className="text-zinc-300">{props.duration}</p>
         </div>
       </div>

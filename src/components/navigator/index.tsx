@@ -8,7 +8,7 @@ interface BottomSideNavigationProps {
 
 function Root(props: BottomSideNavigationProps) {
   return (
-    <div className="fixed w-full bottom-0 py-6 flex items-center justify-center">
+    <div className="fixed w-full -bottom-1 md:bottom-0 py-0 md:py-6 flex items-center justify-center">
       {props.children}
     </div>
   );

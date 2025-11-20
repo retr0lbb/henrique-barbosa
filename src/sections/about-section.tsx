@@ -13,11 +13,11 @@ export function AboutSection() {
       </h1>
       <Scroller>
         <ScrollSection isOnStart year="Myself">
-          <div className="w-full h-full grid grid-cols-5 grid-rows-3 gap-4 p-10">
-            <div className="col-span-2 row-span-2 w-full h-full bg-linear-to-bl rounded-lg flex items-center justify-center">
+          <div className="w-full h-full grid grid-cols-2 grid-rows-[auto_auto_auto_auto] md:grid-cols-5 md:grid-rows-3 gap-4 p-4 md:p-10">
+            <div className="col-span-2 md:row-span-2 w-full h-full rounded-lg flex items-center justify-center">
               <div className="aspect-square w-full h-auto">
                 <Image
-                  alt="fusito"
+                  alt="Image of ryan gosling"
                   className="w-full h-full object-cover rounded-full p-4"
                   src={Me}
                 />
@@ -25,18 +25,18 @@ export function AboutSection() {
             </div>
 
             <div className="col-span-3 flex items-center justify-center gap-8 flex-col h-full px-5 backdrop-blur-lg">
-              <h1 className="text-6xl text-zinc-200 font-bold">
+              <h1 className="text-3xl text-center md:text-5xl lg:text-6xl text-zinc-200 font-bold">
                 Henrique Barbosa Sampaio
               </h1>
 
-              <p className="text-2xl font-bold text-zinc-400">
+              <p className="text-sm md:text-xl lg:text-2xl font-bold text-zinc-400">
                 Software Developer | Web Developer | Much More
               </p>
             </div>
 
-            <div className="col-span-3 row-span-2 flex items-center justify-center gap-8 flex-col h-full px-5 py-4">
+            <div className="col-span-2 md:col-span-3 md:row-span-2 flex items-center justify-center gap-8 flex-col h-full md:px-5 py-4">
               <h1 className="text-4xl text-zinc-200">Work Experience</h1>
-              <div className="flex flex-1 items-center gap-4 flex-col px-6">
+              <div className="flex flex-1 items-center gap-4 flex-col md:px-6">
                 <WorkExperienceCard.Root
                   company_or_person="PicBrand"
                   duration="03/2025 - 06/2025"
@@ -76,7 +76,7 @@ export function AboutSection() {
             </div>
 
             <div className="col-span-2 flex flex-col items-center justify-center gap-6 w-full h-full p-5">
-              <p className="text-3xl text-zinc-200 w-full text-justify">
+              <p className="text-xl md:text-2xl lg:text-3xl text-zinc-200 w-full text-justify">
                 I'm A Brazilian Software Developer, I have proficiency in
                 programming languages like Javascript, Typescript, Rust and
                 other more.

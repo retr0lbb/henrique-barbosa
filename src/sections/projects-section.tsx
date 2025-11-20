@@ -4,7 +4,7 @@ export function ProjectSection() {
   return (
     <section className="bg-zinc-950 w-full min-h-dvh flex items-center justify-center gap-5 flex-col px-10 py-2">
       <div className="p-5">
-        <h1 className="text-4xl md:text-5xl md:font-bold text-zinc-200">
+        <h1 className="text-4xl md:text-5xl pb-4 md:pb-2 lg:pb-0 md:font-bold text-zinc-200">
           Major Projects
         </h1>
       </div>

@@ -8,9 +8,9 @@ import { MdEmail } from "react-icons/md";
 
 export default function Home() {
   return (
-    <div className="w-full h-full flex flex-col">
+    <div className="w-full h-full flex flex-col pb-24 md:pb-0">
       <HeroSection />
-      {/* <AboutSection /> */}
+      <AboutSection />
       <ProjectSection />
 
       <BottomSideNavigation.Root>
