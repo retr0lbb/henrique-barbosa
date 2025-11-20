@@ -27,7 +27,7 @@ export function Tags({ colored, text, ...props }: TagsProps) {
 
   return (
     <span
-      className={`px-4 py-1.5 rounded-2xl border text-sm ${colorClasses[colored]}`}
+      className={`px-3 py-1 md:px-4 md:py-1.5 rounded-2xl border text-xs md:text-sm ${colorClasses[colored]}`}
       {...props}
     >
       {text}

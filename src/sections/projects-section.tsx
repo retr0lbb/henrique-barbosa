@@ -4,10 +4,12 @@ export function ProjectSection() {
   return (
     <section className="bg-zinc-950 w-full min-h-dvh flex items-center justify-center gap-5 flex-col px-10 py-2">
       <div className="p-5">
-        <h1 className="text-5xl font-bold text-zinc-200">Major Projects</h1>
+        <h1 className="text-4xl md:text-5xl md:font-bold text-zinc-200">
+          Major Projects
+        </h1>
       </div>
 
-      <div className="w-full h-full columns-3 gap-8">
+      <div className="w-full h-full columns-1 md:columns-2 lg:columns-3 md:gap-8 gap-2">
         <ProjectCard.Root
           description="A modern Nextjs Portfolio for a very experienced graphics designer"
           title="Rubens Araujo Filho"
