@@ -1,7 +1,8 @@
 import { Scroller } from "@/components/scrollingHistory/scroller";
 import { ScrollSection } from "@/components/scrollingHistory/scrollSection";
 import Image from "next/image";
-import Fursuit from "@/assets/images/fursuit.jpg";
+import Me from "@/assets/images/Ryan_Gosling_v4.webp";
+import { WorkExperienceCard } from "@/components/work-experience-card";
 import Link from "next/link";
 
 export function AboutSection() {
@@ -11,17 +12,19 @@ export function AboutSection() {
         About Me
       </h1>
       <Scroller>
-        <ScrollSection isOnStart>
-          <div className="w-full h-full grid grid-cols-5 grid-rows-5 gap-4 p-10">
-            <div className="col-span-2 row-span-2 aspect-square w-full h-full bg-linear-to-bl from-zinc-200/5 to-zinc-200/10 border border-zinc-200/15 rounded-lg">
-              <Image
-                alt="fusito"
-                className="w-full h-full object-cover p-4 rounded-full"
-                src={Fursuit}
-              />
+        <ScrollSection isOnStart year="Myself">
+          <div className="w-full h-full grid grid-cols-5 grid-rows-3 gap-4 p-10">
+            <div className="col-span-2 row-span-2 w-full h-full bg-linear-to-bl rounded-lg flex items-center justify-center">
+              <div className="aspect-square w-full h-auto">
+                <Image
+                  alt="fusito"
+                  className="w-full h-full object-cover rounded-full p-4"
+                  src={Me}
+                />
+              </div>
             </div>
 
-            <div className="col-span-3 flex items-center justify-center gap-8 flex-col h-full bg-white/5 border border-zinc-200/10 px-5 backdrop-blur-lg">
+            <div className="col-span-3 flex items-center justify-center gap-8 flex-col h-full px-5 backdrop-blur-lg">
               <h1 className="text-6xl text-zinc-200 font-bold">
                 Henrique Barbosa Sampaio
               </h1>
@@ -30,13 +33,64 @@ export function AboutSection() {
                 Software Developer | Web Developer | Much More
               </p>
             </div>
-            <div className="col-span-3 row-span-2 flex items-center justify-center gap-8 flex-col h-full bg-white/5 border border-zinc-200/10 px-5 py-4">
+
+            <div className="col-span-3 row-span-2 flex items-center justify-center gap-8 flex-col h-full px-5 py-4">
               <h1 className="text-4xl text-zinc-200">Work Experience</h1>
-              <div className="flex flex-1 items-center justify-center flex-col">
-                <div className="w-full h-auto p-4 bg-linear-to-bl from-zinc-200/5 to-zinc-200/10 border border-white/25 backdrop-blur-2xl">
-                  <p className="text-zinc-200">Nubank</p>
-                </div>
+              <div className="flex flex-1 items-center gap-4 flex-col px-6">
+                <WorkExperienceCard.Root
+                  company_or_person="PicBrand"
+                  duration="03/2025 - 06/2025"
+                  job_function="Fullstack Junior Web Engineer"
+                  model_of_contract="PJ"
+                >
+                  <WorkExperienceCard.KeyPoint>
+                    Worked with REST API and Scrapper Bots in python for backend
+                    and also specialized frontend development with react for a
+                    event totem.
+                  </WorkExperienceCard.KeyPoint>
+
+                  <WorkExperienceCard.KeyPoint>
+                    I have developed resilient and versatile software focused on
+                    events interaction and data collection with was used in
+                    several event points across country.
+                  </WorkExperienceCard.KeyPoint>
+                </WorkExperienceCard.Root>
+
+                <WorkExperienceCard.Root
+                  company_or_person="Boom Sneakers"
+                  duration="06/2024 - 09/2024"
+                  job_function="Front End Developer"
+                  model_of_contract="Project"
+                >
+                  <WorkExperienceCard.KeyPoint>
+                    Helped in a team of developers to create the website
+                    BoomSneakers.
+                  </WorkExperienceCard.KeyPoint>
+                  <WorkExperienceCard.KeyPoint>
+                    Worked with Deploy, Domain Name System, Database
+                    configuration, frontend development and custom module
+                    development in PHP.
+                  </WorkExperienceCard.KeyPoint>
+                </WorkExperienceCard.Root>
               </div>
+            </div>
+
+            <div className="col-span-2 flex flex-col items-center justify-center gap-6 w-full h-full p-5">
+              <p className="text-3xl text-zinc-200 w-full text-justify">
+                I'm A Brazilian Software Developer, I have proficiency in
+                programming languages like Javascript, Typescript, Rust and
+                other more.
+              </p>
+              <p className="text-zinc-400 w-full text-center text-xl">
+                If you want to know more about myself keep scrolling. If you
+                have seen enough, lets cut the chase, take a look at{" "}
+                <Link
+                  className="text-zinc-200 hover:text-cyan-500 text-2xl transition-all"
+                  href={"#projects"}
+                >
+                  MY PROJECTS
+                </Link>
+              </p>
             </div>
           </div>
         </ScrollSection>
@@ -62,7 +116,7 @@ export function AboutSection() {
           </div>
         </ScrollSection>
 
-        <ScrollSection year={"2050"}>
+        <ScrollSection year={"2050"} isOnEnd>
           <div className="w-full h-full flex flex-col items-center justify-center gap-12">
             <p className="max-w-[700px] text-xl text-justify text-zinc-200">
               By the year 2025, I plan to be at least a PHD with a doctored in
