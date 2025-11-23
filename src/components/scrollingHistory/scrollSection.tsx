@@ -1,5 +1,4 @@
 "use client";
-
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -25,7 +24,7 @@ export function ScrollSection(props: ScrollSectionProps) {
                     ${props.isOnEnd ? "to-zinc-950" : "to-blue-500"}
                     ${props.isOnStart && "rounded-t-full"} 
                     ${props.isOnEnd && "rounded-b-full"}`}
-        ></div>
+        />
 
         {/* ANIMAÇÃO DO ANO */}
         {props.year && (
