@@ -19,7 +19,7 @@ export function ScrollSection(props: ScrollSectionProps) {
     <div ref={ref} className="w-full min-h-dvh flex px-4 gap-10">
       <div className="min-h-full min-w-60 hidden lg:flex flex-col relative items-center justify-center">
         <div
-          className={`min-h-full max-w-1 bg-linear-to-b absolute hidden inset-0 left-6 
+          className={`min-h-full max-w-1 bg-linear-to-b absolute hidden lg:block inset-0 left-6 
                     ${props.isOnStart ? "from-zinc-950" : "from-blue-500"} 
                     via-cyan-400 
                     ${props.isOnEnd ? "to-zinc-950" : "to-blue-500"}

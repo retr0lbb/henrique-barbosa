@@ -24,17 +24,7 @@ export function AboutSection() {
               </div>
             </div>
 
-            <div className="col-span-3 flex items-center justify-center gap-8 flex-col h-full px-5 backdrop-blur-lg">
-              <h1 className="text-3xl text-center md:text-5xl lg:text-6xl text-zinc-200 font-bold">
-                Henrique Barbosa Sampaio
-              </h1>
-
-              <p className="text-sm md:text-xl lg:text-2xl font-bold text-zinc-400">
-                Software Developer | Web Developer | Much More
-              </p>
-            </div>
-
-            <div className="col-span-2 md:col-span-3 md:row-span-2 flex items-center justify-center gap-8 flex-col h-full md:px-5 py-4">
+            <div className="col-span-2 md:col-span-3 md:row-span-3 flex items-center justify-center gap-8 flex-col h-full md:px-5 py-4">
               <h1 className="text-4xl text-zinc-200">Work Experience</h1>
               <div className="flex flex-1 items-center gap-4 flex-col md:px-6">
                 <WorkExperienceCard.Root
@@ -53,6 +43,22 @@ export function AboutSection() {
                     I have developed resilient and versatile software focused on
                     events interaction and data collection with was used in
                     several event points across country.
+                  </WorkExperienceCard.KeyPoint>
+                </WorkExperienceCard.Root>
+
+                <WorkExperienceCard.Root
+                  company_or_person="Rubens Araujo"
+                  duration="10/2025 - 11/2025"
+                  job_function="Front End developer"
+                  model_of_contract="Free lance"
+                >
+                  <WorkExperienceCard.KeyPoint>
+                    Build a responsive Graphics Designer portfolio using nextjs
+                    and deployed on vercel
+                  </WorkExperienceCard.KeyPoint>
+                  <WorkExperienceCard.KeyPoint>
+                    Designed UI using best practices in color theory, responsive
+                    design and User Experience (UX)
                   </WorkExperienceCard.KeyPoint>
                 </WorkExperienceCard.Root>
 
