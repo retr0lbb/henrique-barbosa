@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export function AboutSection() {
   return (
-    <section className="w-full min-h-dvh bg-zinc-950">
+    <section className="w-full min-h-dvh bg-zinc-950" id="about">
       <h1 className="w-full text-center pb-24 text-zinc-200 text-6xl font-bold">
         About Me
       </h1>

@@ -19,9 +19,21 @@ export default function Home() {
       <TopSideNavigation.Root>
         <TopSideNavigation.Nav>
           <TopSideNavigation.SectionLink Icon={FaHouse} text="Home" to="/" />
-          <TopSideNavigation.SectionLink Icon={FaUser} text="About" to="/" />
-          <TopSideNavigation.SectionLink Icon={IoGrid} text="Projects" to="/" />
-          <TopSideNavigation.SectionLink Icon={MdEmail} text="Contact" to="/" />
+          <TopSideNavigation.SectionLink
+            Icon={FaUser}
+            text="About"
+            to="/#about"
+          />
+          <TopSideNavigation.SectionLink
+            Icon={IoGrid}
+            text="Projects"
+            to="/#projects"
+          />
+          <TopSideNavigation.SectionLink
+            Icon={MdEmail}
+            text="Contact"
+            to="/#contact"
+          />
         </TopSideNavigation.Nav>
       </TopSideNavigation.Root>
       <Footer />
