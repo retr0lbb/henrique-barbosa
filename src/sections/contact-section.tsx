@@ -1,3 +1,5 @@
+import { Terminal } from "@/components/terminal";
+
 export function ContactPage() {
   return (
     <section
@@ -9,7 +11,7 @@ export function ContactPage() {
       </div>
 
       <div className="flex flex-1 w-full bg-zinc-200/10 items-center-safe justify-center-safe">
-        a
+        <Terminal />
       </div>
     </section>
   );
