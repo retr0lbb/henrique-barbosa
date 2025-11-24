@@ -10,7 +10,7 @@ export function ContactPage() {
         <h1 className="text-4xl text-zinc-200">Get in touch</h1>
       </div>
 
-      <div className="flex flex-1 w-full bg-zinc-200/10 items-center-safe justify-center-safe">
+      <div className="flex flex-1 w-full items-center-safe justify-center-safe">
         <Terminal />
       </div>
     </section>
