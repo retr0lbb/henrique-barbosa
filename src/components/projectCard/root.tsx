@@ -1,17 +1,23 @@
 "use client";
 import { motion, useInView } from "framer-motion";
+import type { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Image from "next/image";
 import { useRef } from "react";
-
+import TEMPLATE from "@/assets/images/cs.webp";
 interface RootProps {
   title: string;
   description: string;
   to?: string;
   children?: React.ReactNode;
+  src?: StaticImport;
+  srcAlt?: string;
 }
 
 export function Root(props: RootProps) {
   const rootRef = useRef(null);
   const inView = useInView(rootRef, { once: false, margin: "-50px" });
+
+  const cardSrc = props.src ? props.src : TEMPLATE;
 
   return (
     <motion.div
@@ -44,7 +50,11 @@ export function Root(props: RootProps) {
       }}
       className="flex h-full flex-col gap-1 cursor-pointer break-inside-avoid pb-6 md:pb-10 group"
     >
-      <div className="bg-gray-600 rounded-2xl aspect-square">Imagem</div>
+      <Image
+        alt={props.srcAlt ?? "Default Alt Value"}
+        src={cardSrc}
+        className="bg-gray-600 rounded-2xl"
+      ></Image>
 
       <div className="w-full flex items-center justify-start pt-3 px-2">
         <h1 className="text-xl md:text-2xl text-zinc-200 font-medium group-hover:underline">

@@ -1,4 +1,6 @@
 import { ProjectCard } from "@/components/projectCard";
+import RBMAIN from "@/assets/images/projeto_rubens/rb_main.png";
+import TJ from "@/assets/images/projeto_junior/TJ_main.png";
 
 export function ProjectSection() {
   return (
@@ -14,6 +16,8 @@ export function ProjectSection() {
 
       <div className="w-full h-full columns-1 md:columns-2 lg:columns-3 md:gap-8 gap-2">
         <ProjectCard.Root
+          src={RBMAIN}
+          srcAlt="Portfolio of Rubens"
           description="A modern Nextjs Portfolio for a very experienced graphics designer"
           title="Rubens Araujo Filho"
           to=""
@@ -36,6 +40,8 @@ export function ProjectSection() {
         </ProjectCard.Root>
 
         <ProjectCard.Root
+          src={TJ}
+          srcAlt="Homen com turbante vermelho"
           description="A simple portfolio for a writer and spiritual guide, made by me powered by wix"
           title="Jose Luiz Junior"
           to=""
