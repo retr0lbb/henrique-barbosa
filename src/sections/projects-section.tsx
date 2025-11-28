@@ -1,5 +1,7 @@
 import { ProjectCard } from "@/components/projectCard";
 import RBMAIN from "@/assets/images/projeto_rubens/rb_main.png";
+import NERD from "@/assets/images/projeto_nerd/NERD_main.png";
+import HYPER from "@/assets/images/projeto_hyperbolic/HT_main.png";
 import TJ from "@/assets/images/projeto_junior/TJ_main.png";
 
 export function ProjectSection() {
@@ -26,6 +28,8 @@ export function ProjectSection() {
         </ProjectCard.Root>
 
         <ProjectCard.Root
+          src={NERD}
+          srcAlt="Image of an nerd emoji with glasses"
           description="The game platform made by Brazilians to Brazilians, in future, Ai tools would be implemented in order to make easier to develop games and build a stronger market."
           title="N.E.R.D"
           to=""
@@ -50,6 +54,8 @@ export function ProjectSection() {
         </ProjectCard.Root>
 
         <ProjectCard.Root
+          src={HYPER}
+          srcAlt="Image of an text showing the text Hyperbolic Tasks in white"
           description="Why not develop another task manager, well this one has a catch, you can create any number of subtasks in any task, and yet you can visualize this tasks in a tree format."
           title="Hyperbolic Tasks"
           to=""
