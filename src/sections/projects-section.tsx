@@ -1,8 +1,10 @@
 import { ProjectCard } from "@/components/projectCard";
+import { FaGithub } from "react-icons/fa6";
 import RBMAIN from "@/assets/images/projeto_rubens/rb_main.png";
 import NERD from "@/assets/images/projeto_nerd/NERD_main.png";
 import HYPER from "@/assets/images/projeto_hyperbolic/HT_main.png";
 import TJ from "@/assets/images/projeto_junior/TJ_main.png";
+import { Divider } from "@/components/divider";
 
 export function ProjectSection() {
   return (
@@ -10,8 +12,9 @@ export function ProjectSection() {
       className="bg-zinc-950 w-full min-h-dvh flex items-center justify-center gap-5 flex-col px-10 py-2"
       id="projects"
     >
-      <div className="p-5">
-        <h1 className="text-4xl md:text-5xl pb-4 md:pb-2 lg:pb-0 md:font-bold text-zinc-200">
+      <Divider />
+      <div className="p-5 pb-10">
+        <h1 className="text-4xl md:text-5xl pb-10 md:pb-2 lg:pb-0 md:font-bold text-zinc-200">
           Major Projects
         </h1>
       </div>
@@ -60,6 +63,21 @@ export function ProjectSection() {
           title="Hyperbolic Tasks"
           to=""
         ></ProjectCard.Root>
+      </div>
+
+      <div className="flex flex-col items-center justify-center p-5 gap-8">
+        <p className="text-2xl text-zinc-300 max-w-2xl">
+          These are some of my best projects, but they don't represent the
+          entirety of my work. For a complete overview, please visit my GitHub.
+        </p>
+
+        <button
+          className="flex items-center cursor-pointer justify-center gap-5 bg-zinc-200/10 px-6 py-2.5 border border-zinc-200/15 rounded-lg shadow-xl shadow-zinc-500/5"
+          type="button"
+        >
+          <FaGithub size={28} className="text-zinc-200" />
+          <p className="text-2xl text-zinc-200 font-medium">GitHub</p>
+        </button>
       </div>
     </section>
   );
