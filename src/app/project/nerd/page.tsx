@@ -7,19 +7,22 @@ import Autoplay from 'embla-carousel-autoplay'
 
 import NERD_GAME from "@/assets/images/projeto_nerd/NERD_game.png"
 import NERD_LIB from "@/assets/images/projeto_nerd/NERD_games.png"
+import NERD_MAIN from "@/assets/images/projeto_nerd/NERD_main.png"
+import NERD_PROFILE from "@/assets/images/projeto_nerd/NERD_profile.png"
+import NERD_CAPTURE from "@/assets/images/projeto_nerd/Nerd_capture.png"
 
 const images = [
-    { src: NERD_GAME, alt: "game page" },
-    { src: NERD_LIB, alt: "library page" },
-    { src: NERD_GAME, alt: "game page 2" },
-    { src: NERD_LIB, alt: "library page 2" },
-    { src: NERD_GAME, alt: "game page 3" },
+    { src: NERD_MAIN, alt: "game page" },
+    { src: NERD_GAME, alt: "library page" },
+    { src: NERD_LIB, alt: "game page 2" },
+    { src: NERD_PROFILE, alt: "library page 2" },
+    { src: NERD_CAPTURE, alt: "game page 3" },
 ]
 
 export default function Page(){
     const [selectedIndex, setSelectedIndex] = useState(0)
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-        Autoplay({ delay: 3000, stopOnInteraction: false })
+        Autoplay({ delay: 10000, stopOnInteraction: false })
     ])
 
     const scrollTo = useCallback((index: number) => {
@@ -41,7 +44,7 @@ export default function Page(){
     }, [emblaApi, onSelect])
 
     return(
-        <div className="min-h-dvh bg-zinc-950 flex flex-col gap-4 p-5">
+        <div className="min-h-dvh bg-zinc-950 flex flex-col gap-2 p-2">
             <div className="flex flex-col gap-4 p-6">
                 <h1 className="text-zinc-200 text-6xl font-bold">N.E.R.D</h1>
                 <p className="text-xl text-zinc-400">The game plataform from Brazil to Brazil.</p>
@@ -57,7 +60,7 @@ export default function Page(){
                                     <Image 
                                         src={image.src} 
                                         alt={image.alt} 
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-contain"
                                         priority={index === 0}
                                     />
                                 </div>
