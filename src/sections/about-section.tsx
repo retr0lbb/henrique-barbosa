@@ -1,7 +1,7 @@
 import { Scroller } from "@/components/scrollingHistory/scroller";
 import { ScrollSection } from "@/components/scrollingHistory/scrollSection";
 import Image from "next/image";
-import Me from "@/assets/images/Ryan_Gosling_v4.webp";
+import Me from "@/assets/images/profile.jpeg";
 import { WorkExperienceCard } from "@/components/work-experience-card";
 import Link from "next/link";
 import { Divider } from "@/components/divider";
