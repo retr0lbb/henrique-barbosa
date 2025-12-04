@@ -78,7 +78,7 @@ export function ASCIIAnimation(props: ASCIIAnimationProps) {
     }
 
     const reducedMotion =
-      window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+       window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === false;
 
     if (reducedMotion) {
       return;
