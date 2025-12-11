@@ -1,5 +1,4 @@
 import { Divider } from "@/components/divider";
-import { Terminal } from "@/components/terminal";
 import { TerminalSection } from "@/components/terminal/terminal-section";
 
 export function ContactPage() {
