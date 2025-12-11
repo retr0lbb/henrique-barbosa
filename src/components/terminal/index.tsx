@@ -2,13 +2,14 @@
 import { motion } from "framer-motion";
 import { TerminalHeader } from "./header";
 import { useTerminalSpawnPosition } from "./use-terminal-spawn";
-import { useEffect, useRef, useState } from "react";
+import { type RefObject, useEffect, useRef, useState } from "react";
 
 interface TerminalProps {
   spawnArea: { width: number; height: number };
   numberOfOpenTerminals: number;
   children: React.ReactNode;
   isVisible?: boolean;
+  dragConstrain: RefObject<HTMLDivElement | null>;
   onCloseClick: () => void;
 }
 
@@ -16,12 +17,15 @@ export function Terminal(props: TerminalProps) {
   const terminalRef = useRef<HTMLDivElement>(null);
   const [terminalSize, setTerminalSize] = useState({ width: 0, height: 0 });
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <no need for exaustivness>
   useEffect(() => {
     if (!terminalRef.current) return;
 
     const { offsetWidth, offsetHeight } = terminalRef.current;
 
     setTerminalSize({ height: offsetHeight, width: offsetWidth });
+
+    console.log("Terminal Size: ", terminalSize);
   }, []);
 
   const { x, y, zIndex } = useTerminalSpawnPosition({
@@ -31,8 +35,6 @@ export function Terminal(props: TerminalProps) {
     expectTerminalWidth: terminalSize.width,
     numberOfChildren: props.numberOfOpenTerminals,
   });
-
-  console.log(terminalSize);
 
   return (
     <motion.div
@@ -53,6 +55,9 @@ export function Terminal(props: TerminalProps) {
         width: props.isVisible ? "auto" : 0,
         height: props.isVisible ? "auto" : 0,
       }}
+      drag
+      dragMomentum={false}
+      dragConstraints={props.dragConstrain}
       ref={terminalRef}
       className={`flex flex-col gap-2 border border-zinc-200/40 border-t-0 rounded-xs absolute`}
     >

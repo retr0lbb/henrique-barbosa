@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
 import { Terminal } from ".";
+import { WritingText } from "../writting-text";
 
 enum VisibleTerminals {
   NONE = 0,
@@ -27,17 +28,18 @@ export function TerminalSection() {
 
     setDivSpawnArea({ height: offsetHeight, width: offsetWidth });
 
-    console.log(divSpawnArea);
+    console.log("Div spawn area: ", divSpawnArea);
   }, []);
 
   return (
-    <div className="flex relative flex-1 w-full items-center-safe justify-center-safe">
+    <div className="flex relative flex-1 w-full h-full">
       {/* Terminal Spawn canvas*/}
       <div
         ref={terminalCanvasRef}
         className="absolute inset-0 w-full h-full overflow-hidden"
       >
         <Terminal
+          dragConstrain={terminalCanvasRef}
           spawnArea={{
             height: divSpawnArea.height,
             width: divSpawnArea.width,
@@ -50,13 +52,21 @@ export function TerminalSection() {
         </Terminal>
       </div>
 
-      <button
-        className="text-zinc-200 font-mono text-4xl underline hover:text-cyan-400 transition-all z-10"
-        onClick={() => setTerminaVisible(VisibleTerminals.GITHUB)}
-        type="button"
-      >
-        {">"} Github x: {divSpawnArea.width}, y: {divSpawnArea.height}
-      </button>
+      <div className="flex flex-1 flex-col items-center justify-center gap-4">
+        <div className="w-full grid place-items-center">
+          <WritingText />
+        </div>
+
+        <div className="flex flex-1">
+          <button
+            className="text-zinc-200 font-mono text-4xl underline hover:text-cyan-400 transition-all z-10"
+            onClick={() => setTerminaVisible(VisibleTerminals.GITHUB)}
+            type="button"
+          >
+            {">"} Github
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

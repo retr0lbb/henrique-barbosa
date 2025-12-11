@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@keyframes typewriter {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animated-write {
+  animation: typewriter forwards steps(14);
+}
