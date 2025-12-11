@@ -1,5 +1,6 @@
 import { Divider } from "@/components/divider";
 import { Terminal } from "@/components/terminal";
+import { TerminalSection } from "@/components/terminal/terminal-section";
 
 export function ContactPage() {
   return (
@@ -12,9 +13,7 @@ export function ContactPage() {
         <h1 className="text-4xl text-zinc-200 font-bold">Get in touch</h1>
       </div>
 
-      <div className="flex flex-1 w-full items-center-safe justify-center-safe">
-        <Terminal />
-      </div>
+      <TerminalSection />
     </section>
   );
 }
