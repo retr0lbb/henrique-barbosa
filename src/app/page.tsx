@@ -1,5 +1,5 @@
 import { Footer } from "@/components/footer";
-import { TopSideNavigation } from "@/components/navigator";
+import { TopSideNavigation, VerticalDivider } from "@/components/navigator";
 import { AboutSection } from "@/sections/about-section";
 import { ContactPage } from "@/sections/contact-section";
 import { HeroSection } from "@/sections/hero-section";
@@ -17,6 +17,8 @@ export default function Home() {
       <ContactPage />
 
       <TopSideNavigation.Root>
+        <TopSideNavigation.LocaleButton />
+        <VerticalDivider />
         <TopSideNavigation.Nav>
           <TopSideNavigation.SectionLink Icon={FaHouse} text="Home" to="/" />
           <TopSideNavigation.SectionLink
