@@ -13,58 +13,71 @@ interface TerminalProps {
   onCloseClick: () => void;
 }
 
-export function Terminal(props: TerminalProps) {
+export function Terminal({
+  children,
+  isVisible,
+  dragConstrain,
+  onCloseClick,
+}: TerminalProps) {
   const terminalRef = useRef<HTMLDivElement>(null);
-  const [terminalSize, setTerminalSize] = useState({ width: 0, height: 0 });
+  const [spawnPosition, setSpawnPosition] = useState({ x: 0, y: 0 });
+  const [hasSpawned, setHasSpawned] = useState(false);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <no need for exaustivness>
   useEffect(() => {
-    if (!terminalRef.current) return;
+    if (
+      !isVisible ||
+      hasSpawned ||
+      !dragConstrain.current ||
+      !terminalRef.current
+    )
+      return;
 
-    const { offsetWidth, offsetHeight } = terminalRef.current;
+    const canvas = dragConstrain.current;
+    const terminal = terminalRef.current;
 
-    setTerminalSize({ height: offsetHeight, width: offsetWidth });
+    requestAnimationFrame(() => {
+      const canvasRect = canvas.getBoundingClientRect();
+      const terminalRect = terminal.getBoundingClientRect();
 
-    console.log("Terminal Size: ", terminalSize);
-  }, []);
+      const maxX = canvasRect.width - terminalRect.width;
+      const maxY = canvasRect.height - terminalRect.height;
 
-  const { x, y, zIndex } = useTerminalSpawnPosition({
-    canvasHeight: props.spawnArea.height,
-    canvasWidth: props.spawnArea.width,
-    expectTerminalHeight: terminalSize.height,
-    expectTerminalWidth: terminalSize.width,
-    numberOfChildren: props.numberOfOpenTerminals,
-  });
+      const randomX = Math.max(0, Math.floor(Math.random() * maxX));
+      const randomY = Math.max(0, Math.floor(Math.random() * maxY));
+
+      setSpawnPosition({ x: randomX, y: randomY });
+      setHasSpawned(true);
+    });
+  }, [isVisible, hasSpawned, dragConstrain]);
+
+  useEffect(() => {
+    if (!isVisible) {
+      setHasSpawned(false);
+    }
+  }, [isVisible]);
+
+  if (!isVisible) return null;
 
   return (
     <motion.div
-      initial={{
-        top: 0,
-        left: 0,
-        width: "auto",
-        height: "auto",
-        display: "hidden",
-        zIndex: 0,
-      }}
-      animate={{
-        display: "block",
-        top: y,
-        left: x,
-        zIndex: zIndex,
-        opacity: props.isVisible ? 1 : 0,
-        width: props.isVisible ? "auto" : 0,
-        height: props.isVisible ? "auto" : 0,
-      }}
+      ref={terminalRef}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      transition={{ duration: 0.2 }}
       drag
       dragMomentum={false}
-      dragConstraints={props.dragConstrain}
-      ref={terminalRef}
-      className={`flex flex-col gap-2 border border-zinc-200/40 border-t-0 rounded-xs absolute`}
+      dragConstraints={dragConstrain}
+      dragElastic={0}
+      style={{
+        x: spawnPosition.x,
+        y: spawnPosition.y,
+      }}
+      className="flex flex-col border border-zinc-200/40 rounded-lg absolute cursor-move z-50"
     >
-      <TerminalHeader onCloseButtonClick={props.onCloseClick} />
-
-      <div className="bg-zinc-950 flex justify-center gap-10 p-5">
-        {props.children}
+      <TerminalHeader onCloseButtonClick={onCloseClick} />
+      <div className="bg-zinc-950 flex justify-center gap-10 p-5 rounded-b-lg">
+        {children}
       </div>
     </motion.div>
   );
