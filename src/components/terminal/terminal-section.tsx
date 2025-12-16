@@ -18,9 +18,19 @@ export function TerminalSection() {
     height: number;
   }>({ height: 0, width: 0 });
   const terminalCanvasRef = useRef<HTMLDivElement>(null);
+  const [githubData, setGithubData] = useState<{
+    followers: number;
+    last_update: string;
+    public_repos: number;
+  }>({ followers: 0, last_update: "", public_repos: 0 });
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <needles>
   useEffect(() => {
+    fetch("/api/github_data")
+      .then((res) => res.json())
+      .then((data) => {
+        setGithubData(data);
+      });
     if (!terminalCanvasRef.current) {
       return;
     }
@@ -30,6 +40,7 @@ export function TerminalSection() {
     setDivSpawnArea({ height: offsetHeight, width: offsetWidth });
 
     console.log("Div spawn area: ", divSpawnArea);
+    console.log(githubData);
   }, []);
 
   return (
@@ -50,7 +61,34 @@ export function TerminalSection() {
           isVisible={terminalVisible === VisibleTerminals.GITHUB}
         >
           <div className="flex items-center justify-center gap-6 p-2">
-            <AsciiImage colorOverlay imageName="github" className="text-xs!" />
+            <AsciiImage
+              imageName="github"
+              className="text-xs! text-zinc-300!"
+            />
+
+            <div className="flex flex-col items-start gap-4">
+              <div className="flex items-center justify-center gap-2">
+                <p className="text-blue-500 text-2xl">[Link]</p>
+                <a
+                  href="https://github.com/retr0lbb"
+                  className="text-zinc-300 text-2xl hover:text-cyan-500 hover:underline transition-all"
+                >
+                  retr0lbb
+                </a>
+              </div>
+
+              <div className="flex items-center justify-center gap-2">
+                <p className="text-blue-500 text-2xl">[repos]</p>
+                <p className="text-zinc-300 text-2xl">
+                  {githubData.public_repos}
+                </p>
+              </div>
+
+              <div className="flex items-center justify-center gap-2">
+                <p className="text-blue-500 text-2xl">[followers]</p>
+                <p className="text-zinc-300 text-2xl">{githubData.followers}</p>
+              </div>
+            </div>
           </div>
         </Terminal>
       </div>
