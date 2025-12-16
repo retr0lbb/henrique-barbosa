@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import { TerminalHeader } from "./header";
-import { useTerminalSpawnPosition } from "./use-terminal-spawn";
 import { type RefObject, useEffect, useRef, useState } from "react";
 
 interface TerminalProps {
@@ -21,38 +20,64 @@ export function Terminal({
 }: TerminalProps) {
   const terminalRef = useRef<HTMLDivElement>(null);
   const [spawnPosition, setSpawnPosition] = useState({ x: 0, y: 0 });
-  const [hasSpawned, setHasSpawned] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    if (
-      !isVisible ||
-      hasSpawned ||
-      !dragConstrain.current ||
-      !terminalRef.current
-    )
+    if (!isVisible || isReady || !dragConstrain.current || !terminalRef.current)
       return;
 
     const canvas = dragConstrain.current;
     const terminal = terminalRef.current;
 
-    requestAnimationFrame(() => {
-      const canvasRect = canvas.getBoundingClientRect();
-      const terminalRect = terminal.getBoundingClientRect();
+    // Espera múltiplos frames e usa um timeout para garantir que o conteúdo foi renderizado
+    const calculatePosition = () => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            const canvasRect = canvas.getBoundingClientRect();
+            const terminalRect = terminal.getBoundingClientRect();
 
-      const maxX = canvasRect.width - terminalRect.width;
-      const maxY = canvasRect.height - terminalRect.height;
+            console.log(
+              "Canvas - Width:",
+              canvasRect.width,
+              "Height:",
+              canvasRect.height,
+            );
+            console.log(
+              "Terminal - Width:",
+              terminalRect.width,
+              "Height:",
+              terminalRect.height,
+            );
 
-      const randomX = Math.max(0, Math.floor(Math.random() * maxX));
-      const randomY = Math.max(0, Math.floor(Math.random() * maxY));
+            // Garante que temos dimensões válidas
+            if (terminalRect.width === 0 || terminalRect.height === 0) {
+              console.warn("Terminal dimensions are 0, retrying...");
+              calculatePosition(); // Tenta novamente
+              return;
+            }
 
-      setSpawnPosition({ x: randomX, y: randomY });
-      setHasSpawned(true);
-    });
-  }, [isVisible, hasSpawned, dragConstrain]);
+            const maxX = Math.max(0, canvasRect.width - terminalRect.width);
+            const maxY = Math.max(0, canvasRect.height - terminalRect.height);
+
+            const randomX = Math.max(0, Math.floor(Math.random() * maxX));
+            const randomY = Math.max(0, Math.floor(Math.random() * maxY));
+
+            console.log("Spawn position - X:", randomX, "Y:", randomY);
+
+            setSpawnPosition({ x: randomX, y: randomY });
+            setIsReady(true);
+          }, 100); // Pequeno delay para garantir renderização completa
+        });
+      });
+    };
+
+    calculatePosition();
+  }, [isVisible, isReady, dragConstrain]);
 
   useEffect(() => {
     if (!isVisible) {
-      setHasSpawned(false);
+      setIsReady(false);
     }
   }, [isVisible]);
 
@@ -62,8 +87,10 @@ export function Terminal({
     <motion.div
       ref={terminalRef}
       initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
+      animate={{
+        opacity: isReady ? 1 : 0,
+        scale: isReady ? 1 : 0.9,
+      }}
       transition={{ duration: 0.2 }}
       drag
       dragMomentum={false}
@@ -72,6 +99,7 @@ export function Terminal({
       style={{
         x: spawnPosition.x,
         y: spawnPosition.y,
+        visibility: isReady ? "visible" : "hidden",
       }}
       className="flex flex-col border border-zinc-200/40 rounded-lg absolute cursor-move z-50"
     >

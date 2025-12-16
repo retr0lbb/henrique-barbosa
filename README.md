@@ -39,12 +39,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # TODO List
 
 - [ ] Add page transitions(Later)
+- [ ] Add a better monospaced font
 - [✅] add slides to about section
 - [ ] add micro projects and other work experiences
-- [ ] add a navigation (Placeholder)
+- [✅] add a navigation (works on desktop, need to refactor on mobile)
 - [ ] add any effect on text on hero section
-- [ ] add meteor shower background effect
 - [✅] add ascii art effects (FIREEE) really thanks for the https://github.com/developedbyed content
- 
+
+- [ ] Refactor the Terminal Section to function on mobile and be a better code 
 - [ ] Refactor the Slide and on-Scroll animate to make it better 
+- [ ] Refactor the Navigation Bar to work on mobile
 

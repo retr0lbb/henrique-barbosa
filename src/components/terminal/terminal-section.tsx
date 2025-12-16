@@ -49,8 +49,8 @@ export function TerminalSection() {
           onCloseClick={() => setTerminaVisible(VisibleTerminals.NONE)}
           isVisible={terminalVisible === VisibleTerminals.GITHUB}
         >
-          <div className="flex items-center justify-center gap-6">
-            <AsciiImage imageName="github" />
+          <div className="flex items-center justify-center gap-6 p-2">
+            <AsciiImage colorOverlay imageName="github" className="text-xs!" />
           </div>
         </Terminal>
       </div>
