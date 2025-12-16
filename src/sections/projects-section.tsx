@@ -6,6 +6,7 @@ import HYPER from "@/assets/images/projeto_hyperbolic/HT_main.png";
 import TJ from "@/assets/images/projeto_junior/TJ_main.png";
 import { Divider } from "@/components/divider";
 import { AccordionCollapse } from "@/components/accordion-colapse";
+import { Button } from "@/components/button";
 
 export function ProjectSection() {
   return (
@@ -73,13 +74,10 @@ export function ProjectSection() {
           entirety of my work. For a complete overview, please visit my GitHub.
         </p>
 
-        <button
-          className="flex items-center cursor-pointer justify-center gap-5 bg-zinc-200/10 px-6 py-2.5 border border-zinc-200/15 rounded-lg shadow-xl shadow-zinc-500/5"
-          type="button"
-        >
+        <Button variant="terminal" type="button">
           <FaGithub size={28} className="text-zinc-200" />
           <p className="text-2xl text-zinc-200 font-medium">GitHub</p>
-        </button>
+        </Button>
       </div>
     </section>
   );

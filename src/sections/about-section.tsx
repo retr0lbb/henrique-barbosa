@@ -5,6 +5,7 @@ import Me from "@/assets/images/profile.jpeg";
 import { WorkExperienceCard } from "@/components/work-experience-card";
 import Link from "next/link";
 import { Divider } from "@/components/divider";
+import { Button } from "@/components/button";
 
 export function AboutSection() {
   return (
@@ -91,14 +92,13 @@ export function AboutSection() {
               </p>
               <p className="text-zinc-400 w-full text-center text-xl">
                 If you want to know more about myself keep scrolling. If you
-                have seen enough, lets cut the chase, take a look at{" "}
-                <Link
-                  className="text-zinc-200 hover:text-cyan-500 text-2xl transition-all"
-                  href={"#projects"}
-                >
-                  MY PROJECTS
-                </Link>
+                have seen enough, lets cut the chase, take a look at
               </p>
+              <Link href={"/#projects"}>
+                <Button variant="terminal">
+                  <p className="text-zinc-200 text-xl font-bold">My projects</p>
+                </Button>
+              </Link>
             </div>
           </div>
         </ScrollSection>
