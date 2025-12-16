@@ -87,7 +87,7 @@ export function TerminalSection() {
 
       <div className="flex flex-1 flex-col items-center justify-center gap-4">
         <div className="w-full grid place-items-center">
-          <WritingText />
+          <WritingText text="Contact Me" />
         </div>
 
         <div className="flex flex-1">

@@ -1,12 +1,55 @@
-export function WritingText() {
+"use client";
+
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+interface WritingTextProps {
+  text: string;
+}
+
+export function WritingText({ text }: WritingTextProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, {
+    once: false,
+    margin: "-50px",
+  });
+
   return (
-    <div className="relative overflow-hidden w-auto">
-      <h1 className="text-6xl font-black font-mono text-zinc-200">
-        Contact Me!
-      </h1>
-      <div className="absolute inset-0 w-full animated-write bg-zinc-950">
-        <div className="h-full bg-red-400 w-[30px]"></div>
-      </div>
+    <div ref={ref} className="py-5 my-10">
+      <motion.div
+        className="flex items-center font-mono text-6xl font-black text-zinc-200"
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.07,
+            },
+          },
+        }}
+      >
+        {text.split("").map((char, index) => (
+          <motion.span
+            // biome-ignore lint/suspicious/noArrayIndexKey: <no need>
+            key={index}
+            className="inline-block whitespace-pre"
+            variants={{
+              hidden: { opacity: 0, scaleX: 0 },
+              visible: {
+                opacity: 1,
+                scaleX: 1,
+                transition: {
+                  duration: 0.1,
+                  ease: "easeOut",
+                },
+              },
+            }}
+            style={{ transformOrigin: "left" }}
+          >
+            {char}
+          </motion.span>
+        ))}
+      </motion.div>
     </div>
   );
 }
