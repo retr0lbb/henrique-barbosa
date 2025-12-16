@@ -45,7 +45,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - [ ] add any effect on text on hero section
 - [ ] add meteor shower background effect
 - [✅] add ascii art effects (FIREEE) really thanks for the https://github.com/developedbyed content
-- [ ] create a nootbook open animation with y2k meme stickers like watch dogs 2 opening a terminal 
  
 - [ ] Refactor the Slide and on-Scroll animate to make it better 
 

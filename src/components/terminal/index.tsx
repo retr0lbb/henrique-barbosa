@@ -76,7 +76,7 @@ export function Terminal({
       className="flex flex-col border border-zinc-200/40 rounded-lg absolute cursor-move z-50"
     >
       <TerminalHeader onCloseButtonClick={onCloseClick} />
-      <div className="bg-zinc-950 flex justify-center gap-10 p-5 rounded-b-lg">
+      <div className="bg-zinc-950 flex justify-center gap-8 p-2 rounded-b-lg">
         {children}
       </div>
     </motion.div>
