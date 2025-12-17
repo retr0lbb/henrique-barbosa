@@ -1,5 +1,3 @@
-"use client";
-import { useState } from "react";
 import type { ComponentProps } from "react";
 
 interface ButtonProps extends ComponentProps<"button"> {
@@ -20,8 +18,6 @@ export function Button({
   children,
   ...rest
 }: ButtonProps) {
-  const [isSelected, setIsSelected] = useState(false);
-
   const terminalColors = {
     white: {
       default: "text-zinc-200",
@@ -45,12 +41,8 @@ export function Button({
   if (variant === "terminal") {
     return (
       <button
-        className={`flex items-center cursor-pointer justify-center gap-2 px-4 py-2 font-mono text-4xl transition-all duration-150 rounded ${
-          isSelected ? colorScheme.selected : colorScheme.default
-        } ${colorScheme.hover}`}
-        onMouseDown={() => setIsSelected(true)}
-        onMouseUp={() => setIsSelected(false)}
-        onMouseLeave={() => setIsSelected(false)}
+        className={`flex items-center cursor-pointer justify-center gap-2 px-4 py-2 font-mono text-4xl transition-all duration-150 rounded 
+          ${colorScheme.default} ${colorScheme.hover}`}
         type="button"
         {...rest}
       >
