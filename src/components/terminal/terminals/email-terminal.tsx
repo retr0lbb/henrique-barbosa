@@ -7,7 +7,7 @@ export function EmailTerminal() {
         href="mailto:retr0lbb@gmail.com
         ?subject=Contato pelo site
         &body=Oi, vim pelo seu site!"
-        className="text-zinc-300 font-mono text-4xl hover:text-cyan-300 transition-all hover:underline"
+        className="text-zinc-300 font-code text-4xl hover:text-cyan-300 transition-all hover:underline"
       >
         retr0lbb@gmail.com
       </a>

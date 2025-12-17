@@ -18,7 +18,7 @@ export function TerminalHeader(props: TerminalHeaderProps) {
         <button
           onClick={props.onCloseButtonClick}
           type="button"
-          className="size-6 border bg-red-500/30 border-red-500/20 cursor-pointer hover:bg-red-400/10 transition-all flex items-center justify-center"
+          className="size-6 border bg-red-500/30 border-red-500/20 cursor-pointer font-code hover:bg-red-400/10 transition-all flex items-center justify-center"
         >
           X
         </button>

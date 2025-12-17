@@ -69,7 +69,7 @@ export function TerminalSection() {
 
         <div className="flex flex-1 items-center justify-center gap-2 flex-col">
           <button
-            className="text-zinc-200 font-mono text-4xl underline hover:text-cyan-400 transition-all z-10"
+            className="text-zinc-200 font-code text-4xl underline hover:text-cyan-400 transition-all z-10"
             onClick={() => setTerminalVisible(VisibleTerminals.GITHUB)}
             type="button"
           >
@@ -77,7 +77,7 @@ export function TerminalSection() {
           </button>
 
           <button
-            className="text-zinc-200 font-mono text-4xl underline hover:text-cyan-400 transition-all z-10"
+            className="text-zinc-200 font-code text-4xl underline hover:text-cyan-400 transition-all z-10"
             onClick={() => setTerminalVisible(VisibleTerminals.GMAIL)}
             type="button"
           >

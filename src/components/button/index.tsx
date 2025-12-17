@@ -41,7 +41,7 @@ export function Button({
   if (variant === "terminal") {
     return (
       <button
-        className={`flex items-center cursor-pointer justify-center gap-2 px-4 py-2 font-mono text-4xl transition-all duration-150 rounded 
+        className={`flex items-center cursor-pointer justify-center gap-2 px-4 py-2 font-code text-4xl transition-all duration-150 rounded 
           ${colorScheme.default} ${colorScheme.hover}`}
         type="button"
         {...rest}

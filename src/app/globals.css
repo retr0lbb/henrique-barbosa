@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.font-code {
+  font-family: var(--font-roboto-mono);
+}
+
 @keyframes typing {
   from {
     width: 0;
