@@ -67,22 +67,25 @@ export function TerminalSection() {
           <WritingText text="Contact Me" />
         </div>
 
-        <div className="flex flex-1 items-center justify-center gap-2 flex-col">
-          <button
-            className="text-zinc-200 font-code text-4xl underline hover:text-cyan-400 transition-all z-10"
-            onClick={() => setTerminalVisible(VisibleTerminals.GITHUB)}
-            type="button"
-          >
-            {">"} Github
-          </button>
+        <div className="flex flex-1 items-center justify-center gap-6">
+          <div className="w-full bg-red-400">a</div>
+          <div className="flex items-start justify-center flex-col gap-2">
+            <button
+              className="text-zinc-200 flex items-center gap-3 font-code text-4xl underline hover:text-cyan-400 transition-all z-10"
+              onClick={() => setTerminalVisible(VisibleTerminals.GITHUB)}
+              type="button"
+            >
+              <span>{">"}</span> Github
+            </button>
 
-          <button
-            className="text-zinc-200 font-code text-4xl underline hover:text-cyan-400 transition-all z-10"
-            onClick={() => setTerminalVisible(VisibleTerminals.GMAIL)}
-            type="button"
-          >
-            {">"} Gmail
-          </button>
+            <button
+              className="text-zinc-200 flex items-center gap-3 font-code text-4xl underline hover:text-cyan-400 transition-all z-10"
+              onClick={() => setTerminalVisible(VisibleTerminals.GMAIL)}
+              type="button"
+            >
+              <span>{">"}</span> Gmail
+            </button>
+          </div>
         </div>
       </div>
     </div>
