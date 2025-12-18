@@ -5,7 +5,8 @@ type TailwindColor =
   | "lime"
   | "emerald"
   | "purple"
-  | "green";
+  | "green"
+  | "gray";
 
 interface TechBadgeProps {
   tecName: string;
@@ -23,6 +24,7 @@ export function TechBadge({ tecName, color, Icon, textColor }: TechBadgeProps) {
     emerald: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20",
     purple: "text-purple-500 bg-purple-500/10 border-purple-500/20",
     green: "text-green-500 bg-green-500/10 border-green-500/20",
+    gray: "text-zinc-200 bg-zinc-500/10 border border-zinc-200/10",
   };
 
   const textColorClasses: Record<TailwindColor, string> = {
@@ -33,6 +35,7 @@ export function TechBadge({ tecName, color, Icon, textColor }: TechBadgeProps) {
     emerald: "text-emerald-500",
     purple: "text-purple-500",
     green: "text-green-500",
+    gray: "text-zinc-200",
   };
 
   const baseClasses = colorClasses[color];

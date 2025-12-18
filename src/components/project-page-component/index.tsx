@@ -8,7 +8,7 @@ interface RootProps {
 }
 function Root(props: RootProps) {
   return (
-    <div className="min-h-dvh bg-zinc-950 flex flex-col gap-2 p-2">
+    <div className="min-h-dvh bg-zinc-950 flex flex-col gap-2 p-2 py-10">
       {props.children}
     </div>
   );
