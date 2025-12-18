@@ -67,7 +67,7 @@ export function Terminal({
 
             setSpawnPosition({ x: randomX, y: randomY });
             setIsReady(true);
-          }, 100); // Pequeno delay para garantir renderização completa
+          }, 100);
         });
       });
     };

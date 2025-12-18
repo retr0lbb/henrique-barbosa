@@ -5,7 +5,7 @@ interface TerminalHeaderProps {
 
 export function TerminalHeader(props: TerminalHeaderProps) {
   return (
-    <div className="min-h-8 bg-zinc-200/20 flex items-center justify-between px-5 py-1 gap-8">
+    <div className="min-h-8 bg-zinc-200/20 backdrop-blur-2xl flex items-center justify-between px-5 py-1 gap-8">
       <p></p>
       <div className="flex flex-1">
         {props.text && (

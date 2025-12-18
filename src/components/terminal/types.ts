@@ -2,6 +2,7 @@ export enum VisibleTerminals {
   NONE = 0,
   GITHUB,
   GMAIL,
+  LINKEDIN,
 }
 
 export interface GithubData {
