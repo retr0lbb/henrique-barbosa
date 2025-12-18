@@ -5,6 +5,7 @@ import NERD_LIB from "@/assets/images/projeto_nerd/NERD_games.png";
 import NERD_MAIN from "@/assets/images/projeto_nerd/NERD_main.png";
 import NERD_PROFILE from "@/assets/images/projeto_nerd/NERD_profile.png";
 import NERD_CAPTURE from "@/assets/images/projeto_nerd/Nerd_capture.png";
+
 import { Button } from "@/components/button";
 import { TechBadge } from "@/components/project-page-component/shared/technologies-badge";
 import { SiExpress, SiTypescript } from "react-icons/si";
@@ -32,10 +33,16 @@ export default function Page() {
         <ProjectComponent.Description.Root>
           <ProjectComponent.Description.Area title="Project Development">
             <p className="text-zinc-400 max-w-2xl text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, at
-              laudantium? Beatae vitae molestiae eligendi quidem qui unde odit
-              expedita aspernatur tenetur voluptatum ea officiis earum
-              voluptatem, quisquam, harum nostrum?
+              This project was developed as the final capstone (TCC) required to
+              complete high school. Our team worked intensively throughout the
+              entire development process to deliver a robust and high-quality
+              software solution. The N.E.R.D project is a digital games platform
+              designed for publishing and purchasing games, with a strong focus
+              on the Brazilian gaming market. From a technical perspective, the
+              platform was built to support scalability, usability, and
+              performance, while also providing significant advantages for indie
+              developers, such as reduced publishing fees and a more accessible
+              distribution model.
             </p>
           </ProjectComponent.Description.Area>
           <ProjectComponent.Description.Area

@@ -27,7 +27,6 @@ export function ProjectSection() {
             srcAlt="Portfolio of Rubens"
             description="A modern Nextjs Portfolio for a very experienced graphics designer"
             title="Rubens Araujo Filho"
-            to=""
           >
             <ProjectCard.Tag colored="green" text="DONE" />
           </ProjectCard.Root>
@@ -37,7 +36,7 @@ export function ProjectSection() {
             srcAlt="Image of an nerd emoji with glasses"
             description="The game platform made by Brazilians to Brazilians, in future, Ai tools would be implemented in order to make easier to develop games and build a stronger market."
             title="N.E.R.D"
-            to=""
+            to="/project/nerd"
           ></ProjectCard.Root>
 
           <ProjectCard.Root
