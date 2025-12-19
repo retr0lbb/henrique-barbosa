@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer className="w-full bg-zinc-900 min-h-20 border-t border-zinc-200/10 flex items-center justify-between px-12 z-20">
+    <footer className="hidden md:flex w-full bg-zinc-900 min-h-20 border-t border-zinc-200/10 items-center justify-between px-12 z-20">
       <p className="text-zinc-300">2025© made by retr0lbb</p>
 
       <div className="flex clear-both items-center justify-center gap-5">

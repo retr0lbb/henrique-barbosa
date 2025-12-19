@@ -15,9 +15,9 @@ export function WritingText({ text }: WritingTextProps) {
   });
 
   return (
-    <div ref={ref} className="py-5 my-10">
+    <div ref={ref} className="py-5 my-2 md:my-5 lg:my-10">
       <motion.div
-        className="flex items-center font-code text-6xl font-bold text-zinc-200"
+        className="flex items-center font-code text-4xl md:text-6xl font-bold text-zinc-200"
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         variants={{

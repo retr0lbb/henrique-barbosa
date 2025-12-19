@@ -69,7 +69,7 @@ export function ProjectSection() {
       </AccordionCollapse>
 
       <div className="flex flex-col items-center justify-center p-5 gap-8">
-        <p className="text-2xl text-zinc-300 max-w-2xl">
+        <p className="text-xl md:text-2xl text-justify md:text-center text-zinc-300 max-w-2xl">
           These are some of my best projects, but they don't represent the
           entirety of my work. For a complete overview, please visit my GitHub.
         </p>

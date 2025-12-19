@@ -8,6 +8,7 @@ import { GithubTerminal } from "./terminals/github-terminal";
 import { EmailTerminal } from "./terminals/email-terminal";
 import { ASCIIAnimation } from "../asciiAnimation";
 import { LinkedInTerminal } from "./terminals/linkedin-terminal";
+import { Button } from "../button";
 
 export function TerminalSection() {
   const [terminalVisible, setTerminalVisible] = useState<VisibleTerminals>(
@@ -79,37 +80,56 @@ export function TerminalSection() {
           <WritingText text="Contact Me" />
         </div>
 
-        <div className="flex flex-1 items-center justify-center gap-12">
-          <ASCIIAnimation fps={30} frameCount={247} frameFolder="pink_rain" />
+        <div className="flex flex-1 items-center justify-center flex-col lg:flex-row gap-0 md:gap-8 lg:gap-10">
+          <div
+            className="w-full h-full absolute inset-0 mt-10"
+            style={{
+              maskImage:
+                "radial-gradient(circle at center, black 30%, transparent 70%)",
+              WebkitMaskImage:
+                "radial-gradient(circle at center, black 30%, transparent 70%)",
+            }}
+          >
+            <ASCIIAnimation
+              textColor="text-zinc-500"
+              hFull
+              fps={30}
+              frameCount={247}
+              frameFolder="pink_rain"
+            />
+          </div>
           <div className="w-96 h-96 flex items-center justify-center">
-            <p className="text-zinc-200 text-4xl font-code z-20">
+            <p className="text-zinc-200 text-3xl md:text-2xl lg:text-4xl font-code z-20">
               Available to work
             </p>
           </div>
-          <div className="flex items-start justify-center flex-col gap-2">
-            <button
-              className="text-zinc-200 flex items-center gap-3 font-code text-4xl underline hover:text-cyan-400 transition-all z-10"
+          <div className="flex items-center md:justify-start justify-center flex-row flex-wrap md:flex-col gap-2">
+            <Button
+              style={{ zIndex: 20 }}
+              variant="terminal"
               onClick={() => setTerminalVisible(VisibleTerminals.GITHUB)}
               type="button"
             >
-              <span>{">"}</span> Github
-            </button>
+              Github
+            </Button>
 
-            <button
-              className="text-zinc-200 flex items-center gap-3 font-code text-4xl underline hover:text-cyan-400 transition-all z-10"
+            <Button
+              style={{ zIndex: 20 }}
+              variant="terminal"
               onClick={() => setTerminalVisible(VisibleTerminals.GMAIL)}
               type="button"
             >
-              <span>{">"}</span> Gmail
-            </button>
+              Gmail
+            </Button>
 
-            <button
-              className="text-zinc-200 flex items-center gap-3 font-code text-4xl underline hover:text-cyan-400 transition-all z-10"
+            <Button
+              style={{ zIndex: 20 }}
+              variant="terminal"
               onClick={() => setTerminalVisible(VisibleTerminals.LINKEDIN)}
               type="button"
             >
-              <span>{">"}</span> LinkedIn
-            </button>
+              LinkedIn
+            </Button>
           </div>
         </div>
       </div>

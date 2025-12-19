@@ -11,6 +11,8 @@ interface ASCIIAnimationProps {
   frameCount?: number;
   frameFolder?: string;
   showFrameIndex?: boolean;
+  hFull?: boolean;
+  textColor?: string;
 }
 
 export function ASCIIAnimation(props: ASCIIAnimationProps) {
@@ -128,7 +130,9 @@ export function ASCIIAnimation(props: ASCIIAnimationProps) {
       )}
 
       <div className="relative w-full h-full flex items-end justify-center overflow-hidden">
-        <pre className="text-zinc-700 pb-4 select-none">
+        <pre
+          className={`${props.textColor ?? "text-zinc-700"} pb-4 select-none ${props.hFull && "h-full"}`}
+        >
           {frames[currentFrame]}
         </pre>
 

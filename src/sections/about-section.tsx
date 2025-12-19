@@ -11,7 +11,7 @@ export function AboutSection() {
   return (
     <section className="w-full min-h-dvh bg-zinc-950 mt-5" id="about">
       <Divider />
-      <h1 className="w-full text-center pb-24 text-zinc-200 text-6xl font-bold py-4">
+      <h1 className="w-full text-center pb-24 text-zinc-200 text-5xl md:text-6xl font-bold py-4">
         About Me
       </h1>
       <Scroller>
@@ -28,12 +28,14 @@ export function AboutSection() {
             </div>
 
             <div className="col-span-2 md:col-span-3 md:row-span-3 flex items-center justify-center gap-8 flex-col h-full md:px-5 py-4">
-              <h1 className="text-4xl text-zinc-200">Work Experience</h1>
+              <h1 className="text-2xl md:text-4xl text-zinc-200">
+                Work Experience
+              </h1>
               <div className="flex flex-1 items-center gap-4 flex-col md:px-6">
                 <WorkExperienceCard.Root
                   company_or_person="PicBrand"
-                  duration="03/2025 - 06/2025"
-                  job_function="Fullstack Junior Web Engineer"
+                  duration="03/25 - 06/25"
+                  job_function="Fullstack Junior Web engineer"
                   model_of_contract="PJ"
                 >
                   <WorkExperienceCard.KeyPoint>
@@ -51,7 +53,7 @@ export function AboutSection() {
 
                 <WorkExperienceCard.Root
                   company_or_person="Rubens Araujo"
-                  duration="10/2025 - 11/2025"
+                  duration="10/25 - 11/25"
                   job_function="Front End developer"
                   model_of_contract="Free lance"
                 >
@@ -67,7 +69,7 @@ export function AboutSection() {
 
                 <WorkExperienceCard.Root
                   company_or_person="Boom Sneakers"
-                  duration="06/2024 - 09/2024"
+                  duration="06/24 - 09/24"
                   job_function="Front End Developer"
                   model_of_contract="Project"
                 >
@@ -104,10 +106,10 @@ export function AboutSection() {
         </ScrollSection>
         <ScrollSection year={"2015"}>
           <div className="w-full h-full flex flex-col items-center justify-center gap-12">
-            <h1 className="text-4xl font-bold text-zinc-200">
+            <h1 className="text-2xl text-center md:text-3xl lg:text-4xl lg:text-left font-bold text-zinc-200">
               My Fist Contact With Technology
             </h1>
-            <p className="max-w-[700px] text-lg text-justify text-zinc-300">
+            <p className="max-w-[700px] text-lg md:text-xl text-justify text-zinc-300">
               In 2015 I have started a course in game development, in the past i
               had developed a few little games, i always was fascinated about
               how things works in games, always using maths and stuffs.
@@ -116,7 +118,10 @@ export function AboutSection() {
         </ScrollSection>
         <ScrollSection year={"2024"}>
           <div className="w-full h-full flex flex-col items-center justify-center gap-12">
-            <p className="max-w-[700px] text-xl text-justify text-zinc-200">
+            <h1 className="text-2xl text-center md:text-3xl lg:text-4xl lg:text-left font-bold text-zinc-200">
+              My Education
+            </h1>
+            <p className="max-w-[700px] text-lg md:text-xl text-justify text-zinc-200">
               In 2024 I have finished Tec Highschool in Software development and
               analysis. right after before that, I entered in the Faculty of
               Technology of Cotia with I am studying right now until 2027.
@@ -126,7 +131,10 @@ export function AboutSection() {
 
         <ScrollSection year={"2050"} isOnEnd>
           <div className="w-full h-full flex flex-col items-center justify-center gap-12">
-            <p className="max-w-[700px] text-xl text-justify text-zinc-200">
+            <h1 className="text-2xl text-center md:text-3xl lg:text-4xl lg:text-left font-bold text-zinc-200">
+              My plans for the future
+            </h1>
+            <p className="max-w-[700px] text-lg md:text-xl text-justify text-zinc-200">
               By the year 2025, I plan to be at least a PHD with a doctored in
               Computer Science, I plan to have a lot of Scientific Articles
               Published and trying to make the diference in the world.
