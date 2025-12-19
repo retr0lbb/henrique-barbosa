@@ -45,7 +45,7 @@ export function TechBadge({ tecName, color, Icon, textColor }: TechBadgeProps) {
 
   return (
     <div
-      className={`flex items-center justify-center gap-2 px-3 py-1.5 text-xl rounded-full border ${finalClasses}`}
+      className={`flex items-center justify-center gap-2 px-3 py-1.5 text-sm md:text-xl rounded-full border ${finalClasses}`}
     >
       <Icon />
       <span>{tecName}</span>

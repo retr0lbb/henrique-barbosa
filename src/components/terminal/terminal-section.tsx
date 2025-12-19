@@ -81,17 +81,11 @@ export function TerminalSection() {
         </div>
 
         <div className="flex flex-1 items-center justify-center flex-col lg:flex-row gap-0 md:gap-8 lg:gap-10">
-          <div
-            className="w-full h-full absolute inset-0 mt-10"
-            style={{
-              maskImage:
-                "radial-gradient(circle at center, black 30%, transparent 70%)",
-              WebkitMaskImage:
-                "radial-gradient(circle at center, black 30%, transparent 70%)",
-            }}
-          >
+          <div className="w-full h-full absolute inset-0 mt-10 md:mt-4">
             <ASCIIAnimation
               textColor="text-zinc-500"
+              colorOverlay
+              colorsOfColorOverlay="CYAN"
               hFull
               fps={30}
               frameCount={247}

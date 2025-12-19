@@ -3,10 +3,13 @@ import type { GithubData } from "@/components/terminal/types";
 
 export function GithubTerminal(props: { data: GithubData }) {
   return (
-    <div className="flex items-center justify-center gap-6 p-2">
-      <AsciiImage imageName="github" className="text-xs! text-zinc-300!" />
+    <div className="flex items-center justify-center flex-col lg:flex-row gap-6 p-4 md:p-2">
+      <AsciiImage
+        imageName="github"
+        className="text-xs! hidden! text-zinc-300!"
+      />
 
-      <div className="flex flex-col items-start gap-4">
+      <div className="flex flex-col items-start gap-8 md:gap-4">
         <div className="flex items-center justify-center gap-2">
           <p className="text-blue-500 text-2xl font-code">[Link]</p>
           <a

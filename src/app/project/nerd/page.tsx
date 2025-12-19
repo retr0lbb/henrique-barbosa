@@ -35,7 +35,7 @@ export default function Page() {
           <ProjectComponent.Carousel imgs={images} />
           <ProjectComponent.Description.Root>
             <ProjectComponent.Description.Area title="Project Development">
-              <p className="text-zinc-400 max-w-2xl text-xl">
+              <p className="text-zinc-400 max-w-2xl text-justify text-sm md:text-lg lg:text-xl md:text-left">
                 This project was developed as the final capstone (TCC) required
                 to complete high school. Our team worked intensively throughout
                 the entire development process to deliver a robust and
@@ -52,7 +52,7 @@ export default function Page() {
               className="space-y-4"
               title="Used Technologies"
             >
-              <div className="flex flex-wrap items-center justify-center gap-3">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
                 <TechBadge Icon={FaReact} tecName="React" color={"blue"} />
                 <TechBadge
                   Icon={SiTypescript}
@@ -70,14 +70,16 @@ export default function Page() {
                 <TechBadge Icon={SiExpress} tecName="Express" color="yellow" />
               </div>
             </ProjectComponent.Description.Area>
-            <div className="mt-5 w-full flex items-center justify-start gap-10">
+            <div className="mt-5 w-full flex items-center justify-center md:justify-start flex-col md:flex-row gap-6">
               <Link
                 target="_blank"
                 href={"https://github.com/retr0lbb/N.E.R.D"}
               >
-                <Button variant="terminal">
-                  <FaGithub />
-                  Repository
+                <Button>
+                  <div className="flex items-center justify-center gap-2 text-zinc-300 text-xl font-semibold">
+                    <FaGithub />
+                    Repository
+                  </div>
                 </Button>
               </Link>
             </div>

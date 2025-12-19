@@ -4,7 +4,7 @@ interface DescriptionProps {
 
 export function Description(props: DescriptionProps) {
   return (
-    <div className="w-full flex flex-col items-center justify-center gap-6 px-20">
+    <div className="w-full flex flex-col items-center justify-center gap-6 px-2 md:px-6 lg:px-20">
       {props.children}
     </div>
   );
@@ -18,7 +18,9 @@ interface DescriptionAreaProps {
 export function DescriptionArea(props: DescriptionAreaProps) {
   return (
     <div className={`space-y-1 w-full ${props.className}`}>
-      <h1 className="text-zinc-200 text-4xl font-semibold">{props.title}</h1>
+      <h1 className="text-zinc-200 text-2xl md:text-4xl font-semibold">
+        {props.title}
+      </h1>
       {props.children}
     </div>
   );

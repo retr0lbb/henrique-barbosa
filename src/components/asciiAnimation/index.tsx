@@ -3,17 +3,31 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimationController } from "@/utils/animation-controller";
 
+type ColorOverlay = "CYAN" | "YELLOW" | "GREEN" | "RED";
 interface ASCIIAnimationProps {
   frames?: [];
   className?: string;
   fps?: number;
   colorOverlay?: boolean;
+  colorsOfColorOverlay?: ColorOverlay;
   frameCount?: number;
   frameFolder?: string;
   showFrameIndex?: boolean;
   hFull?: boolean;
   textColor?: string;
 }
+
+const COLOR_OVERLAY_GRADIENTS: Record<ColorOverlay, string> = {
+  CYAN: "linear-gradient(to top, rgba(0,255,255,0.9) 0%, rgba(0,150,255,0.7) 30%, rgba(0,50,150,0.8) 70%, rgba(0,20,80,0.6) 100%)",
+
+  YELLOW:
+    "linear-gradient(to top, rgba(208,135,0,0.9) 0%, rgba(180,120,0,0.7) 30%, rgba(140,90,0,0.8) 70%, rgba(90,60,0,0.6) 100%)",
+
+  GREEN:
+    "linear-gradient(to top, rgba(0,201,80,0.9) 0%, rgba(0,160,65,0.7) 30%, rgba(0,120,50,0.8) 70%, rgba(0,80,35,0.6) 100%)",
+
+  RED: "linear-gradient(to top, rgba(255,32,86,0.9) 0%, rgba(200,25,70,0.7) 30%, rgba(150,18,55,0.8) 70%, rgba(100,12,40,0.6) 100%)",
+};
 
 export function ASCIIAnimation(props: ASCIIAnimationProps) {
   const [frames, setFrames] = useState<string[]>([]);
@@ -141,7 +155,7 @@ export function ASCIIAnimation(props: ASCIIAnimationProps) {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "linear-gradient(to top, rgba(0,255,255,0.9) 0%, rgba(0,150,255,0.7) 30%, rgba(0,50,150,0.8) 70%, rgba(0,20,80,0.6) 100%)",
+                COLOR_OVERLAY_GRADIENTS[props.colorsOfColorOverlay ?? "CYAN"],
               mixBlendMode: "color",
             }}
           />

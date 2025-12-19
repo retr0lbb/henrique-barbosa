@@ -44,14 +44,14 @@ export function Carousel(props: CarouselProps) {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="w-full px-6 flex flex-col items-center justify-center gap-2">
+    <div className="w-full px-2 pt-2 pb-6 md:px-6 flex flex-col items-center justify-center gap-2">
       {/* Main Image Carousel */}
       <div className="overflow-hidden rounded-lg" ref={emblaRef}>
         <div className="flex">
           {props.imgs.map((image, index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: <no other data>
             <div key={index} className="flex-[0_0_100%] min-w-0">
-              <div className="relative w-full h-[500px]">
+              <div className="relative w-full ">
                 <Image
                   src={image.src}
                   alt={image.alt}
@@ -65,7 +65,7 @@ export function Carousel(props: CarouselProps) {
       </div>
 
       {/* Thumbnails */}
-      <div className="flex gap-3 overflow-x-auto pb-2">
+      <div className="flex gap-3 overflow-x-hidden items-center justify-center flex-wrap pb-2">
         {props.imgs.map((image, index) => (
           <button
             // biome-ignore lint/suspicious/noArrayIndexKey: <No other type of key>

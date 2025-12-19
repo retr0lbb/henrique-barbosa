@@ -38,7 +38,7 @@ export default function Page() {
           <ProjectComponent.Carousel imgs={images} />
           <ProjectComponent.Description.Root>
             <ProjectComponent.Description.Area title="Project Development">
-              <p className="text-zinc-400 max-w-2xl text-xl">
+              <p className="text-zinc-400 max-w-2xl text-justify text-sm md:text-lg lg:text-xl md:text-left">
                 A portfolio website developed using Wix, featuring a multi-page
                 structure, an integrated CMS for content management, and a
                 contact form. The site includes additional features that enhance
@@ -50,31 +50,23 @@ export default function Page() {
               className="space-y-4"
               title="Used Technologies"
             >
-              <div className="flex flex-wrap items-center justify-start gap-3">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
                 <TechBadge Icon={SiWix} tecName="Wix" color={"purple"} />
                 <TechBadge Icon={SiFigma} tecName="Figma" color={"gray"} />
               </div>
             </ProjectComponent.Description.Area>
-            <div className="mt-5 w-full flex items-center justify-start gap-10">
-              <Link
-                target="_blank"
-                href={"https://github.com/retr0lbb/sub-tasks"}
-              >
-                <Button variant="terminal">
-                  <FaGithub />
-                  Repository
-                </Button>
-              </Link>
-
+            <div className="mt-5 w-full flex items-center justify-center md:justify-start flex-col md:flex-row gap-6">
               <Link
                 target="_blank"
                 href={
                   "https://www.luizjuniorastral.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnUCvN8mj0eU_cxnXSOyqlSsV_EE_Ms9qs4NYghvOPuXrxUmo9vXVUxs01gvk_aem_OzWZxD_nIQWA8y6EhVvz6A"
                 }
               >
-                <Button variant="terminal">
-                  <FaGlobe />
-                  Website
+                <Button>
+                  <div className="flex items-center justify-center gap-2 text-zinc-300 text-xl font-semibold">
+                    <FaGlobe />
+                    Website
+                  </div>
                 </Button>
               </Link>
             </div>
