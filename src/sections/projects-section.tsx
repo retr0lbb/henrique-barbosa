@@ -52,7 +52,6 @@ export function ProjectSection() {
             srcAlt="Homen com turbante vermelho"
             description="A simple portfolio for a writer and spiritual guide, made by me powered by wix"
             title="Jose Luiz Junior"
-            to=""
           >
             <ProjectCard.Tag colored="yellow" text="LOW CODE" />
           </ProjectCard.Root>
@@ -62,7 +61,7 @@ export function ProjectSection() {
             srcAlt="Image of an text showing the text Hyperbolic Tasks in white"
             description="Why not develop another task manager, well this one has a catch, you can create any number of subtasks in any task, and yet you can visualize this tasks in a tree format."
             title="Hyperbolic Tasks"
-            to=""
+            to="/project/hyperbolic"
           ></ProjectCard.Root>
         </div>
       </AccordionCollapse>

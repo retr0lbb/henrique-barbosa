@@ -104,7 +104,6 @@ export default function Page() {
           </ProjectComponent.Description.Root>
         </ProjectComponent.Body>
       </ProjectComponent.Root>
-
       <Footer />
     </div>
   );
