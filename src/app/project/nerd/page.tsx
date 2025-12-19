@@ -13,13 +13,15 @@ import { DiMongodb } from "react-icons/di";
 import { FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
+import type { StaticImageData } from "next/image";
+import { requiredProps } from "@/components/project-page-component/carousel";
 
-const images = [
-  { src: NERD_MAIN, alt: "game page" },
-  { src: NERD_GAME, alt: "library page" },
-  { src: NERD_LIB, alt: "game page 2" },
-  { src: NERD_PROFILE, alt: "library page 2" },
-  { src: NERD_CAPTURE, alt: "game page 3" },
+const images: requiredProps[] = [
+  { src: NERD_MAIN, type: "image", alt: "game page" },
+  { src: NERD_GAME, type: "image", alt: "library page" },
+  { src: NERD_LIB, type: "image", alt: "game page 2" },
+  { src: NERD_PROFILE, type: "image", alt: "library page 2" },
+  { src: NERD_CAPTURE, type: "image", alt: "game page 3" },
 ];
 
 export default function Page() {

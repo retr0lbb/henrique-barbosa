@@ -15,14 +15,15 @@ import { SiWix, SiFigma } from "react-icons/si";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
+import { requiredProps } from "@/components/project-page-component/carousel";
 
-const images = [
-  { src: TJ_MAIN, alt: "Page" },
-  { src: TJ_ABOUT, alt: "Page" },
-  { src: TJ_POD, alt: "Page" },
-  { src: TJ_SERVICES, alt: "Page" },
-  { src: TJ_VID, alt: "Page" },
-  { src: TJ_BOOKS, alt: "Page" },
+const images: requiredProps[] = [
+  { src: TJ_MAIN, type: "image", alt: "Page" },
+  { src: TJ_ABOUT, type: "image", alt: "Page" },
+  { src: TJ_POD, type: "image", alt: "Page" },
+  { src: TJ_SERVICES, type: "image", alt: "Page" },
+  { src: TJ_VID, type: "image", alt: "Page" },
+  { src: TJ_BOOKS, type: "image", alt: "Page" },
 ];
 
 export default function Page() {

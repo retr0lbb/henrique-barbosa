@@ -5,12 +5,15 @@ import type { StaticImageData } from "next/image";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
-interface ImageDataType {
+export type requiredProps = {
+  type: "image" | "video";
   src: StaticImageData;
   alt: string;
-}
+  poster?: string;
+};
+
 interface CarouselProps {
-  imgs: ImageDataType[];
+  imgs: requiredProps[];
 }
 
 export function Carousel(props: CarouselProps) {

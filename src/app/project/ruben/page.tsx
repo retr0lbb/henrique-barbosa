@@ -12,12 +12,13 @@ import { FaGithub, FaGlobe } from "react-icons/fa";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { RiNextjsFill } from "react-icons/ri";
+import { requiredProps } from "@/components/project-page-component/carousel";
 
-const images = [
-  { src: RB_MAIN, alt: "Main page from portfolio" },
-  { src: RB_ABOUT, alt: "About Page from rubens portfolio" },
-  { src: RB_PROJECTS, alt: "Project page showing 3 projects" },
-  { src: RB_CONTACT, alt: "Contact Card final page" },
+const images: requiredProps[] = [
+  { src: RB_MAIN, type: "image", alt: "Main page from portfolio" },
+  { src: RB_ABOUT, type: "image", alt: "About Page from rubens portfolio" },
+  { src: RB_PROJECTS, type: "image", alt: "Project page showing 3 projects" },
+  { src: RB_CONTACT, type: "image", alt: "Contact Card final page" },
 ];
 
 export default function Page() {

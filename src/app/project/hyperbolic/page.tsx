@@ -18,12 +18,13 @@ import { RiNextjsFill } from "react-icons/ri";
 import { FaGithub, FaNodeJs } from "react-icons/fa";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
+import type { requiredProps } from "@/components/project-page-component/carousel";
 
-const images = [
-  { src: HT_MAIN, alt: "Main page from Hyperbolic Tasks" },
-  { src: HT_LOGIN, alt: "library page" },
-  { src: HT_REGISTER, alt: "game page 2" },
-  { src: HT_SEC, alt: "library page 2" },
+const images: requiredProps[] = [
+  { src: HT_MAIN, type: "image", alt: "Main page from Hyperbolic Tasks" },
+  { src: HT_LOGIN, type: "image", alt: "library page" },
+  { src: HT_REGISTER, type: "image", alt: "game page 2" },
+  { src: HT_SEC, type: "image", alt: "library page 2" },
 ];
 
 export default function Page() {
