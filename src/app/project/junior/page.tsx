@@ -15,7 +15,7 @@ import { SiWix, SiFigma } from "react-icons/si";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
-import { requiredProps } from "@/components/project-page-component/carousel";
+import type { requiredProps } from "@/components/project-page-component/carousel";
 
 const images: requiredProps[] = [
   { src: TJ_MAIN, type: "image", alt: "Page" },

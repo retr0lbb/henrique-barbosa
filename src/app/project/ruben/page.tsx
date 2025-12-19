@@ -12,7 +12,7 @@ import { FaGithub, FaGlobe } from "react-icons/fa";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { RiNextjsFill } from "react-icons/ri";
-import { requiredProps } from "@/components/project-page-component/carousel";
+import type { requiredProps } from "@/components/project-page-component/carousel";
 
 const images: requiredProps[] = [
   { src: RB_MAIN, type: "image", alt: "Main page from portfolio" },

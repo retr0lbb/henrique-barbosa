@@ -13,8 +13,7 @@ import { DiMongodb } from "react-icons/di";
 import { FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
-import type { StaticImageData } from "next/image";
-import { requiredProps } from "@/components/project-page-component/carousel";
+import type { requiredProps } from "@/components/project-page-component/carousel";
 
 const images: requiredProps[] = [
   { src: NERD_MAIN, type: "image", alt: "game page" },
