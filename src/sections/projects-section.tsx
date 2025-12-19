@@ -27,6 +27,7 @@ export function ProjectSection() {
             srcAlt="Portfolio of Rubens"
             description="A modern Nextjs Portfolio for a very experienced graphics designer"
             title="Rubens Araujo Filho"
+            to="/project/ruben"
           >
             <ProjectCard.Tag colored="green" text="DONE" />
           </ProjectCard.Root>
@@ -42,7 +43,7 @@ export function ProjectSection() {
           <ProjectCard.Root
             description="Why not implement security features and as a bonus, automate boring tasks"
             title="Fatecard"
-            to=""
+            to="/"
           >
             <ProjectCard.Tag colored="red" text="JUST PITCH IDEA" />
           </ProjectCard.Root>
@@ -52,6 +53,7 @@ export function ProjectSection() {
             srcAlt="Homen com turbante vermelho"
             description="A simple portfolio for a writer and spiritual guide, made by me powered by wix"
             title="Jose Luiz Junior"
+            to="/project/junior"
           >
             <ProjectCard.Tag colored="yellow" text="LOW CODE" />
           </ProjectCard.Root>
