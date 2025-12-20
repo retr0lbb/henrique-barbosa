@@ -52,11 +52,14 @@ export function Root(props: RootProps) {
         }}
         className="flex h-full flex-col gap-1 cursor-pointer break-inside-avoid pb-6 md:pb-10 group"
       >
-        <Image
-          alt={props.srcAlt ?? "Default Alt Value"}
-          src={cardSrc}
-          className="bg-gray-600 rounded-2xl"
-        ></Image>
+        <div className="relative w-full aspect-video">
+          <Image
+            src={cardSrc}
+            alt={props.srcAlt ?? "Default Alt Value"}
+            fill
+            className="object-cover rounded-2xl bg-gray-600"
+          />
+        </div>
 
         <div className="w-full flex items-center justify-start pt-3 px-2">
           <h1 className="text-xl md:text-2xl text-zinc-200 font-medium group-hover:underline">
