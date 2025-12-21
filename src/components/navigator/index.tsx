@@ -11,9 +11,9 @@ interface TopSideNavigationProps {
 function Root(props: TopSideNavigationProps) {
   return (
     <div
-      className="fixed z-50 top-5 self-center flex flex-row items-center justify-center
+      className="fixed left-5 md:left-auto z-50 top-5 self-center flex flex-row items-center justify-center
       gap-2 border border-zinc-200/20 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] 
-      backdrop-blur-sm bg-zinc-100/10 px-6"
+      backdrop-blur-sm bg-zinc-100/10 px-2 md:px-6 -translate-x-[200%]"
     >
       {props.children}
     </div>

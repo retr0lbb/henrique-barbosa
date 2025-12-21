@@ -11,7 +11,7 @@ import { Button } from "@/components/button";
 export function ProjectSection() {
   return (
     <section
-      className="bg-zinc-950 w-full min-h-dvh flex items-center justify-center gap-5 flex-col px-10 py-2"
+      className="bg-zinc-950 w-full min-h-svh flex items-center justify-center gap-5 flex-col px-10 py-2"
       id="projects"
     >
       <Divider />

@@ -9,7 +9,7 @@ import { Button } from "@/components/button";
 
 export function AboutSection() {
   return (
-    <section className="w-full min-h-dvh bg-zinc-950 mt-5" id="about">
+    <section className="w-full min-h-svh bg-zinc-950 mt-5" id="about">
       <Divider />
       <h1 className="w-full text-center pb-24 text-zinc-200 text-5xl md:text-6xl font-bold py-4">
         About Me
