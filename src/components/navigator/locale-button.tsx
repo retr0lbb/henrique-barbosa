@@ -25,7 +25,7 @@ export function LocaleButton() {
           }}
           type="button"
           onClick={toggleLanguage}
-          className="text-2xl hidden md:block text-zinc-200 p-2 mr-2 rounded-full bg-zinc-200/10 border border-zinc-200/20 
+          className="text-2xl m-2 md:m-0 text-zinc-200 p-2 mr-2 rounded-full bg-zinc-200/10 border border-zinc-200/20 
         cursor-pointer hover:bg-zinc-300/20 transition-all hover:scale-110 active:scale-95"
           aria-label={"Mudar para Português"}
         >
@@ -43,7 +43,7 @@ export function LocaleButton() {
           }}
           type="button"
           onClick={toggleLanguage}
-          className="text-2xl hidden md:block text-zinc-200 p-2 mr-2 rounded-full bg-zinc-200/10 border border-zinc-200/20 
+          className="text-2xl m-2 md:m-0 text-zinc-200 p-2 mr-2 rounded-full bg-zinc-200/10 border border-zinc-200/20 
         cursor-pointer hover:bg-zinc-300/20 transition-all hover:scale-110 active:scale-95"
           aria-label={"Switch to English"}
         >
