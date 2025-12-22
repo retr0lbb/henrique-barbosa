@@ -43,7 +43,7 @@ export function ProjectSection() {
           <ProjectCard.Root
             description="Why not implement security features and as a bonus, automate boring tasks"
             title="Fatecard"
-            to="/"
+            to="/project/fatecard"
           >
             <ProjectCard.Tag colored="red" text="JUST PITCH IDEA" />
           </ProjectCard.Root>
