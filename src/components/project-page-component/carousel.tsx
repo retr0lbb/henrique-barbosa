@@ -7,9 +7,9 @@ import { useCallback, useEffect, useState } from "react";
 
 export type requiredProps = {
   type: "image" | "video";
-  src: StaticImageData;
+  src: StaticImageData | string;
   alt: string;
-  poster?: string;
+  poster?: StaticImageData | string;
 };
 
 interface CarouselProps {
@@ -52,12 +52,23 @@ export function Carousel(props: CarouselProps) {
             // biome-ignore lint/suspicious/noArrayIndexKey: <no other data>
             <div key={index} className="flex-[0_0_100%] min-w-0">
               <div className="relative w-full ">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-contain"
-                  priority={index === 0}
-                />
+                {image.type === "image" ? (
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-contain"
+                    priority={index === 0}
+                  />
+                ) : (
+                  // biome-ignore lint/a11y/useMediaCaption: <i dont know what are this>
+                  <video
+                    src={image.src as string}
+                    poster={image.poster as string}
+                    controls
+                    playsInline
+                    className="w-full h-full object-contain rounded-lg"
+                  />
+                )}
               </div>
             </div>
           ))}
@@ -68,7 +79,7 @@ export function Carousel(props: CarouselProps) {
       <div className="flex gap-3 overflow-x-hidden items-center justify-center flex-wrap pb-2">
         {props.imgs.map((image, index) => (
           <button
-            // biome-ignore lint/suspicious/noArrayIndexKey: <No other type of key>
+            // biome-ignore lint/suspicious/noArrayIndexKey: <yep>
             key={index}
             type="button"
             onClick={() => scrollTo(index)}
@@ -78,11 +89,26 @@ export function Carousel(props: CarouselProps) {
                 : "opacity-50 hover:opacity-75"
             }`}
           >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-full object-cover"
-            />
+            {image.type === "image" && (
+              <Image
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+              />
+            )}
+
+            {image.type === "video" && image.poster && (
+              <>
+                <Image
+                  src={image.poster}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                  <span className="text-white text-xs">▶</span>
+                </div>
+              </>
+            )}
           </button>
         ))}
       </div>
