@@ -7,8 +7,16 @@ import { ProjectSection } from "@/sections/projects-section";
 import { FaHouse, FaUser } from "react-icons/fa6";
 import { IoGrid } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
+import { getDictionary } from "./dictionaries";
+import { Locale } from "./i18n-config";
 
-export default function Home() {
+type HomeProps = {
+  params: Promise<{ lang: string }>;
+};
+export default async function Home({ params }: HomeProps) {
+  const { lang } = await params;
+  const dict = getDictionary(lang as "pt-BR" | "en-US");
+
   return (
     <div className="w-full h-full flex flex-col md:pb-0">
       <HeroSection />
@@ -20,21 +28,25 @@ export default function Home() {
         <TopSideNavigation.LocaleButton />
         <VerticalDivider />
         <TopSideNavigation.Nav>
-          <TopSideNavigation.SectionLink Icon={FaHouse} text="Home" to="/" />
+          <TopSideNavigation.SectionLink
+            Icon={FaHouse}
+            text="Home"
+            to={`/${lang}/`}
+          />
           <TopSideNavigation.SectionLink
             Icon={FaUser}
             text="About"
-            to="/#about"
+            to={`/${lang}/#about`}
           />
           <TopSideNavigation.SectionLink
             Icon={IoGrid}
             text="Projects"
-            to="/#projects"
+            to={`/${lang}/#projects`}
           />
           <TopSideNavigation.SectionLink
             Icon={MdEmail}
             text="Contact"
-            to="/#contact"
+            to={`/${lang}/#contact`}
           />
         </TopSideNavigation.Nav>
       </TopSideNavigation.Root>
