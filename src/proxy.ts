@@ -3,19 +3,24 @@ import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { defaultLocale, locales } from "./app/[lang]/i18n-config";
 
-function getLocale(request: NextRequest): string {
-  // Get headers as plain object for Negotiator
+function getLocaleFromCookie(request: NextRequest): string | null {
+  const cookie = request.cookies.get("preferred_language");
+  if (cookie?.value && locales.includes(cookie.value as "en-US" | "pt-BR")) {
+    return cookie.value;
+  }
+  return null;
+}
+
+function getLocaleFromHeader(request: NextRequest): string {
   const negotiatorHeaders: Record<string, string> = {};
   request.headers.forEach((value, key) => {
     negotiatorHeaders[key] = value;
   });
 
-  // Get user's preferred languages from Accept-Language header
   const languages = new Negotiator({
     headers: negotiatorHeaders,
   }).languages();
 
-  // Match against our supported locales
   return match(languages, locales as unknown as string[], defaultLocale);
 }
 
@@ -27,11 +32,10 @@ export function proxy(request: NextRequest): NextResponse | undefined {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
-  // If locale is already in pathname, continue normally
   if (pathnameHasLocale) return;
 
-  // Get the best matching locale
-  const locale = getLocale(request);
+  // Priority: Cookie > Browser Header
+  const locale = getLocaleFromCookie(request) || getLocaleFromHeader(request);
 
   // Redirect to the same path with locale prefix
   request.nextUrl.pathname = `/${locale}${pathname}`;

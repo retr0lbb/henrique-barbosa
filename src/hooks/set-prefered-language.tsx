@@ -1,8 +1,7 @@
-// src/hooks/set-prefered-language.tsx
 "use client";
 
 export function useSetPreferredLanguage() {
-  const setLanguage = (lang: "EN" | "PT-BR") => {
+  const setLanguage = (lang: "en-US" | "pt-BR") => {
     // Salva no localStorage
     localStorage.setItem("@hbs:idiom", lang);
 
