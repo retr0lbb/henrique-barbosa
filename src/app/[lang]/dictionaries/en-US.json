@@ -1,5 +1,150 @@
 {
-  "home": {
-    "subText": "Fullstack Developer"
+  "navBar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "heroSection": {
+    "subText": "Fullstack Web Developer"
+  },
+  "aboutSection": {
+    "title": "About Me",
+    "workExperience": {
+      "title": "Work Experience"
+    },
+
+    "experience": [
+      {
+        "jobTitle": "Fullstack Junior Web engineer",
+        "modelOfContractor": "PJ",
+        "duration": "03/25 - 06/25",
+        "company": "PicBrand",
+        "keyPoints": [
+          "Worked with REST API and Scrapper Bots in python for backend and also specialized frontend development with react for a event totem.",
+          "I have developed resilient and versatile software focused on events interaction and data collection with was used in several event points across country."
+        ]
+      },
+      {
+        "jobTitle": "Front End developer",
+        "company": "Rubens Araujo",
+        "modelOfContractor": "Free lance",
+        "duration": "10/25 - 11/25",
+        "keyPoints": [
+          "Build a responsive Graphics Designer portfolio using nextjs and deployed on vercel.",
+          "Designed UI using best practices in color theory, responsive design and User Experience (UX)."
+        ]
+      },
+      {
+        "jobTitle": "Front End Developer",
+        "company": "Boom Sneakers",
+        "modelOfContractor": "Project",
+        "duration": "06/23 - 09/23",
+        "keyPoints": [
+          "Helped in a team of developers to create the website BoomSneakers.",
+          "Worked with Deploy, Domain Name System, Database configuration, frontend development and custom module development in PHP."
+        ]
+      }
+    ],
+
+    "sideBar": "Myself",
+    "bio": "I'm A Brazilian Software Developer, I have proficiency in programming languages like Javascript, Typescript, Rust and other more.",
+    "moreAbout": "If you want to know more about myself keep scrolling. If you have seen enough, lets cut the chase, take a look at",
+    "myProjectsButton": "My projects"
+  },
+  "historyTime": {
+    "2015": {
+      "title": "My Fist Contact With Technology",
+      "desc": "In 2015 I have started a course in game development, in the past i had developed a few little games, i always was fascinated about how things works in games, always using maths and stuffs."
+    },
+    "2024": {
+      "title": "My Education",
+      "desc": "In 2024 I have finished Tec Highschool in Software development and analysis. right after before that, I entered in the Faculty of Technology of Cotia with I am studying right now until 2027."
+    },
+    "2050": {
+      "title": "My plans for the future",
+      "desc": "By the year 2025, I plan to be at least a PHD with a doctored in Computer Science, I plan to have a lot of Scientific Articles Published and trying to make the diference in the world."
+    }
+  },
+  "projectsSection": {
+    "title": "Major Projects",
+
+    "projects": {
+      "rubens": {
+        "shortDesc": "A modern Nextjs Portfolio for a very experienced graphics designer",
+        "subtitle": "Graphics designer interactive portfolio",
+
+        "projectDevelopment": {
+          "title": "Project Development",
+          "text": "An interactive portfolio developed for a graphic designer named Rubens. The project is built with Next.js and leverages Framer Motion to deliver seamless animations and advanced visual effects, ensuring a smooth and engaging user experience. The website is deployed on Vercel, benefiting from optimized performance, scalability, and continuous deployment."
+        },
+
+        "usedTech": "Used Technologies",
+
+        "repository": "Repository"
+      },
+      "fatecard": {
+        "shortDesc": "Why not implement security features and as a bonus, automate boring tasks",
+        "subtitle": "Smart security system for universities.",
+
+        "projectDevelopment": {
+          "title": "Project Development",
+          "text": "This is a project that i developed during a Hackathon from my university. The ideia is that every student will receive a RFID card that works both for identification and as a tool to mark presence, mark attendance on talks and events and it could be a way to use this data for predict when a student will dropout or where would be the best place to put a new water filter based on where the students most passes. The possibilities are infinity."
+        },
+
+        "usedTech": "Used Technologies",
+
+        "repository": "Repository"
+      },
+      "jlj": {
+        "shortDesc": "A simple portfolio for a writer and spiritual guide, made by me powered by wix",
+        "subtitle": "Portfolio for Luiz Junior",
+
+        "projectDevelopment": {
+          "title": "Project Development",
+          "text": "A portfolio website developed using Wix, featuring a multi-page structure, an integrated CMS for content management, and a contact form. The site includes additional features that enhance usability and provide visitors with a comprehensive overview of Luiz Junior’s work and professional profile."
+        },
+
+        "usedTech": "Used Technologies"
+      },
+      "nerd": {
+        "shortDesc": "The game platform made by Brazilians to Brazilians, in future, Ai tools would be implemented in order to make easier to develop games and build a stronger market.",
+        "subtitle": "A games platform made by Brazilians for Brazilians.",
+
+        "projectDevelopment": {
+          "title": "Project Development",
+          "text": "This project was developed as the final capstone (TCC) required to complete high school. Our team worked intensively throughout the entire development process to deliver a robust and high-quality software solution. The N.E.R.D project is a digital games platform designed for publishing and purchasing games, with a strong focus on the Brazilian gaming market. From a technical perspective, the platform was built to support scalability, usability, and performance, while also providing significant advantages for indie developers, such as reduced publishing fees and a more accessible distribution model."
+        },
+
+        "usedTech": "Used Technologies"
+      },
+      "ht": {
+        "shortDesc": "Why not develop another task manager, well this one has a catch, you can create any number of subtasks in any task, and yet you can visualize this tasks in a tree format.",
+        "subtitle": "Task manager that uses graphs.",
+
+        "whatIs": {
+          "title": "What is?",
+          "text": "This is not a conventional task manager. The project leverages a tree-based architecture with interconnected nodes, allowing each task to be expanded into an almost unlimited hierarchy of subtasks, providing high flexibility and granular task organization."
+        },
+
+        "projectDevelopment": {
+          "title": "Development",
+          "text": "This project is backed by a well-architected server infrastructure, incorporating automated unit testing powered by Vitest to ensure reliability and code quality. It includes structured logging mechanisms and fully automated CI/CD pipelines implemented with GitHub Actions, enabling consistent integration and deployment workflows. The API is self-documented through Swagger, facilitating maintainability and clear communication between services. From a security standpoint, the system employs HTTP-only cookies combined with CSRF protection. Additionally, all inputs are strictly validated using Zod, ensuring data integrity and preventing malformed or unsafe requests."
+        },
+
+        "usedTech": "Used Technologies"
+      }
+    },
+
+    "accordionButton": {
+      "seeMore": "See More",
+      "seeLess": "See Less"
+    },
+
+    "representativeText": "These are some of my best projects, but they don't represent the entirety of my work. For a complete overview, please visit my GitHub."
+  },
+  "contactSection": {
+    "title": "Contact Me",
+    "availableToWork": "Available to work"
   }
 }

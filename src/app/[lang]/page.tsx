@@ -15,12 +15,12 @@ type HomeProps = {
 };
 export default async function Home({ params }: HomeProps) {
   const { lang } = await params;
-  const dict = getDictionary(lang as "pt-BR" | "en-US");
+  const dict = await getDictionary(lang as "pt-BR" | "en-US");
 
   return (
     <div className="w-full h-full flex flex-col md:pb-0">
-      <HeroSection />
-      <AboutSection />
+      <HeroSection dict={dict} />
+      <AboutSection dict={dict} />
       <ProjectSection />
       <ContactPage />
 

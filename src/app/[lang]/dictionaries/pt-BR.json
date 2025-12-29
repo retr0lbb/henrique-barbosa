@@ -1,5 +1,132 @@
 {
-  "home": {
-    "subText": "Desenvolvedor Fullstack"
+  "navBar": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "heroSection": {
+    "subText": "Desenvolvedor Web Full Stack"
+  },
+  "aboutSection": {
+    "title": "Sobre mim",
+    "workExperience": {
+      "title": "Experiência profissional"
+    },
+    "experience": [
+      {
+        "jobTitle": "Engenheiro Web Full Stack Júnior",
+        "company": "PicBrand",
+        "modelOfContractor": "PJ",
+        "duration": "03/25 - 06/25",
+        "keyPoints": [
+          "Atuação no desenvolvimento de APIs REST e bots de scraping em Python para o backend, além de desenvolvimento frontend especializado em React para totens interativos de eventos.",
+          "Desenvolvimento de softwares resilientes e versáteis, focados em interação com o público e coleta de dados, utilizados em diversos eventos ao redor do país."
+        ]
+      },
+      {
+        "jobTitle": "Desenvolvedor Front-end",
+        "company": "Rubens Araujo",
+        "modelOfContractor": "Trabalho independente",
+        "duration": "10/25 - 11/25",
+        "keyPoints": [
+          "Desenvolvimento de um portfólio responsivo para designer gráfico utilizando Next.js, com deploy realizado na Vercel.",
+          "Criação da interface seguindo boas práticas de teoria das cores, design responsivo e Experiência do Usuário (UX)."
+        ]
+      },
+      {
+        "jobTitle": "Desenvolvedor Front-end",
+        "company": "Boom Sneakers | Projeto",
+        "modelOfContractor": "Projeto",
+        "duration": "06/23 - 09/23",
+        "keyPoints": [
+          "Atuação em equipe no desenvolvimento do website da Boom Sneakers.",
+          "Participação em processos de deploy, configuração de DNS, banco de dados, desenvolvimento frontend e criação de módulos customizados em PHP."
+        ]
+      }
+    ],
+    "sideBar": "Eu",
+    "bio": "Sou um desenvolvedor de software brasileiro, com proficiência em linguagens como JavaScript, TypeScript, Rust, entre outras tecnologias do ecossistema web.",
+    "moreAbout": "Se quiser saber mais sobre mim, continue rolando. Caso já tenha visto o suficiente, vamos direto ao ponto:",
+    "myProjectsButton": "Meus projetos"
+  },
+  "historyTime": {
+    "2015": {
+      "title": "Meu primeiro contato com tecnologia",
+      "desc": "Em 2015 iniciei um curso de desenvolvimento de jogos. Na época, desenvolvi pequenos projetos e sempre fui fascinado por entender como os jogos funcionam internamente, principalmente o uso de lógica, matemática e sistemas."
+    },
+    "2024": {
+      "title": "Minha formação",
+      "desc": "Em 2024 concluí o ensino técnico em Desenvolvimento e Análise de Sistemas. Logo após, ingressei na Faculdade de Tecnologia de Cotia (FATEC), onde atualmente curso minha graduação com previsão de conclusão em 2027."
+    },
+    "2050": {
+      "title": "Planos para o futuro",
+      "desc": "Meu objetivo a longo prazo é seguir carreira acadêmica, alcançar o título de doutor em Ciência da Computação, publicar artigos científicos e contribuir de forma significativa para o avanço tecnológico e científico."
+    }
+  },
+  "projectsSection": {
+    "title": "Principais projetos",
+    "projects": {
+      "rubens": {
+        "shortDesc": "Portfólio moderno em Next.js para um designer gráfico experiente",
+        "subtitle": "Portfólio interativo de designer gráfico",
+        "projectDevelopment": {
+          "title": "Desenvolvimento do projeto",
+          "text": "Portfólio interativo desenvolvido para um designer gráfico chamado Rubens. O projeto foi construído com Next.js e utiliza Framer Motion para animações fluidas e efeitos visuais avançados, garantindo uma experiência de navegação suave e envolvente. O site está hospedado na Vercel, aproveitando recursos de performance, escalabilidade e deploy contínuo."
+        },
+        "usedTech": "Tecnologias utilizadas",
+        "repository": "Repositório"
+      },
+      "fatecard": {
+        "shortDesc": "Automatização de processos e implementação de recursos de segurança em ambientes acadêmicos",
+        "subtitle": "Sistema inteligente de segurança para universidades",
+        "projectDevelopment": {
+          "title": "Desenvolvimento do projeto",
+          "text": "Projeto desenvolvido durante um hackathon universitário. A ideia consiste em fornecer a cada aluno um cartão RFID que funcione tanto para identificação quanto para controle de presença em aulas, palestras e eventos. Os dados coletados podem ser utilizados para análises preditivas, como evasão escolar, ou para otimizações de infraestrutura, como a melhor localização de recursos no campus. As possibilidades de aplicação são amplas."
+        },
+        "usedTech": "Tecnologias utilizadas",
+        "repository": "Repositório"
+      },
+      "jlj": {
+        "shortDesc": "Portfólio simples para escritor e guia espiritual, desenvolvido com Wix",
+        "subtitle": "Portfólio para Luiz Junior",
+        "projectDevelopment": {
+          "title": "Desenvolvimento do projeto",
+          "text": "Website de portfólio desenvolvido com Wix, contendo múltiplas páginas, CMS integrado para gerenciamento de conteúdo e formulário de contato. O projeto inclui funcionalidades adicionais que melhoram a usabilidade e apresentam de forma clara o trabalho e o perfil profissional de Luiz Junior."
+        },
+        "usedTech": "Tecnologias utilizadas"
+      },
+      "nerd": {
+        "shortDesc": "Plataforma de jogos criada por brasileiros para brasileiros, com foco no fortalecimento do mercado nacional",
+        "subtitle": "Plataforma de jogos feita por brasileiros para brasileiros",
+        "projectDevelopment": {
+          "title": "Desenvolvimento do projeto",
+          "text": "Projeto desenvolvido como Trabalho de Conclusão de Curso (TCC) do ensino médio. A equipe atuou de forma intensiva em todas as etapas do desenvolvimento para entregar uma solução robusta e de alta qualidade. A N.E.R.D é uma plataforma digital para publicação e comercialização de jogos, com foco no mercado brasileiro. Do ponto de vista técnico, a solução foi pensada para ser escalável, performática e acessível, oferecendo benefícios significativos para desenvolvedores independentes, como taxas reduzidas e um modelo de distribuição mais inclusivo."
+        },
+        "usedTech": "Tecnologias utilizadas"
+      },
+      "ht": {
+        "shortDesc": "Gerenciador de tarefas com estrutura em árvore e suporte a subtarefas ilimitadas",
+        "subtitle": "Gerenciador de tarefas baseado em grafos",
+        "whatIs": {
+          "title": "O que é?",
+          "text": "Este não é um gerenciador de tarefas convencional. O projeto utiliza uma arquitetura baseada em árvore, com nós interconectados, permitindo que cada tarefa seja expandida em uma hierarquia praticamente ilimitada de subtarefas, oferecendo alto nível de flexibilidade e organização."
+        },
+        "projectDevelopment": {
+          "title": "Desenvolvimento",
+          "text": "O projeto conta com uma infraestrutura de backend bem arquitetada, incluindo testes unitários automatizados com Vitest para garantir confiabilidade e qualidade de código. Possui logging estruturado e pipelines de CI/CD totalmente automatizados com GitHub Actions. A API é auto documentada via Swagger, facilitando manutenção e integração. Em termos de segurança, utiliza cookies HTTP-only combinados com proteção CSRF. Todas as entradas são rigorosamente validadas com Zod, assegurando integridade dos dados e prevenindo requisições malformadas."
+        },
+        "usedTech": "Tecnologias utilizadas"
+      }
+    },
+    "accordionButton": {
+      "seeMore": "Ver mais",
+      "seeLess": "Ver menos"
+    },
+    "representativeText": "Estes são alguns dos meus principais projetos, mas não representam a totalidade do meu trabalho. Para uma visão completa, visite meu GitHub."
+  },
+  "contactSection": {
+    "title": "Entre em contato",
+    "availableToWork": "Disponível para trabalho"
   }
 }
