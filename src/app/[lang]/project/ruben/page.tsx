@@ -1,3 +1,4 @@
+"use client";
 import { ProjectComponent } from "@/components/project-page-component";
 
 import RB_MAIN from "@/assets/images/projeto_rubens/rb_main.png";
@@ -13,6 +14,7 @@ import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { RiNextjsFill } from "react-icons/ri";
 import type { requiredProps } from "@/components/project-page-component/carousel";
+import { useDictionary } from "@/hooks/use-dictionary-context";
 
 const images: requiredProps[] = [
   { src: RB_MAIN, type: "image", alt: "Main page from portfolio" },
@@ -22,29 +24,30 @@ const images: requiredProps[] = [
 ];
 
 export default function Page() {
+  const dict = useDictionary();
+
   return (
     <div className="w-full min-h-dvh flex flex-col gap-10">
       <ProjectComponent.Root>
         <ProjectComponent.Header
           title="Rubens Araujo"
-          subtitle="Graphics designer interactive portfolio"
+          subtitle={dict.projectsSection.projects.rubens.subtitle}
         />
         <ProjectComponent.Body>
           <ProjectComponent.Carousel imgs={images} />
           <ProjectComponent.Description.Root>
-            <ProjectComponent.Description.Area title="Project Development">
+            <ProjectComponent.Description.Area
+              title={
+                dict.projectsSection.projects.rubens.projectDevelopment.title
+              }
+            >
               <p className="text-zinc-400 max-w-2xl text-justify text-sm md:text-lg lg:text-xl md:text-left">
-                An interactive portfolio developed for a graphic designer named
-                Rubens. The project is built with Next.js and leverages Framer
-                Motion to deliver seamless animations and advanced visual
-                effects, ensuring a smooth and engaging user experience. The
-                website is deployed on Vercel, benefiting from optimized
-                performance, scalability, and continuous deployment.
+                {dict.projectsSection.projects.rubens.projectDevelopment.text}
               </p>
             </ProjectComponent.Description.Area>
             <ProjectComponent.Description.Area
               className="space-y-4"
-              title="Used Technologies"
+              title={dict.projectsSection.projects.rubens.usedTech}
             >
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
                 <TechBadge
@@ -77,7 +80,7 @@ export default function Page() {
                 <Button>
                   <div className="flex items-center justify-center gap-2 text-zinc-300 text-xl font-semibold">
                     <FaGithub />
-                    Repository
+                    {dict.projectsSection.projects.rubens.repository}
                   </div>
                 </Button>
               </Link>

@@ -1,3 +1,4 @@
+"use client";
 import { ProjectComponent } from "@/components/project-page-component";
 
 import {
@@ -12,10 +13,11 @@ import {
 import { Button } from "@/components/button";
 import { TechBadge } from "@/components/project-page-component/shared/technologies-badge";
 import { SiWix, SiFigma } from "react-icons/si";
-import { FaGithub, FaGlobe } from "react-icons/fa";
+import { FaGlobe } from "react-icons/fa";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import type { requiredProps } from "@/components/project-page-component/carousel";
+import { useDictionary } from "@/hooks/use-dictionary-context";
 
 const images: requiredProps[] = [
   { src: TJ_MAIN, type: "image", alt: "Page" },
@@ -27,28 +29,28 @@ const images: requiredProps[] = [
 ];
 
 export default function Page() {
+  const dict = useDictionary();
+
   return (
-    <div className="w-full min-h-dvh flex flex-col gap-10">
+    <>
       <ProjectComponent.Root>
         <ProjectComponent.Header
           title="Luiz Junior Astral"
-          subtitle="Portfolio for Luiz Junior"
+          subtitle={dict.projectsSection.projects.jlj.subtitle}
         />
         <ProjectComponent.Body>
           <ProjectComponent.Carousel imgs={images} />
           <ProjectComponent.Description.Root>
-            <ProjectComponent.Description.Area title="Project Development">
+            <ProjectComponent.Description.Area
+              title={dict.projectsSection.projects.jlj.projectDevelopment.title}
+            >
               <p className="text-zinc-400 max-w-2xl text-justify text-sm md:text-lg lg:text-xl md:text-left">
-                A portfolio website developed using Wix, featuring a multi-page
-                structure, an integrated CMS for content management, and a
-                contact form. The site includes additional features that enhance
-                usability and provide visitors with a comprehensive overview of
-                Luiz Junior’s work and professional profile.
+                {dict.projectsSection.projects.jlj.projectDevelopment.text}
               </p>
             </ProjectComponent.Description.Area>
             <ProjectComponent.Description.Area
               className="space-y-4"
-              title="Used Technologies"
+              title={dict.projectsSection.projects.jlj.usedTech}
             >
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
                 <TechBadge Icon={SiWix} tecName="Wix" color={"purple"} />
@@ -74,6 +76,6 @@ export default function Page() {
         </ProjectComponent.Body>
       </ProjectComponent.Root>
       <Footer />
-    </div>
+    </>
   );
 }

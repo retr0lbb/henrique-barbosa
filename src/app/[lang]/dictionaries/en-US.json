@@ -116,7 +116,8 @@
           "text": "This project was developed as the final capstone (TCC) required to complete high school. Our team worked intensively throughout the entire development process to deliver a robust and high-quality software solution. The N.E.R.D project is a digital games platform designed for publishing and purchasing games, with a strong focus on the Brazilian gaming market. From a technical perspective, the platform was built to support scalability, usability, and performance, while also providing significant advantages for indie developers, such as reduced publishing fees and a more accessible distribution model."
         },
 
-        "usedTech": "Used Technologies"
+        "usedTech": "Used Technologies",
+        "repository": "Repositório"
       },
       "ht": {
         "shortDesc": "Why not develop another task manager, well this one has a catch, you can create any number of subtasks in any task, and yet you can visualize this tasks in a tree format.",
@@ -132,7 +133,8 @@
           "text": "This project is backed by a well-architected server infrastructure, incorporating automated unit testing powered by Vitest to ensure reliability and code quality. It includes structured logging mechanisms and fully automated CI/CD pipelines implemented with GitHub Actions, enabling consistent integration and deployment workflows. The API is self-documented through Swagger, facilitating maintainability and clear communication between services. From a security standpoint, the system employs HTTP-only cookies combined with CSRF protection. Additionally, all inputs are strictly validated using Zod, ensuring data integrity and preventing malformed or unsafe requests."
         },
 
-        "usedTech": "Used Technologies"
+        "usedTech": "Used Technologies",
+        "repository": "Repositório"
       }
     },
 

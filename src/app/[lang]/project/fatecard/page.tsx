@@ -1,3 +1,5 @@
+"use client";
+
 import { ProjectComponent } from "@/components/project-page-component";
 
 import PLAY from "@/assets/images/play.webp";
@@ -10,6 +12,7 @@ import Link from "next/link";
 import { Footer } from "@/components/footer";
 import type { requiredProps } from "@/components/project-page-component/carousel";
 import { getDictionary } from "../../dictionaries";
+import { useDictionary } from "@/hooks/use-dictionary-context";
 
 const images: requiredProps[] = [
   {
@@ -20,16 +23,10 @@ const images: requiredProps[] = [
   },
 ];
 
-type PageProps = {
-  params: Promise<{ lang: string }>;
-};
-
-export default async function Page({ params }: PageProps) {
-  const { lang } = await params;
-  const dict = await getDictionary(lang as "pt-BR" | "en-US");
-
+export default function Page() {
+  const dict = useDictionary();
   return (
-    <div className="w-full min-h-dvh flex flex-col gap-10">
+    <>
       <ProjectComponent.Root>
         <ProjectComponent.Header
           title="FATECARD"
@@ -81,6 +78,6 @@ export default async function Page({ params }: PageProps) {
         </ProjectComponent.Body>
       </ProjectComponent.Root>
       <Footer />
-    </div>
+    </>
   );
 }

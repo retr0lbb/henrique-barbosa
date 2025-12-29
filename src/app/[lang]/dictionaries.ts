@@ -104,6 +104,7 @@ export type Dicitionary = {
         };
 
         usedTech: string;
+        repository: string;
       };
       ht: {
         shortDesc: string;
@@ -120,6 +121,7 @@ export type Dicitionary = {
         };
 
         usedTech: string;
+        repository: string;
       };
     };
 

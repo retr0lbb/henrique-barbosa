@@ -1,3 +1,4 @@
+"use client";
 import { ProjectComponent } from "@/components/project-page-component";
 
 import NERD_GAME from "@/assets/images/projeto_nerd/NERD_game.png";
@@ -14,6 +15,7 @@ import { FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import type { requiredProps } from "@/components/project-page-component/carousel";
+import { useDictionary } from "@/hooks/use-dictionary-context";
 
 const images: requiredProps[] = [
   { src: NERD_MAIN, type: "image", alt: "game page" },
@@ -24,33 +26,29 @@ const images: requiredProps[] = [
 ];
 
 export default function Page() {
+  const dict = useDictionary();
   return (
-    <div className="w-full min-h-dvh flex flex-col gap-10">
+    <>
       <ProjectComponent.Root>
         <ProjectComponent.Header
           title="N.E.R.D"
-          subtitle="A games platform made by Brazilians for Brazilians."
+          subtitle={dict.projectsSection.projects.nerd.subtitle}
         />
         <ProjectComponent.Body>
           <ProjectComponent.Carousel imgs={images} />
           <ProjectComponent.Description.Root>
-            <ProjectComponent.Description.Area title="Project Development">
+            <ProjectComponent.Description.Area
+              title={
+                dict.projectsSection.projects.nerd.projectDevelopment.title
+              }
+            >
               <p className="text-zinc-400 max-w-2xl text-justify text-sm md:text-lg lg:text-xl md:text-left">
-                This project was developed as the final capstone (TCC) required
-                to complete high school. Our team worked intensively throughout
-                the entire development process to deliver a robust and
-                high-quality software solution. The N.E.R.D project is a digital
-                games platform designed for publishing and purchasing games,
-                with a strong focus on the Brazilian gaming market. From a
-                technical perspective, the platform was built to support
-                scalability, usability, and performance, while also providing
-                significant advantages for indie developers, such as reduced
-                publishing fees and a more accessible distribution model.
+                {dict.projectsSection.projects.nerd.projectDevelopment.text}
               </p>
             </ProjectComponent.Description.Area>
             <ProjectComponent.Description.Area
               className="space-y-4"
-              title="Used Technologies"
+              title={dict.projectsSection.projects.nerd.usedTech}
             >
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
                 <TechBadge Icon={FaReact} tecName="React" color={"blue"} />
@@ -78,7 +76,7 @@ export default function Page() {
                 <Button>
                   <div className="flex items-center justify-center gap-2 text-zinc-300 text-xl font-semibold">
                     <FaGithub />
-                    Repository
+                    {dict.projectsSection.projects.nerd.repository}
                   </div>
                 </Button>
               </Link>
@@ -87,6 +85,6 @@ export default function Page() {
         </ProjectComponent.Body>
       </ProjectComponent.Root>
       <Footer />
-    </div>
+    </>
   );
 }

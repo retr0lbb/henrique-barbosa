@@ -1,3 +1,4 @@
+"use client";
 import { ProjectComponent } from "@/components/project-page-component";
 
 import HT_MAIN from "@/assets/images/projeto_hyperbolic/HT_main.png";
@@ -19,6 +20,7 @@ import { FaGithub, FaNodeJs } from "react-icons/fa";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import type { requiredProps } from "@/components/project-page-component/carousel";
+import { useDictionary } from "@/hooks/use-dictionary-context";
 
 const images: requiredProps[] = [
   { src: HT_MAIN, type: "image", alt: "Main page from Hyperbolic Tasks" },
@@ -28,45 +30,36 @@ const images: requiredProps[] = [
 ];
 
 export default function Page() {
+  const dict = useDictionary();
+
   return (
-    <div className="w-full min-h-dvh flex flex-col gap-10">
+    <>
       <ProjectComponent.Root>
         <ProjectComponent.Header
           title="Hyperbolic Tasks"
-          subtitle="Task manager that uses graphs."
+          subtitle={dict.projectsSection.projects.ht.subtitle}
         />
         <ProjectComponent.Body>
           <ProjectComponent.Carousel imgs={images} />
           <ProjectComponent.Description.Root>
-            <ProjectComponent.Description.Area title="What is?">
+            <ProjectComponent.Description.Area
+              title={dict.projectsSection.projects.ht.whatIs.title}
+            >
               <p className="text-zinc-400 max-w-2xl text-justify text-sm md:text-lg lg:text-xl md:text-left">
-                This is not a conventional task manager. The project leverages a
-                tree-based architecture with interconnected nodes, allowing each
-                task to be expanded into an almost unlimited hierarchy of
-                subtasks, providing high flexibility and granular task
-                organization.
+                {dict.projectsSection.projects.ht.whatIs.text}
               </p>
             </ProjectComponent.Description.Area>
 
-            <ProjectComponent.Description.Area title="Development">
+            <ProjectComponent.Description.Area
+              title={dict.projectsSection.projects.ht.projectDevelopment.title}
+            >
               <p className="text-zinc-400 max-w-2xl text-justify text-sm md:text-lg lg:text-xl md:text-left">
-                This project is backed by a well-architected server
-                infrastructure, incorporating automated unit testing powered by
-                Vitest to ensure reliability and code quality. It includes
-                structured logging mechanisms and fully automated CI/CD
-                pipelines implemented with GitHub Actions, enabling consistent
-                integration and deployment workflows. The API is self-documented
-                through Swagger, facilitating maintainability and clear
-                communication between services. From a security standpoint, the
-                system employs HTTP-only cookies combined with CSRF protection.
-                Additionally, all inputs are strictly validated using Zod,
-                ensuring data integrity and preventing malformed or unsafe
-                requests.
+                {dict.projectsSection.projects.ht.whatIs.text}
               </p>
             </ProjectComponent.Description.Area>
             <ProjectComponent.Description.Area
               className="space-y-4"
-              title="Used Technologies"
+              title={dict.projectsSection.projects.ht.usedTech}
             >
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
                 <TechBadge
@@ -98,8 +91,7 @@ export default function Page() {
               >
                 <Button>
                   <div className="flex items-center justify-center gap-2 text-zinc-300 text-xl font-semibold">
-                    <FaGithub />
-                    Repository
+                    <FaGithub /> {dict.projectsSection.projects.ht.repository}
                   </div>
                 </Button>
               </Link>
@@ -108,6 +100,6 @@ export default function Page() {
         </ProjectComponent.Body>
       </ProjectComponent.Root>
       <Footer />
-    </div>
+    </>
   );
 }

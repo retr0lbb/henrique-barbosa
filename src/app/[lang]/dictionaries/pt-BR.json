@@ -103,7 +103,8 @@
           "title": "Desenvolvimento do projeto",
           "text": "Projeto desenvolvido como Trabalho de Conclusão de Curso (TCC) do ensino médio. A equipe atuou de forma intensiva em todas as etapas do desenvolvimento para entregar uma solução robusta e de alta qualidade. A N.E.R.D é uma plataforma digital para publicação e comercialização de jogos, com foco no mercado brasileiro. Do ponto de vista técnico, a solução foi pensada para ser escalável, performática e acessível, oferecendo benefícios significativos para desenvolvedores independentes, como taxas reduzidas e um modelo de distribuição mais inclusivo."
         },
-        "usedTech": "Tecnologias utilizadas"
+        "usedTech": "Tecnologias utilizadas",
+        "repository": "Repositório"
       },
       "ht": {
         "shortDesc": "Gerenciador de tarefas com estrutura em árvore e suporte a subtarefas ilimitadas",
@@ -116,7 +117,8 @@
           "title": "Desenvolvimento",
           "text": "O projeto conta com uma infraestrutura de backend bem arquitetada, incluindo testes unitários automatizados com Vitest para garantir confiabilidade e qualidade de código. Possui logging estruturado e pipelines de CI/CD totalmente automatizados com GitHub Actions. A API é auto documentada via Swagger, facilitando manutenção e integração. Em termos de segurança, utiliza cookies HTTP-only combinados com proteção CSRF. Todas as entradas são rigorosamente validadas com Zod, assegurando integridade dos dados e prevenindo requisições malformadas."
         },
-        "usedTech": "Tecnologias utilizadas"
+        "usedTech": "Tecnologias utilizadas",
+        "repository": "Repositório"
       }
     },
     "accordionButton": {
