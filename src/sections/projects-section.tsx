@@ -7,8 +7,14 @@ import TJ from "@/assets/images/projeto_junior/TJ_main.png";
 import { Divider } from "@/components/divider";
 import { AccordionCollapse } from "@/components/accordion-colapse";
 import { Button } from "@/components/button";
+import type { Dicitionary } from "@/app/[lang]/dictionaries";
 
-export function ProjectSection() {
+interface ProjectSectionProps {
+  dict: Dicitionary;
+  lang: string;
+}
+
+export function ProjectSection({ dict, lang }: ProjectSectionProps) {
   return (
     <section
       className="bg-zinc-950 w-full min-h-svh flex items-center justify-center gap-5 flex-col px-10 py-2"
@@ -17,17 +23,21 @@ export function ProjectSection() {
       <Divider />
       <div className="p-5 pb-10">
         <h1 className="text-4xl md:text-5xl pb-10 md:pb-2 lg:pb-0 md:font-bold text-zinc-200">
-          Major Projects
+          {dict.projectsSection.title}
         </h1>
       </div>
-      <AccordionCollapse startColapse={false}>
+      <AccordionCollapse
+        expandText={dict.projectsSection.accordionButton.seeMore}
+        retractText={dict.projectsSection.accordionButton.seeLess}
+        startColapse={false}
+      >
         <div className="w-full h-full columns-1 md:columns-2 lg:columns-3 md:gap-8 gap-2">
           <ProjectCard.Root
             src={RBMAIN}
             srcAlt="Portfolio of Rubens"
-            description="A modern Nextjs Portfolio for a very experienced graphics designer"
+            description={dict.projectsSection.projects.rubens.shortDesc}
             title="Rubens Araujo Filho"
-            to="/project/ruben"
+            to={`/${lang}/project/ruben`}
           >
             <ProjectCard.Tag colored="green" text="DONE" />
           </ProjectCard.Root>
@@ -35,13 +45,13 @@ export function ProjectSection() {
           <ProjectCard.Root
             src={NERD}
             srcAlt="Image of an nerd emoji with glasses"
-            description="The game platform made by Brazilians to Brazilians, in future, Ai tools would be implemented in order to make easier to develop games and build a stronger market."
+            description={dict.projectsSection.projects.nerd.shortDesc}
             title="N.E.R.D"
             to="/project/nerd"
           ></ProjectCard.Root>
 
           <ProjectCard.Root
-            description="Why not implement security features and as a bonus, automate boring tasks"
+            description={dict.projectsSection.projects.fatecard.shortDesc}
             title="Fatecard"
             to="/project/fatecard"
           >
@@ -51,7 +61,7 @@ export function ProjectSection() {
           <ProjectCard.Root
             src={TJ}
             srcAlt="Homen com turbante vermelho"
-            description="A simple portfolio for a writer and spiritual guide, made by me powered by wix"
+            description={dict.projectsSection.projects.jlj.shortDesc}
             title="Jose Luiz Junior"
             to="/project/junior"
           >
@@ -61,7 +71,7 @@ export function ProjectSection() {
           <ProjectCard.Root
             src={HYPER}
             srcAlt="Image of an text showing the text Hyperbolic Tasks in white"
-            description="Why not develop another task manager, well this one has a catch, you can create any number of subtasks in any task, and yet you can visualize this tasks in a tree format."
+            description={dict.projectsSection.projects.ht.shortDesc}
             title="Hyperbolic Tasks"
             to="/project/hyperbolic"
           ></ProjectCard.Root>
@@ -70,8 +80,7 @@ export function ProjectSection() {
 
       <div className="flex flex-col items-center justify-center p-5 gap-8">
         <p className="text-xl md:text-2xl text-justify md:text-center text-zinc-300 max-w-2xl">
-          These are some of my best projects, but they don't represent the
-          entirety of my work. For a complete overview, please visit my GitHub.
+          {dict.projectsSection.representativeText}
         </p>
 
         <Button variant="terminal" type="button">

@@ -5,6 +5,8 @@ import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 interface AccordionCollapseProps {
   children: React.ReactNode;
   startColapse?: boolean;
+  expandText: string;
+  retractText: string;
 }
 
 export function AccordionCollapse(props: AccordionCollapseProps) {
@@ -21,7 +23,7 @@ export function AccordionCollapse(props: AccordionCollapseProps) {
           className="flex items-center justify-center flex-col gap-2 py-4 cursor-pointer group w-full"
         >
           <p className="text-zinc-400 text-2xl group-hover:text-zinc-300">
-            See More
+            {props.expandText}
           </p>
           <BiChevronDown className="text-zinc-400 group-hover:text-zinc-300 text-4xl" />
         </button>
@@ -32,7 +34,7 @@ export function AccordionCollapse(props: AccordionCollapseProps) {
           className="flex items-center justify-center flex-col gap-2 py-4 cursor-pointer group w-full"
         >
           <p className="text-zinc-400 text-2xl group-hover:text-zinc-300">
-            See Less
+            {props.retractText}
           </p>
           <BiChevronUp className="text-zinc-400 group-hover:text-zinc-300 text-4xl" />
         </button>

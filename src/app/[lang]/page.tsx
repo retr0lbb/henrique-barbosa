@@ -20,7 +20,7 @@ export default async function Home({ params }: HomeProps) {
     <div className="w-full h-full flex flex-col md:pb-0">
       <HeroSection dict={dict} lang={lang} />
       <AboutSection dict={dict} lang={lang} />
-      <ProjectSection />
+      <ProjectSection dict={dict} lang={lang} />
       <ContactPage />
 
       <TopSideNavigation.Root>
