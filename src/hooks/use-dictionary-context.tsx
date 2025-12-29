@@ -1,5 +1,5 @@
 "use client";
-import { Dicitionary } from "@/app/[lang]/dictionaries";
+import type { Dicitionary } from "@/app/[lang]/dictionaries";
 import { createContext, useContext } from "react";
 
 const DictionaryContext = createContext<Dicitionary | null>(null);

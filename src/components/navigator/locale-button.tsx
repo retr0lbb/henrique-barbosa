@@ -36,7 +36,7 @@ export function LocaleButton() {
         cursor-pointer hover:bg-zinc-300/20 transition-all hover:scale-110 active:scale-95"
           aria-label="Mudar para Português"
         >
-          <GiUsaFlag />
+          <GiBrazilFlag />
         </motion.button>
       )}
 
@@ -50,7 +50,7 @@ export function LocaleButton() {
         cursor-pointer hover:bg-zinc-300/20 transition-all hover:scale-110 active:scale-95"
           aria-label="Switch to English"
         >
-          <GiBrazilFlag />
+          <GiUsaFlag />
         </motion.button>
       )}
     </>
