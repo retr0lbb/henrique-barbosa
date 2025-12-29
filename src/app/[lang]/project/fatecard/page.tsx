@@ -9,6 +9,7 @@ import { FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import type { requiredProps } from "@/components/project-page-component/carousel";
+import { getDictionary } from "../../dictionaries";
 
 const images: requiredProps[] = [
   {
@@ -19,31 +20,36 @@ const images: requiredProps[] = [
   },
 ];
 
-export default function Page() {
+type PageProps = {
+  params: Promise<{ lang: string }>;
+};
+
+export default async function Page({ params }: PageProps) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as "pt-BR" | "en-US");
+
   return (
     <div className="w-full min-h-dvh flex flex-col gap-10">
       <ProjectComponent.Root>
         <ProjectComponent.Header
           title="FATECARD"
-          subtitle="Smart security system for universities."
+          subtitle={dict.projectsSection.projects.fatecard.subtitle}
         />
         <ProjectComponent.Body>
           <ProjectComponent.Carousel imgs={images} />
           <ProjectComponent.Description.Root>
-            <ProjectComponent.Description.Area title="Project Development">
+            <ProjectComponent.Description.Area
+              title={
+                dict.projectsSection.projects.fatecard.projectDevelopment.title
+              }
+            >
               <p className="text-zinc-400 max-w-2xl text-justify text-sm md:text-lg lg:text-xl md:text-left">
-                This is a project that i developed during a Hackathon from my
-                university. The ideia is that every student will receive a RFID
-                card that works both for identification and as a tool to mark
-                presence, mark attendance on talks and events and it could be a
-                way to use this data for predict when a student will dropout or
-                where would be the best place to put a new water filter based on
-                where the students most passes. The possibilities are infinity.
+                {dict.projectsSection.projects.fatecard.projectDevelopment.text}
               </p>
             </ProjectComponent.Description.Area>
             <ProjectComponent.Description.Area
               className="space-y-4"
-              title="Used Technologies"
+              title={dict.projectsSection.projects.fatecard.usedTech}
             >
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
                 <TechBadge Icon={FaReact} tecName="React" color={"blue"} />
@@ -66,7 +72,7 @@ export default function Page() {
                 <Button>
                   <div className="flex items-center justify-center gap-2 text-zinc-300 text-xl font-semibold">
                     <FaGithub />
-                    Repository
+                    {dict.projectsSection.projects.fatecard.repository}
                   </div>
                 </Button>
               </Link>
