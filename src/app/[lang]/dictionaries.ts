@@ -143,5 +143,5 @@ export const isValidLocale = (locale: string): locale is Locale => {
 };
 
 export const getDictionary = async (locale: Locale): Promise<Dicitionary> => {
-  return dictionaries[locale]() as any;
+  return dictionaries[locale]() as Promise<Dicitionary>;
 };

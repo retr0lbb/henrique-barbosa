@@ -21,7 +21,7 @@ export default async function Home({ params }: HomeProps) {
       <HeroSection dict={dict} lang={lang} />
       <AboutSection dict={dict} lang={lang} />
       <ProjectSection dict={dict} lang={lang} />
-      <ContactPage />
+      <ContactPage dict={dict} />
 
       <TopSideNavigation.Root>
         <TopSideNavigation.LocaleButton />
@@ -29,22 +29,22 @@ export default async function Home({ params }: HomeProps) {
         <TopSideNavigation.Nav>
           <TopSideNavigation.SectionLink
             Icon={FaHouse}
-            text="Home"
+            text={dict.navBar.home}
             to={`/${lang}/`}
           />
           <TopSideNavigation.SectionLink
             Icon={FaUser}
-            text="About"
+            text={dict.navBar.about}
             to={`/${lang}/#about`}
           />
           <TopSideNavigation.SectionLink
             Icon={IoGrid}
-            text="Projects"
+            text={dict.navBar.projects}
             to={`/${lang}/#projects`}
           />
           <TopSideNavigation.SectionLink
             Icon={MdEmail}
-            text="Contact"
+            text={dict.navBar.contact}
             to={`/${lang}/#contact`}
           />
         </TopSideNavigation.Nav>

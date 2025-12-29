@@ -9,8 +9,13 @@ import { EmailTerminal } from "./terminals/email-terminal";
 import { ASCIIAnimation } from "../asciiAnimation";
 import { LinkedInTerminal } from "./terminals/linkedin-terminal";
 import { Button } from "../button";
+import type { Dicitionary } from "@/app/[lang]/dictionaries";
 
-export function TerminalSection() {
+interface TerminalSectionProps {
+  dict: Dicitionary;
+}
+
+export function TerminalSection({ dict }: TerminalSectionProps) {
   const [terminalVisible, setTerminalVisible] = useState<VisibleTerminals>(
     VisibleTerminals.NONE,
   );
@@ -77,7 +82,7 @@ export function TerminalSection() {
 
       <div className="flex flex-1 flex-col items-center justify-center gap-4">
         <div className="w-full grid place-items-center z-20">
-          <WritingText text="Contact Me" />
+          <WritingText text={dict.contactSection.title} />
         </div>
 
         <div className="flex flex-1 items-center justify-center flex-col lg:flex-row gap-0 md:gap-8 lg:gap-10">
@@ -94,7 +99,7 @@ export function TerminalSection() {
           </div>
           <div className="w-96 h-96 flex items-center justify-center">
             <p className="text-zinc-200 text-3xl md:text-2xl lg:text-4xl font-code z-20">
-              Available to work
+              {dict.contactSection.availableToWork}
             </p>
           </div>
           <div className="flex items-center md:justify-start justify-center flex-row flex-wrap md:flex-col gap-2">
