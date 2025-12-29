@@ -8,7 +8,6 @@ import { FaHouse, FaUser } from "react-icons/fa6";
 import { IoGrid } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { getDictionary } from "./dictionaries";
-import { Locale } from "./i18n-config";
 
 type HomeProps = {
   params: Promise<{ lang: string }>;
@@ -19,8 +18,8 @@ export default async function Home({ params }: HomeProps) {
 
   return (
     <div className="w-full h-full flex flex-col md:pb-0">
-      <HeroSection dict={dict} />
-      <AboutSection dict={dict} />
+      <HeroSection dict={dict} lang={lang} />
+      <AboutSection dict={dict} lang={lang} />
       <ProjectSection />
       <ContactPage />
 

@@ -1,8 +1,9 @@
-import { Dicitionary, getDictionary } from "@/app/[lang]/dictionaries";
+import type { Dicitionary } from "@/app/[lang]/dictionaries";
 import { ASCIIAnimation } from "@/components/asciiAnimation";
 
 interface HeroSectionProps {
   dict: Dicitionary;
+  lang: string;
 }
 export async function HeroSection({ dict }: HeroSectionProps) {
   return (
