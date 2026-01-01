@@ -23,32 +23,6 @@ export default async function Home({ params }: HomeProps) {
       <ProjectSection dict={dict} lang={lang} />
       <ContactPage dict={dict} />
 
-      <TopSideNavigation.Root>
-        <TopSideNavigation.LocaleButton />
-        <VerticalDivider />
-        <TopSideNavigation.Nav>
-          <TopSideNavigation.SectionLink
-            Icon={FaHouse}
-            text={dict.navBar.home}
-            to={`/${lang}/`}
-          />
-          <TopSideNavigation.SectionLink
-            Icon={FaUser}
-            text={dict.navBar.about}
-            to={`/${lang}/#about`}
-          />
-          <TopSideNavigation.SectionLink
-            Icon={IoGrid}
-            text={dict.navBar.projects}
-            to={`/${lang}/#projects`}
-          />
-          <TopSideNavigation.SectionLink
-            Icon={MdEmail}
-            text={dict.navBar.contact}
-            to={`/${lang}/#contact`}
-          />
-        </TopSideNavigation.Nav>
-      </TopSideNavigation.Root>
       <Footer />
     </div>
   );

@@ -15,12 +15,9 @@ export function LocaleButton() {
     const newLang = lang === "en-US" ? "pt-BR" : "en-US";
     setLanguage(newLang);
 
-    // Extrai o locale atual da URL e substitui pelo novo
     const segments = pathname.split("/");
-    segments[1] = newLang; // Substitui o locale (primeira posição após /)
+    segments[1] = newLang;
     const newPath = segments.join("/");
-
-    // Navega para a nova URL com o locale atualizado
     router.push(newPath);
   };
 
