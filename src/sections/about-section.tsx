@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Divider } from "@/components/divider";
 import { Button } from "@/components/button";
 import type { Dicitionary } from "@/app/[lang]/dictionaries";
+import { BackgroundAnimation } from "@/components/background-animation";
 
 interface AboutSectionProps {
   dict: Dicitionary;
@@ -16,7 +17,8 @@ interface AboutSectionProps {
 
 export function AboutSection({ dict, lang }: AboutSectionProps) {
   return (
-    <section className="w-full min-h-svh bg-zinc-950 mt-5" id="about">
+    <section className="w-full min-h-svh mt-5 relative" id="about">
+      <BackgroundAnimation />
       <Divider />
       <h1 className="w-full text-center pb-24 text-zinc-200 text-5xl md:text-6xl font-bold py-4">
         {dict.aboutSection.title}
