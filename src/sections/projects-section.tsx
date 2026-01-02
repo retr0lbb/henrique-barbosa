@@ -4,7 +4,7 @@ import RBMAIN from "@/assets/images/projeto_rubens/rb_main.png";
 import NERD from "@/assets/images/projeto_nerd/NERD_main.png";
 import HYPER from "@/assets/images/projeto_hyperbolic/HT_main.png";
 import TJ from "@/assets/images/projeto_junior/TJ_main.png";
-import { Divider } from "@/components/divider";
+import { type ColorOfDivision, Divider } from "@/components/divider";
 import { AccordionCollapse } from "@/components/accordion-colapse";
 import { Button } from "@/components/button";
 import type { Dicitionary } from "@/app/[lang]/dictionaries";
@@ -12,15 +12,16 @@ import type { Dicitionary } from "@/app/[lang]/dictionaries";
 interface ProjectSectionProps {
   dict: Dicitionary;
   lang: string;
+  color: ColorOfDivision;
 }
 
-export function ProjectSection({ dict, lang }: ProjectSectionProps) {
+export function ProjectSection({ dict, lang, color }: ProjectSectionProps) {
   return (
     <section
       className="bg-zinc-950 w-full min-h-svh flex items-center justify-center gap-5 flex-col px-10 py-2"
       id="projects"
     >
-      <Divider />
+      <Divider color={color} />
       <div className="p-5 pb-10">
         <h1 className="text-4xl md:text-5xl pb-10 md:pb-2 lg:pb-0 md:font-bold text-zinc-200">
           {dict.projectsSection.title}

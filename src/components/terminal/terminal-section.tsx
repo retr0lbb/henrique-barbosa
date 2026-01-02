@@ -10,12 +10,17 @@ import { ASCIIAnimation } from "../asciiAnimation";
 import { LinkedInTerminal } from "./terminals/linkedin-terminal";
 import { Button } from "../button";
 import type { Dicitionary } from "@/app/[lang]/dictionaries";
+import type { ColorOfDivision } from "../divider";
 
 interface TerminalSectionProps {
   dict: Dicitionary;
+  colorOfOverlay: ColorOfDivision;
 }
 
-export function TerminalSection({ dict }: TerminalSectionProps) {
+export function TerminalSection({
+  dict,
+  colorOfOverlay,
+}: TerminalSectionProps) {
   const [terminalVisible, setTerminalVisible] = useState<VisibleTerminals>(
     VisibleTerminals.NONE,
   );
@@ -90,7 +95,7 @@ export function TerminalSection({ dict }: TerminalSectionProps) {
             <ASCIIAnimation
               textColor="text-zinc-500"
               colorOverlay
-              colorsOfColorOverlay="CYAN"
+              colorsOfColorOverlay={colorOfOverlay}
               hFull
               fps={30}
               frameCount={247}

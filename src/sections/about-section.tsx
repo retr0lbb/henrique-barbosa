@@ -5,7 +5,7 @@ import Image from "next/image";
 import Me from "@/assets/images/profile.jpeg";
 import { WorkExperienceCard } from "@/components/work-experience-card";
 import Link from "next/link";
-import { Divider } from "@/components/divider";
+import { type ColorOfDivision, Divider } from "@/components/divider";
 import { Button } from "@/components/button";
 import type { Dicitionary } from "@/app/[lang]/dictionaries";
 import { BackgroundAnimation } from "@/components/background-animation";
@@ -13,18 +13,19 @@ import { BackgroundAnimation } from "@/components/background-animation";
 interface AboutSectionProps {
   dict: Dicitionary;
   lang: string;
+  color: ColorOfDivision;
 }
 
-export function AboutSection({ dict, lang }: AboutSectionProps) {
+export function AboutSection({ dict, lang, color }: AboutSectionProps) {
   return (
     <section className="w-full min-h-svh mt-5 relative" id="about">
       <BackgroundAnimation />
-      <Divider />
+      <Divider color={color} />
       <h1 className="w-full text-center pb-24 text-zinc-200 text-5xl md:text-6xl font-bold py-4">
         {dict.aboutSection.title}
       </h1>
       <Scroller>
-        <ScrollSection isOnStart year={dict.aboutSection.sideBar}>
+        <ScrollSection color={color} isOnStart year={dict.aboutSection.sideBar}>
           <div className="w-full h-full grid grid-cols-2 grid-rows-[auto_auto_auto_auto] md:grid-cols-5 md:grid-rows-3 gap-4 p-4 md:p-10">
             <div className="col-span-2 md:row-span-2 w-full h-full rounded-lg flex items-center justify-center">
               <div className="aspect-square w-full h-auto">
@@ -80,7 +81,7 @@ export function AboutSection({ dict, lang }: AboutSectionProps) {
             </div>
           </div>
         </ScrollSection>
-        <ScrollSection year={"2015"}>
+        <ScrollSection color={color} year={"2015"}>
           <div className="w-full h-full flex flex-col items-center justify-center gap-12">
             <h1 className="text-2xl text-center md:text-3xl lg:text-4xl lg:text-left font-bold text-zinc-200">
               {dict.historyTime[2015].title}
@@ -90,7 +91,7 @@ export function AboutSection({ dict, lang }: AboutSectionProps) {
             </p>
           </div>
         </ScrollSection>
-        <ScrollSection year={"2024"}>
+        <ScrollSection color={color} year={"2024"}>
           <div className="w-full h-full flex flex-col items-center justify-center gap-12">
             <h1 className="text-2xl text-center md:text-3xl lg:text-4xl lg:text-left font-bold text-zinc-200">
               {dict.historyTime[2024].title}
@@ -101,7 +102,7 @@ export function AboutSection({ dict, lang }: AboutSectionProps) {
           </div>
         </ScrollSection>
 
-        <ScrollSection year={"2050"} isOnEnd>
+        <ScrollSection color={color} year={"2050"} isOnEnd>
           <div className="w-full h-full flex flex-col items-center justify-center gap-12">
             <h1 className="text-2xl text-center md:text-3xl lg:text-4xl lg:text-left font-bold text-zinc-200">
               {dict.historyTime[2050].title}

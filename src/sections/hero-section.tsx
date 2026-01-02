@@ -1,11 +1,12 @@
 import type { Dicitionary } from "@/app/[lang]/dictionaries";
 import { ASCIIAnimation } from "@/components/asciiAnimation";
+import type { ColorOfDivision } from "@/components/divider";
 
 interface HeroSectionProps {
   dict: Dicitionary;
-  lang: string;
+  color: ColorOfDivision;
 }
-export async function HeroSection({ dict }: HeroSectionProps) {
+export async function HeroSection({ dict, color }: HeroSectionProps) {
   return (
     <main className="bg-zinc-950 w-full min-h-svh flex items-center justify-center relative">
       <div className="flex items-center justify-center flex-col gap-3 z-10">
@@ -23,6 +24,7 @@ export async function HeroSection({ dict }: HeroSectionProps) {
         frameFolder="fire_file"
         frameCount={143}
         colorOverlay
+        colorsOfColorOverlay={color}
       ></ASCIIAnimation>
     </main>
   );

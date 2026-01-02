@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimationController } from "@/utils/animation-controller";
+import type { ColorOfDivision } from "../divider";
 
-type ColorOverlay = "CYAN" | "YELLOW" | "GREEN" | "RED";
 interface ASCIIAnimationProps {
   frames?: [];
   className?: string;
   fps?: number;
   colorOverlay?: boolean;
-  colorsOfColorOverlay?: ColorOverlay;
+  colorsOfColorOverlay?: ColorOfDivision;
   frameCount?: number;
   frameFolder?: string;
   showFrameIndex?: boolean;
@@ -17,7 +17,7 @@ interface ASCIIAnimationProps {
   textColor?: string;
 }
 
-const COLOR_OVERLAY_GRADIENTS: Record<ColorOverlay, string> = {
+const COLOR_OVERLAY_GRADIENTS: Record<ColorOfDivision, string> = {
   CYAN: "linear-gradient(to top, rgba(0,255,255,0.9) 0%, rgba(0,150,255,0.7) 30%, rgba(0,50,150,0.8) 70%, rgba(0,20,80,0.6) 100%)",
 
   YELLOW:
