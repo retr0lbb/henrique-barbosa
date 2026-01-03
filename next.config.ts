@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
+  compiler: {
+    removeConsole: true,
+  },
 };
 
 export default nextConfig;
