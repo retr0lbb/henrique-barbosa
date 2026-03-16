@@ -67,7 +67,7 @@
   "projectsSection": {
     "title": "Principais projetos",
     "projects": {
-      "rubens": {
+      "ruben": {
         "shortDesc": "Portfólio moderno em Next.js para um designer gráfico experiente",
         "subtitle": "Portfólio interativo de designer gráfico",
         "projectDevelopment": {
@@ -87,14 +87,15 @@
         "usedTech": "Tecnologias utilizadas",
         "repository": "Repositório"
       },
-      "jlj": {
+      "junior": {
         "shortDesc": "Portfólio simples para escritor e guia espiritual, desenvolvido com Wix",
         "subtitle": "Portfólio para Luiz Junior",
         "projectDevelopment": {
           "title": "Desenvolvimento do projeto",
           "text": "Website de portfólio desenvolvido com Wix, contendo múltiplas páginas, CMS integrado para gerenciamento de conteúdo e formulário de contato. O projeto inclui funcionalidades adicionais que melhoram a usabilidade e apresentam de forma clara o trabalho e o perfil profissional de Luiz Junior."
         },
-        "usedTech": "Tecnologias utilizadas"
+        "usedTech": "Tecnologias utilizadas",
+        "repository": "Repositório"
       },
       "nerd": {
         "shortDesc": "Plataforma de jogos criada por brasileiros para brasileiros, com foco no fortalecimento do mercado nacional",
@@ -106,7 +107,7 @@
         "usedTech": "Tecnologias utilizadas",
         "repository": "Repositório"
       },
-      "ht": {
+      "hyperbolic": {
         "shortDesc": "Gerenciador de tarefas com estrutura em árvore e suporte a subtarefas ilimitadas",
         "subtitle": "Gerenciador de tarefas baseado em grafos",
         "whatIs": {
@@ -116,6 +117,20 @@
         "projectDevelopment": {
           "title": "Desenvolvimento",
           "text": "O projeto conta com uma infraestrutura de backend bem arquitetada, incluindo testes unitários automatizados com Vitest para garantir confiabilidade e qualidade de código. Possui logging estruturado e pipelines de CI/CD totalmente automatizados com GitHub Actions. A API é auto documentada via Swagger, facilitando manutenção e integração. Em termos de segurança, utiliza cookies HTTP-only combinados com proteção CSRF. Todas as entradas são rigorosamente validadas com Zod, assegurando integridade dos dados e prevenindo requisições malformadas."
+        },
+        "usedTech": "Tecnologias utilizadas",
+        "repository": "Repositório"
+      },
+      "devroast": {
+        "shortDesc": "Analizador sarcastico de codigos ruins",
+        "subtitle": "Analizador sarcastico de codigos ruins",
+        "whatIs": {
+          "title": "O que é?",
+          "text": "Este projeto usa ferramentas de Ia para analizar trechos de codigo e devolver uma resposta sarcastica para isso, o usuario pode optar por nao ser sarcastico e no fim de tudo ele mostra o ranking dos piores codigos."
+        },
+        "projectDevelopment": {
+          "title": "Desenvolvimento",
+          "text": "O projeto foi desenvolvido no evento NLW Operataro e usa de tecnologias como nextjs, tRCP, typescript, zod entre outros, o projeto inteiro foi desenvolvido em um periodo de 3 dias e foi usado as melhores praticas de IA com desenvolvimento orientado a agentes como o uso de agentes de codigo em terminal, AGENTS.md e pasta de specs e MCPS para agentes buscarem contexto e pensarem de maneira mais otimizada, o projeto foi desenvolvido com o objetivo de ser um analizador de codigos ruins e mostrar o ranking dos piores codigos."
         },
         "usedTech": "Tecnologias utilizadas",
         "repository": "Repositório"

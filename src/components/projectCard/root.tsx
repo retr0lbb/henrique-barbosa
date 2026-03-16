@@ -16,7 +16,7 @@ interface RootProps {
 
 export function Root(props: RootProps) {
   const rootRef = useRef(null);
-  const inView = useInView(rootRef, { once: false, margin: "-50px" });
+  const inView = useInView(rootRef, { once: true, margin: "-50px" });
 
   const cardSrc = props.src ? props.src : TEMPLATE;
 
@@ -56,7 +56,6 @@ export function Root(props: RootProps) {
           <Image
             src={cardSrc}
             alt={props.srcAlt ?? "Default Alt Value"}
-            fill
             className="object-cover rounded-2xl bg-gray-600"
           />
         </div>

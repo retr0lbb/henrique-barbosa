@@ -8,6 +8,8 @@ const dictionaries = {
     import("./dictionaries/pt-BR.json").then((module) => module.default),
 };
 
+import type { ProjectTranslation } from "@/types/project";
+
 export type JobExperience = {
   jobTitle: string;
   company: string;
@@ -40,15 +42,7 @@ export type Dicitionary = {
     myProjectsButton: string;
   };
   historyTime: {
-    "2015": {
-      title: string;
-      desc: string;
-    };
-    "2024": {
-      title: string;
-      desc: string;
-    };
-    "2050": {
+    [key: string]: {
       title: string;
       desc: string;
     };
@@ -56,74 +50,7 @@ export type Dicitionary = {
   projectsSection: {
     title: string;
 
-    projects: {
-      rubens: {
-        shortDesc: string;
-        subtitle: string;
-
-        projectDevelopment: {
-          title: string;
-          text: string;
-        };
-
-        usedTech: string;
-
-        repository: string;
-      };
-      fatecard: {
-        shortDesc: string;
-        subtitle: string;
-
-        projectDevelopment: {
-          title: string;
-          text: string;
-        };
-
-        usedTech: string;
-
-        repository: string;
-      };
-      jlj: {
-        shortDesc: string;
-        subtitle: string;
-
-        projectDevelopment: {
-          title: string;
-          text: string;
-        };
-
-        usedTech: string;
-      };
-      nerd: {
-        shortDesc: string;
-        subtitle: string;
-
-        projectDevelopment: {
-          title: string;
-          text: string;
-        };
-
-        usedTech: string;
-        repository: string;
-      };
-      ht: {
-        shortDesc: string;
-        subtitle: string;
-
-        whatIs: {
-          title: string;
-          text: string;
-        };
-
-        projectDevelopment: {
-          title: string;
-          text: string;
-        };
-
-        usedTech: string;
-        repository: string;
-      };
-    };
+    projects: Record<string, ProjectTranslation>;
 
     accordionButton: {
       seeMore: string;

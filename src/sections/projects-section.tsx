@@ -1,13 +1,12 @@
 import { ProjectCard } from "@/components/projectCard";
 import { FaGithub } from "react-icons/fa6";
-import RBMAIN from "@/assets/images/projeto_rubens/rb_main.png";
-import NERD from "@/assets/images/projeto_nerd/NERD_main.png";
-import HYPER from "@/assets/images/projeto_hyperbolic/HT_main.png";
-import TJ from "@/assets/images/projeto_junior/TJ_main.png";
 import { type ColorOfDivision, Divider } from "@/components/divider";
 import { AccordionCollapse } from "@/components/accordion-colapse";
 import { Button } from "@/components/button";
+import type { StaticImageData } from "next/image";
 import type { Dicitionary } from "@/app/[lang]/dictionaries";
+
+import { projectsConfig } from "@/config/projects-config";
 
 interface ProjectSectionProps {
   dict: Dicitionary;
@@ -33,49 +32,30 @@ export function ProjectSection({ dict, lang, color }: ProjectSectionProps) {
         startColapse={false}
       >
         <div className="w-full h-full columns-1 md:columns-2 lg:columns-3 md:gap-8 gap-2">
-          <ProjectCard.Root
-            src={RBMAIN}
-            srcAlt="Portfolio of Rubens"
-            description={dict.projectsSection.projects.rubens.shortDesc}
-            title="Rubens Araujo Filho"
-            to={`/${lang}/project/ruben`}
-          >
-            <ProjectCard.Tag colored="green" text="DONE" />
-          </ProjectCard.Root>
+          {projectsConfig.map((project) => {
+            const projectDict = dict.projectsSection.projects[project.id];
+            if (!projectDict) return null;
 
-          <ProjectCard.Root
-            src={NERD}
-            srcAlt="Image of an nerd emoji with glasses"
-            description={dict.projectsSection.projects.nerd.shortDesc}
-            title="N.E.R.D"
-            to="/project/nerd"
-          ></ProjectCard.Root>
+            return (
+              <ProjectCard.Root
+                key={project.id}
+                src={project.mainImage as StaticImageData}
+                srcAlt={project.mainImageAlt}
 
-          <ProjectCard.Root
-            description={dict.projectsSection.projects.fatecard.shortDesc}
-            title="Fatecard"
-            to="/project/fatecard"
-          >
-            <ProjectCard.Tag colored="red" text="JUST PITCH IDEA" />
-          </ProjectCard.Root>
+                description={projectDict.shortDesc}
+                title={project.title}
+                to={`/${lang}/project/${project.id}`}
+              >
+                {project.status && (
+                  <ProjectCard.Tag
+                    colored={project.statusColor || "white"}
+                    text={project.status}
+                  />
+                )}
 
-          <ProjectCard.Root
-            src={TJ}
-            srcAlt="Homen com turbante vermelho"
-            description={dict.projectsSection.projects.jlj.shortDesc}
-            title="Jose Luiz Junior"
-            to="/project/junior"
-          >
-            <ProjectCard.Tag colored="yellow" text="LOW CODE" />
-          </ProjectCard.Root>
-
-          <ProjectCard.Root
-            src={HYPER}
-            srcAlt="Image of an text showing the text Hyperbolic Tasks in white"
-            description={dict.projectsSection.projects.ht.shortDesc}
-            title="Hyperbolic Tasks"
-            to="/project/hyperbolic"
-          ></ProjectCard.Root>
+              </ProjectCard.Root>
+            );
+          })}
         </div>
       </AccordionCollapse>
 
