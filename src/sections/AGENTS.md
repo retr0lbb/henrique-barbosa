@@ -45,4 +45,4 @@ export async function SectionName({ dict, color }: SectionProps) {
    - Usar `async function` se não houver estado (server component)
    - Adicionar `"use client"` se usar hooks ou estado
 5. **Estilização**: Usar Tailwind CSS com classes de cores `zinc-*`
-6. **Altura mínima**: Usar `min-h-svh` para seções que devem ter pelo menos a altura da viewport
+6. **Altura mínima**: Usar `min-h-[100dvh]` para seções que devem ter pelo menos a altura da viewport

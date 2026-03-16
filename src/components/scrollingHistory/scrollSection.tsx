@@ -49,7 +49,7 @@ export function ScrollSection(props: ScrollSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
   const correctColor = props.color ?? "CYAN";
 
-  const isInView = useInView(ref, { once: false, margin: "-400px" });
+  const isInView = useInView(ref, { once: true, margin: "-400px" });
 
   return (
     <div ref={ref} className="w-full min-h-dvh flex px-4 gap-10">

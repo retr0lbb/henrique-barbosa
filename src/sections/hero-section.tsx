@@ -8,7 +8,7 @@ interface HeroSectionProps {
 }
 export async function HeroSection({ dict, color }: HeroSectionProps) {
   return (
-    <main className="bg-zinc-950 w-full min-h-svh flex items-center justify-center relative">
+    <main className="bg-zinc-950 w-full min-h-[100dvh] flex items-center justify-center relative">
       <div className="flex items-center justify-center flex-col gap-3 z-10">
         <h1 className="text-2xl md:text-4xl lg:text-5xl text-zinc-200 font-bold text-center">
           HENRIQUE BARBOSA SAMPAIO

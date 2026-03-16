@@ -18,7 +18,7 @@ interface AboutSectionProps {
 
 export function AboutSection({ dict, lang, color }: AboutSectionProps) {
   return (
-    <section className="w-full min-h-svh mt-5 relative" id="about">
+    <section className="w-full min-h-[100dvh] mt-5 relative" id="about">
       <BackgroundAnimation />
       <Divider color={color} />
       <h1 className="w-full text-center pb-24 text-zinc-200 text-5xl md:text-6xl font-bold py-4">
