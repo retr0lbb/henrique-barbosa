@@ -14,7 +14,7 @@ import type { Locale } from "../../i18n-config";
 export default function ProjectPage() {
   const { id, lang } = useParams<{ id: string; lang: Locale }>();
   const dict = useDictionary();
-  
+
   const projectMetadata = projectsConfig.find((p) => p.id === id);
   const projectDict = dict.projectsSection.projects[id];
 
@@ -43,7 +43,7 @@ export default function ProjectPage() {
                 {projectDict.projectDevelopment.text}
               </p>
             </ProjectComponent.Description.Area>
-            
+
             {projectDict.whatIs && (
               <ProjectComponent.Description.Area
                 title={projectDict.whatIs.title}

@@ -13,6 +13,7 @@ export type requiredProps = {
 };
 
 interface CarouselProps {
+  className?: string;
   imgs: requiredProps[];
 }
 
@@ -44,7 +45,9 @@ export function Carousel(props: CarouselProps) {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="w-full px-2 pt-2 pb-6 md:px-6 flex flex-col items-center justify-center gap-2">
+    <div
+      className={`w-full px-2 pt-2 pb-6 md:px-6 flex flex-col items-center justify-center gap-2 ${props.className || ""}`}
+    >
       {/* Main Image Carousel */}
       <div className="overflow-hidden rounded-lg" ref={emblaRef}>
         <div className="flex">
