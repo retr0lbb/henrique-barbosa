@@ -39,7 +39,7 @@ export default function ProjectPage() {
             <ProjectComponent.Description.Area
               title={projectDict.projectDevelopment.title}
             >
-              <p className="text-zinc-400 max-w-2xl text-justify text-sm md:text-lg lg:text-xl md:text-left">
+              <p className="text-zinc-400 text-justify max-w-4xl text-sm md:text-lg lg:text-xl md:text-left">
                 {projectDict.projectDevelopment.text}
               </p>
             </ProjectComponent.Description.Area>
@@ -48,7 +48,7 @@ export default function ProjectPage() {
               <ProjectComponent.Description.Area
                 title={projectDict.whatIs.title}
               >
-                <p className="text-zinc-400 max-w-2xl text-justify text-sm md:text-lg lg:text-xl md:text-left">
+                <p className="text-zinc-400 text-justify max-w-4xl text-sm md:text-lg lg:text-xl md:text-left">
                   {projectDict.whatIs.text}
                 </p>
               </ProjectComponent.Description.Area>
@@ -58,7 +58,7 @@ export default function ProjectPage() {
               className="space-y-4"
               title={projectDict.usedTech}
             >
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
+              <div className="flex flex-wrap items-center justify-center max-w-4xl md:justify-start gap-3">
                 {projectMetadata.technologies.map((tech) => (
                   <TechBadge
                     key={tech.name}
@@ -70,7 +70,7 @@ export default function ProjectPage() {
               </div>
             </ProjectComponent.Description.Area>
 
-            <div className="mt-5 w-full flex items-center justify-center md:justify-start flex-col md:flex-row gap-6">
+            <div className="mt-8 w-full flex items-center justify-center md:justify-start flex-col md:flex-row gap-6">
               {projectMetadata.githubLink && (
                 <Link target="_blank" href={projectMetadata.githubLink}>
                   <Button>
