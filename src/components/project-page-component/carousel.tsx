@@ -49,46 +49,47 @@ export function Carousel(props: CarouselProps) {
       className={`w-full px-2 pt-2 pb-6 md:px-6 flex flex-col items-center justify-center gap-2 ${props.className || ""}`}
     >
       {/* Main Image Carousel */}
-      <div className="overflow-hidden rounded-lg" ref={emblaRef}>
-        <div className="flex">
+      <div
+        className="overflow-hidden w-[80%] mx-auto border border-white/20"
+        ref={emblaRef}
+      >
+        <div className="flex h-full">
           {props.imgs.map((image, index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: <no other data>
             <div key={index} className="flex-[0_0_100%] min-w-0">
-              <div className="relative w-full ">
-                {image.type === "image" ? (
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-contain"
-                    priority={index === 0}
-                  />
-                ) : (
-                  // biome-ignore lint/a11y/useMediaCaption: <i dont know what are this>
-                  <video
-                    src={image.src as string}
-                    poster={image.poster as string}
-                    controls
-                    playsInline
-                    className="w-full h-full object-contain rounded-lg"
-                  />
-                )}
-              </div>
+              {image.type === "image" ? (
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                  priority={index === 0}
+                />
+              ) : (
+                // biome-ignore lint/a11y/useMediaCaption: <i dont know what are this>
+                <video
+                  src={image.src as string}
+                  poster={image.poster as string}
+                  controls
+                  playsInline
+                  className="w-full h-full object-cover aspect-video"
+                />
+              )}
             </div>
           ))}
         </div>
       </div>
 
       {/* Thumbnails */}
-      <div className="flex gap-3 overflow-x-hidden items-center justify-center flex-wrap pb-2">
+      <div className="flex gap-3 overflow-x-hidden items-center justify-center flex-wrap p-2">
         {props.imgs.map((image, index) => (
           <button
             // biome-ignore lint/suspicious/noArrayIndexKey: <yep>
             key={index}
             type="button"
             onClick={() => scrollTo(index)}
-            className={`relative shrink-0 w-16 h-8 rounded-md overflow-hidden transition-all ${
+            className={`relative shrink-0 w-16 h-8 rounded-md overflow-hidden transition-all border border-zinc-200/25 ${
               selectedIndex === index
-                ? "ring-2 ring-blue-500 opacity-100"
+                ? "ring-2 ring-white opacity-100"
                 : "opacity-50 hover:opacity-75"
             }`}
           >
@@ -107,7 +108,7 @@ export function Carousel(props: CarouselProps) {
                   alt={image.alt}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                <div className="absolute inset-0 flex items-center justify-center w-full h-full bg-black/40">
                   <span className="text-white text-xs">▶</span>
                 </div>
               </>

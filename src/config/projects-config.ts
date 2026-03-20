@@ -1,30 +1,25 @@
 import type { ProjectMetadata } from "@/types/project";
 
 // Images
-import RBMAIN from "@/assets/images/projeto_rubens/rb_main.png";
-import RB_ABOUT from "@/assets/images/projeto_rubens/rb_about.png";
-import RB_PROJECTS from "@/assets/images/projeto_rubens/rb_projects.png";
-import RB_CONTACT from "@/assets/images/projeto_rubens/rb_contact.png";
-import NERD from "@/assets/images/projeto_nerd/NERD_main.png";
 import COMING_SOON from "@/assets/images/cs.webp";
+import {CAPTURE, GAME, GAMES, NERD_MAIN, PROFILE} from "@/assets/images/projeto_nerd"
+import {LOGIN, MAIN, REGISTER, SECONDARY} from "@/assets/images/projeto_hyperbolic"
 import {HOME_IMAGE, CODE_ROAST, MAIN_LEADERBOARD, OPENGRAPHROAST, SHAMELEADERBOARD} from "@/assets/images/projeto_devRoast"
-import HYPER from "@/assets/images/projeto_hyperbolic/HT_main.png";
-
-import TJ from "@/assets/images/projeto_junior/TJ_main.png";
+import {RB_ABOUT, RB_CONTACT, RB_MAIN, RB_PROJECTS} from "@/assets/images/projeto_rubens/"
+import {TJ_ABOUT, TJ_BOOKS, TJ_MAIN, TJ_POD, TJ_SERVICES, TJ_VID} from "@/assets/images/projeto_junior/";
+import PLAY from "@/assets/images/play.webp";
 
 // Icons
 import { SiFramer, SiTailwindcss, SiTypescript, SiArduino, SiExpress, SiVitest, SiSwagger, SiZod, SiGithubactions, SiDrizzle, SiWix } from "react-icons/si";
+import { BiBot } from "react-icons/bi";
 import { FaNodeJs, FaReact, FaBoxes } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
-
-import PLAY from "@/assets/images/play.webp";
-import { BiBot } from "react-icons/bi";
 
 export const projectsConfig: ProjectMetadata[] = [
   {
     id: "ruben",
     title: "Rubens Araujo Filho",
-    mainImage: RBMAIN,
+    mainImage: RB_MAIN,
     mainImageAlt: "Portfolio of Rubens",
     status: "DONE",
     statusColor: "green",
@@ -37,16 +32,17 @@ export const projectsConfig: ProjectMetadata[] = [
       { name: "Tailwindcss", icon: SiTailwindcss, color: "blue" },
     ],
     images: [
-      { src: RBMAIN, type: "image", alt: "Main page from portfolio" },
+      { src: RB_MAIN, type: "image", alt: "Main page from portfolio" },
       { src: RB_ABOUT, type: "image", alt: "About Page from rubens portfolio" },
       { src: RB_PROJECTS, type: "image", alt: "Project page showing 3 projects" },
       { src: RB_CONTACT, type: "image", alt: "Contact Card final page" },
     ],
   },
+
   {
     id: "nerd",
     title: "N.E.R.D",
-    mainImage: NERD,
+    mainImage: NERD_MAIN,
     mainImageAlt: "Image of an nerd emoji with glasses",
     githubLink: "https://github.com/retr0lbb/NERD-Project",
     technologies: [
@@ -58,7 +54,11 @@ export const projectsConfig: ProjectMetadata[] = [
 
     ],
     images: [
-      { src: NERD, type: "image", alt: "N.E.R.D Platform" },
+      { src: NERD_MAIN, type: "image", alt: "N.E.R.D Platform" },
+      { src: GAMES, type: "image", alt: "N.E.R.D games" },
+      { src: GAME, type: "image", alt: "N.E.R.D game" },
+      { src: PROFILE, type: "image", alt: "N.E.R.D Profile" },
+      { src: CAPTURE, type: "image", alt: "N.E.R.D Profile" }
     ],
   },
   {
@@ -86,7 +86,7 @@ export const projectsConfig: ProjectMetadata[] = [
   {
     id: "junior",
     title: "Jose Luiz Junior",
-    mainImage: TJ,
+    mainImage: TJ_MAIN,
     mainImageAlt: "Homen com turbante vermelho",
     status: "LOW CODE",
     statusColor: "yellow",
@@ -94,13 +94,19 @@ export const projectsConfig: ProjectMetadata[] = [
       { name: "Wix", color: "purple", icon: SiWix }
     ],
     images: [
-      { src: TJ, type: "image", alt: "Jose Luiz Junior Portfolio" },
+      { src: TJ_MAIN, type: "image", alt: "Jose Luiz Junior Portfolio" },
+      { src: TJ_ABOUT, type: "image", alt: "Jose Luiz Junior Portfolio" },
+      { src: TJ_BOOKS, type: "image", alt: "Jose Luiz Junior Portfolio" },
+      { src: TJ_POD, type: "image", alt: "Jose Luiz Junior Portfolio" },
+      { src: TJ_SERVICES, type: "image", alt: "Jose Luiz Junior Portfolio" },
+      { src: TJ_VID, type: "image", alt: "Jose Luiz Junior Portfolio" },
+
     ],
   },
   {
     id: "hyperbolic",
     title: "Hyperbolic Tasks",
-    mainImage: HYPER,
+    mainImage: MAIN,
     mainImageAlt: "Image of an text showing the text Hyperbolic Tasks in white",
     githubLink: "https://github.com/retr0lbb/HT-backend",
     technologies: [
@@ -112,7 +118,11 @@ export const projectsConfig: ProjectMetadata[] = [
       { name: "Github Actions", icon: SiGithubactions, color: "blue" },
     ],
     images: [
-        { src: HYPER, type: "image", alt: "Hyperbolic Tasks" },
+        { src: MAIN, type: "image", alt: "Hyperbolic Tasks" },
+        { src: LOGIN, type: "image", alt: "Hyperbolic Tasks" },
+        { src: REGISTER, type: "image", alt: "Hyperbolic Tasks" },
+        { src: SECONDARY, type: "image", alt: "Hyperbolic Tasks" },
+
     ]
   },
   {
