@@ -83,7 +83,7 @@ export function AboutSection({ dict, lang, color }: AboutSectionProps) {
             trigger: bioRef.current,
             start: "top 80%",
           },
-          opacity: 0,
+          opacity: 100,
           y: 20,
           duration: 0.5,
           stagger: 0.1,
