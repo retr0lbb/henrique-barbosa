@@ -21,9 +21,7 @@ export function DescriptionArea(props: DescriptionAreaProps) {
       <h1 className="text-zinc-200 text-2xl md:text-2xl font-semibold text-center">
         {props.title}
       </h1>
-      <div className="flex items-center justify-center">
-        {props.children}
-      </div>
+      <div className="flex items-center justify-center">{props.children}</div>
     </div>
   );
 }

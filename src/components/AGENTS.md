@@ -31,6 +31,35 @@ export const ProjectCard = { Root, Tag: Tags };
 
 ## Regras
 
-1. **useInView**: Ao usar `framer-motion` com `useInView`, sempre usar `once: true` para evitar pulos de layout quando elementos saem da viewport
+1. **GSAP ScrollTrigger**: Sempre usar `gsap.context()` para garantir cleanup adequado e evitar memory leaks
 2. **Barrel files**: Sempre criar `index.ts` para exports organizados
 3. **Nomenclatura**: PascalCase para componentes, camelCase para funções utilitárias
+4. **Client Components**: Componentes que usam GSAP devem ter `"use client"` no topo do arquivo
+
+## GSAP Pattern
+
+```typescript
+"use client";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export function MyComponent() {
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const ctx = gsap.context(() => {
+      // GSAP animations here
+    }, ref);
+
+    return () => ctx.revert();
+  }, []);
+
+  return <section ref={ref}>...</section>;
+}
+```

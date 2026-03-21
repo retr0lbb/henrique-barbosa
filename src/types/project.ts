@@ -1,9 +1,20 @@
 import type { StaticImageData } from "next/image";
 import type { IconType } from "react-icons";
 
-export type ProjectStatus = "DONE" | "IN_PROGRESS" | "JUST PITCH IDEA" | "LOW CODE";
-export type TagColor = "red" | "blue" | "green" | "yellow" | "magenta" | "pink" | "white" | "black";
-
+export type ProjectStatus =
+  | "DONE"
+  | "IN_PROGRESS"
+  | "JUST PITCH IDEA"
+  | "LOW CODE";
+export type TagColor =
+  | "red"
+  | "blue"
+  | "green"
+  | "yellow"
+  | "magenta"
+  | "pink"
+  | "white"
+  | "black";
 
 export interface ProjectMedia {
   src: string | StaticImageData;
@@ -15,7 +26,15 @@ export interface ProjectMedia {
 export interface ProjectTechnology {
   name: string;
   icon: IconType;
-  color: "blue" | "red" | "yellow" | "lime" | "emerald" | "purple" | "green" | "gray";
+  color:
+    | "blue"
+    | "red"
+    | "yellow"
+    | "lime"
+    | "emerald"
+    | "purple"
+    | "green"
+    | "gray";
 }
 
 export interface ProjectMetadata {

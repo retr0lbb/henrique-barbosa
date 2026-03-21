@@ -1,6 +1,3 @@
-"use client";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import type { ColorOfDivision } from "../divider";
 
 interface ColorProps {
@@ -46,13 +43,10 @@ interface ScrollSectionProps {
 }
 
 export function ScrollSection(props: ScrollSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
   const correctColor = props.color ?? "CYAN";
 
-  const isInView = useInView(ref, { once: true, margin: "-400px" });
-
   return (
-    <div ref={ref} className="w-full min-h-dvh flex px-4 gap-10">
+    <div className="w-full min-h-dvh flex px-4 gap-10">
       <div className="min-h-full min-w-60 hidden lg:flex flex-col relative items-center justify-center">
         <div
           className={`min-h-full max-w-1 bg-linear-to-b absolute hidden lg:block inset-0 left-6 
@@ -65,17 +59,12 @@ export function ScrollSection(props: ScrollSectionProps) {
 
         {/* ANIMAÇÃO DO ANO */}
         {props.year && (
-          <motion.div
-            initial={{ x: -100, opacity: 0 }}
-            animate={isInView ? { x: 0, opacity: 1 } : {}}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="flex items-center gap-5"
-          >
+          <div className="flex items-center gap-5">
             <div
               className={`h-2 max-w-10 min-w-10 ${COLOR_OVERLAY_GRADIENTS[correctColor].bg}`}
             />
             <h1 className="text-7xl font-bold text-zinc-200">{props.year}</h1>
-          </motion.div>
+          </div>
         )}
       </div>
 

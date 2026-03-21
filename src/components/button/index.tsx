@@ -1,4 +1,8 @@
+"use client";
+
+import { gsap } from "gsap";
 import type { ComponentProps } from "react";
+import { useRef } from "react";
 
 interface ButtonProps extends ComponentProps<"button"> {
   variant?: "terminal" | "primary" | "secondary";
@@ -18,6 +22,8 @@ export function Button({
   children,
   ...rest
 }: ButtonProps) {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
   const terminalColors = {
     white: {
       default: "text-zinc-200",
@@ -38,12 +44,38 @@ export function Button({
 
   const colorScheme = terminalColors[terminalColor];
 
+  const handleMouseDown = () => {
+    gsap.to(buttonRef.current, {
+      scale: 0.95,
+      duration: 0.1,
+      ease: "power2.in",
+    });
+  };
+
+  const handleMouseUp = () => {
+    gsap.to(buttonRef.current, {
+      scale: 1,
+      duration: 0.15,
+      ease: "power2.out",
+    });
+  };
+
   if (variant === "terminal") {
     return (
       <button
+        ref={buttonRef}
         className={`flex items-center cursor-pointer justify-center gap-2 px-4 py-2 font-code text-4xl transition-all duration-150 rounded 
           ${colorScheme.default} ${colorScheme.hover}`}
         type="button"
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={() =>
+          gsap.to(buttonRef.current, {
+            scale: 1,
+            duration: 0.15,
+            ease: "power2.out",
+          })
+        }
         {...rest}
       >
         <span>[</span>
@@ -55,8 +87,18 @@ export function Button({
 
   return (
     <button
+      ref={buttonRef}
       className={`flex items-center cursor-pointer justify-center gap-5 px-2 py-1.5 ${variantObj[variant]}`}
       type="button"
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={() =>
+        gsap.to(buttonRef.current, {
+          scale: 1,
+          duration: 0.15,
+          ease: "power2.out",
+        })
+      }
       {...rest}
     >
       {children}
