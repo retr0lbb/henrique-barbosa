@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Clarity from "@microsoft/clarity";
 import { locales } from "./i18n-config";
 import { notFound } from "next/navigation";
 import { TopSideNavigation, VerticalDivider } from "@/components/navigator";
@@ -8,6 +9,8 @@ import { FaHouse, FaUser } from "react-icons/fa6";
 import { IoGrid } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { getDictionary } from "./dictionaries";
+
+Clarity.init(process.env.NEXT_PUBLIC_CLARITY_ID ?? "");
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
