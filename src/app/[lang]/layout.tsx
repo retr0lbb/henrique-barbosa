@@ -9,6 +9,7 @@ import { FaHouse, FaUser } from "react-icons/fa6";
 import { IoGrid } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { getDictionary } from "./dictionaries";
+import Script from "next/script";
 
 Clarity.init(process.env.NEXT_PUBLIC_CLARITY_ID ?? "");
 
@@ -82,6 +83,16 @@ export default async function RootLayout({
           </TopSideNavigation.Nav>
         </TopSideNavigation.Root>
         {children}
+
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wx8moknakl");
+          `}
+        </Script>
       </body>
     </html>
   );
