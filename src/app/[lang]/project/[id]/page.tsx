@@ -8,17 +8,16 @@ import { FaGithub, FaGlobe } from "react-icons/fa";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { useDictionary } from "@/hooks/use-dictionary-context";
-import { projectsConfig } from "@/config/projects-config";
+import { projectsConfig, type ProjectId } from "@/config/projects-config";
+import { getProject } from "@/lib/get-project";
 import type { Locale } from "../../i18n-config";
 
 export default function ProjectPage() {
   const { id, lang } = useParams<{ id: string; lang: Locale }>();
   const dict = useDictionary();
 
-  const projectMetadata = projectsConfig.find((p) => p.id === id);
-  const projectDict = dict.projectsSection.projects[id];
-
-  if (!projectMetadata || !projectDict) {
+  const projectMeta = projectsConfig.find((p) => p.id === id);
+  if (!projectMeta) {
     return (
       <div className="w-full h-screen flex items-center justify-center text-white">
         Project not found
@@ -26,40 +25,42 @@ export default function ProjectPage() {
     );
   }
 
+  const project = getProject(projectMeta.id, dict.projectsSection.projects);
+
   return (
     <div className="w-full min-h-dvh flex flex-col gap-10">
       <ProjectComponent.Root>
         <ProjectComponent.Header
-          title={projectMetadata.title}
-          subtitle={projectDict.subtitle}
+          title={project.metadata.title}
+          subtitle={project.translation.subtitle}
         />
         <ProjectComponent.Body>
-          <ProjectComponent.Carousel imgs={projectMetadata.images} />
+          <ProjectComponent.Carousel imgs={project.metadata.images} />
           <ProjectComponent.Description.Root>
             <ProjectComponent.Description.Area
-              title={projectDict.projectDevelopment.title}
+              title={project.translation.projectDevelopment.title}
             >
               <p className="text-zinc-400 text-justify max-w-4xl text-sm md:text-lg lg:text-xl md:text-left">
-                {projectDict.projectDevelopment.text}
+                {project.translation.projectDevelopment.text}
               </p>
             </ProjectComponent.Description.Area>
 
-            {projectDict.whatIs && (
+            {project.translation.whatIs && (
               <ProjectComponent.Description.Area
-                title={projectDict.whatIs.title}
+                title={project.translation.whatIs.title}
               >
                 <p className="text-zinc-400 text-justify max-w-4xl text-sm md:text-lg lg:text-xl md:text-left">
-                  {projectDict.whatIs.text}
+                  {project.translation.whatIs.text}
                 </p>
               </ProjectComponent.Description.Area>
             )}
 
             <ProjectComponent.Description.Area
               className="space-y-4"
-              title={projectDict.usedTech}
+              title={project.translation.usedTech}
             >
               <div className="flex flex-wrap items-center justify-center max-w-4xl md:justify-start gap-3">
-                {projectMetadata.technologies.map((tech) => (
+                {project.metadata.technologies.map((tech) => (
                   <TechBadge
                     key={tech.name}
                     Icon={tech.icon}
@@ -71,19 +72,19 @@ export default function ProjectPage() {
             </ProjectComponent.Description.Area>
 
             <div className="mt-8 w-full flex items-center justify-center md:justify-start flex-col md:flex-row gap-6">
-              {projectMetadata.githubLink && (
-                <Link target="_blank" href={projectMetadata.githubLink}>
+              {project.metadata.githubLink && (
+                <Link target="_blank" href={project.metadata.githubLink}>
                   <Button>
                     <div className="flex items-center justify-center gap-2 text-zinc-300 text-xl font-semibold">
                       <FaGithub />
-                      {projectDict.repository}
+                      {project.translation.repository}
                     </div>
                   </Button>
                 </Link>
               )}
 
-              {projectMetadata.deploymentLink && (
-                <Link target="_blank" href={projectMetadata.deploymentLink}>
+              {project.metadata.deploymentLink && (
+                <Link target="_blank" href={project.metadata.deploymentLink}>
                   <Button>
                     <div className="flex items-center justify-center gap-2 text-zinc-300 text-xl font-semibold">
                       <FaGlobe />

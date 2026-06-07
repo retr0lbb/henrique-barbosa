@@ -1,20 +1,14 @@
 import type { StaticImageData } from "next/image";
 import type { IconType } from "react-icons";
+import type { TagColor } from "@/components/projectCard/tags";
 
 export type ProjectStatus =
   | "DONE"
   | "IN_PROGRESS"
   | "JUST PITCH IDEA"
   | "LOW CODE";
-export type TagColor =
-  | "red"
-  | "blue"
-  | "green"
-  | "yellow"
-  | "magenta"
-  | "pink"
-  | "white"
-  | "black";
+
+export { type TagColor };
 
 export interface ProjectMedia {
   src: string | StaticImageData;
@@ -26,15 +20,7 @@ export interface ProjectMedia {
 export interface ProjectTechnology {
   name: string;
   icon: IconType;
-  color:
-    | "blue"
-    | "red"
-    | "yellow"
-    | "lime"
-    | "emerald"
-    | "purple"
-    | "green"
-    | "gray";
+  color: TagColor;
 }
 
 export interface ProjectMetadata {

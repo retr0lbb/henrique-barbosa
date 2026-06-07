@@ -121,6 +121,16 @@
         "usedTech": "Tecnologias utilizadas",
         "repository": "Repositório"
       },
+      "continum": {
+        "shortDesc": "Uma plataforma de integração contínua para aplicações web modernas",
+        "subtitle": "Plataforma de CI/CD para desenvolvedores",
+        "projectDevelopment": {
+          "title": "Desenvolvimento do projeto",
+          "text": "Continum é uma plataforma de CI/CD atualmente em desenvolvimento. O objetivo é fornecer pipelines de integração e deploy contínuo para aplicações web modernas, com foco em experiência do desenvolvedor e confiabilidade."
+        },
+        "usedTech": "Tecnologias utilizadas",
+        "repository": "Repositório"
+      },
       "devroast": {
         "shortDesc": "Analizador sarcastico de codigos ruins",
         "subtitle": "Analizador sarcastico de codigos ruins",

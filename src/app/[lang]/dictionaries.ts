@@ -9,6 +9,7 @@ const dictionaries = {
 };
 
 import type { ProjectTranslation } from "@/types/project";
+import type { ProjectId } from "@/config/projects-config";
 
 export type JobExperience = {
   jobTitle: string;
@@ -31,7 +32,7 @@ export type Dicitionary = {
   aboutSection: {
     title: string;
     workExperience: {
-      title: "Work Experience";
+      title: string;
     };
 
     experience: JobExperience[];
@@ -50,7 +51,7 @@ export type Dicitionary = {
   projectsSection: {
     title: string;
 
-    projects: Record<string, ProjectTranslation>;
+    projects: Record<ProjectId, ProjectTranslation>;
 
     accordionButton: {
       seeMore: string;
@@ -70,5 +71,5 @@ export const isValidLocale = (locale: string): locale is Locale => {
 };
 
 export const getDictionary = async (locale: Locale): Promise<Dicitionary> => {
-  return dictionaries[locale]() as Promise<Dicitionary>;
+  return dictionaries[locale]();
 };

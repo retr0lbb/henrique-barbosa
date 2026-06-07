@@ -6,7 +6,7 @@ import { Button } from "@/components/button";
 import type { StaticImageData } from "next/image";
 import type { Dicitionary } from "@/app/[lang]/dictionaries";
 
-import { projectsConfig } from "@/config/projects-config";
+import { getAllProjects } from "@/lib/get-project";
 
 interface ProjectSectionProps {
   dict: Dicitionary;
@@ -32,30 +32,23 @@ export function ProjectSection({ dict, lang, color }: ProjectSectionProps) {
         startColapse={false}
       >
         <div className="w-full h-full columns-1 md:columns-2 lg:columns-3 md:gap-8 gap-2">
-          {projectsConfig.map((project) => {
-            const projectDict = dict.projectsSection.projects[project.id];
-            if (!projectDict) return null;
-
-            return (
-              <ProjectCard.Root
-                key={project.id}
-                src={project.mainImage as StaticImageData}
-                srcAlt={project.mainImageAlt}
-
-                description={projectDict.shortDesc}
-                title={project.title}
-                to={`/${lang}/project/${project.id}`}
-              >
-                {project.status && (
-                  <ProjectCard.Tag
-                    colored={project.statusColor || "white"}
-                    text={project.status}
-                  />
-                )}
-
-              </ProjectCard.Root>
-            );
-          })}
+          {getAllProjects(dict.projectsSection.projects).map((project) => (
+            <ProjectCard.Root
+              key={project.metadata.id}
+              src={project.metadata.mainImage as StaticImageData}
+              srcAlt={project.metadata.mainImageAlt}
+              description={project.translation.shortDesc}
+              title={project.metadata.title}
+              to={`/${lang}/project/${project.metadata.id}`}
+            >
+              {project.metadata.status && (
+                <ProjectCard.Tag
+                  colored={project.metadata.statusColor || "white"}
+                  text={project.metadata.status}
+                />
+              )}
+            </ProjectCard.Root>
+          ))}
         </div>
       </AccordionCollapse>
 
