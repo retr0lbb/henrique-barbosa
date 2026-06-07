@@ -122,11 +122,11 @@
         "repository": "Repository"
       },
       "continum": {
-        "shortDesc": "A continuous integration platform for modern web applications",
-        "subtitle": "CI/CD platform for developers",
+        "shortDesc": "An desktop app focused on bringing your max productivity ",
+        "subtitle": "Tray based app for productivity.",
         "projectDevelopment": {
-          "title": "Project Development",
-          "text": "Continum is a CI/CD platform currently in development. It aims to provide seamless continuous integration and deployment pipelines for modern web applications, with a focus on developer experience and reliability."
+          "title": "Development",
+          "text": "Continuum is a tray-based desktop application built with Tauri 2, designed to maximize productivity and project completion while remaining as simple and goal-oriented as possible. The application also features a Prisma-compatible persistence system and global hotkeys, allowing users to interact with the app efficiently without needing to use a mouse."
         },
         "usedTech": "Used Technologies",
         "repository": "Repository"
