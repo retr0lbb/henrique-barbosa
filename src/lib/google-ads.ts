@@ -12,6 +12,7 @@ export function reportConversion({
   transactionId?: string;
 }) {
   if (typeof window === "undefined") return;
+  console.log("CVT");
 
   window.gtag?.("event", "purchase", {
     value,
