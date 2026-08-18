@@ -103,79 +103,69 @@ export function AboutSection({ dict, lang, color }: AboutSectionProps) {
     >
       <BackgroundAnimation />
       <Divider color={color} />
+
       <h1
         ref={titleRef}
         className="w-full text-center pb-24 text-zinc-200 text-5xl md:text-6xl font-bold py-4"
       >
         {dict.aboutSection.title}
       </h1>
-      <Scroller>
-        <ScrollSection color={color} isOnStart year={dict.aboutSection.sideBar}>
-          <div className="w-full h-full grid grid-cols-2 grid-rows-[auto_auto_auto_auto] md:grid-cols-5 md:grid-rows-3 gap-4 p-4 md:p-10">
-            <div
-              ref={profileRef}
-              className="col-span-2 md:row-span-2 w-full h-full rounded-lg flex items-center justify-center"
-            >
-              <div className="aspect-square w-full h-auto">
-                <Image
-                  alt="Image of ryan gosling"
-                  className="w-full h-full object-cover rounded-full p-4"
-                  src={Me}
-                />
-              </div>
-            </div>
 
-            <div
-              ref={experienceRef}
-              className="col-span-2 md:col-span-3 md:row-span-3 flex items-center justify-center gap-8 flex-col h-full md:px-5 py-4"
-            >
-              <h1 className="text-2xl md:text-4xl text-zinc-200">
-                {dict.aboutSection.workExperience.title}
-              </h1>
-              <div className="flex flex-1 items-center gap-4 flex-col md:px-6">
-                {dict.aboutSection.experience.map((job, index) => {
-                  return (
-                    <WorkExperienceCard.Root
-                      company_or_person={job.company}
-                      duration={job.duration}
-                      job_function={job.jobTitle}
-                      model_of_contract={job.modelOfContractor}
-                      key={index}
-                    >
-                      {job.keyPoints.map((kp, index) => {
-                        return (
-                          <WorkExperienceCard.KeyPoint key={index}>
-                            {kp}
-                          </WorkExperienceCard.KeyPoint>
-                        );
-                      })}
-                    </WorkExperienceCard.Root>
-                  );
-                })}
-              </div>
-            </div>
+      <div className="flex flex-1 pb-4 gap-8 md:gap-4 mx-4 md:mx-8 flex-col md:flex-row">
+        <div className="flex flex-col pb-2 md:pb-0 mt-0 md:mt-16 w-full items-center md:w-86 md:items-start shrink-0">
+          <Image
+            alt="Men with black curly hair using black shirt posing in a grass like background looking straight at the camera"
+            className="object-cover rounded-4xl aspect-square size-86 p-4"
+            src={Me}
+          />
 
-            <div
-              ref={bioRef}
-              className="col-span-2 flex flex-col items-center justify-center gap-6 w-full h-full p-5"
-            >
-              <p className="text-xl md:text-2xl lg:text-3xl text-zinc-200 w-full text-justify">
-                {dict.aboutSection.bio}
+          <p className="text-zinc-400 text-center text-xl break-words">
+            {dict.aboutSection.moreAbout}
+          </p>
+
+          <Link
+            className="w-full mt-3 flex items-center justify-center"
+            href={`/${lang}/#projects`}
+          >
+            <Button variant="terminal">
+              <p className="text-zinc-200 text-xl font-bold">
+                {dict.aboutSection.myProjectsButton}
               </p>
-              <p className="text-zinc-400 w-full text-center text-xl">
-                {dict.aboutSection.moreAbout}
-              </p>
-              <Link href={`/${lang}/#projects`}>
-                <Button variant="terminal">
-                  <p className="text-zinc-200 text-xl font-bold">
-                    {dict.aboutSection.myProjectsButton}
-                  </p>
-                </Button>
-              </Link>
-            </div>
+            </Button>
+          </Link>
+        </div>
+
+        <Divider />
+        <div className="flex flex-1 items-center flex-col gap-2 shrink-0">
+          <h1 className="text-2xl md:text-4xl text-zinc-200 py-4">
+            {dict.aboutSection.workExperience.title}
+          </h1>
+
+          <div className="w-full pt-4 md:pt-0 px-4 md:px-10 space-y-4 md:space-y-2.5">
+            {dict.aboutSection.experience.map((job, index) => {
+              return (
+                <WorkExperienceCard.Root
+                  company_or_person={job.company}
+                  duration={job.duration}
+                  job_function={job.jobTitle}
+                  model_of_contract={job.modelOfContractor}
+                  key={index}
+                >
+                  {job.keyPoints.map((kp, index) => {
+                    return (
+                      <WorkExperienceCard.KeyPoint key={index}>
+                        {kp}
+                      </WorkExperienceCard.KeyPoint>
+                    );
+                  })}
+                </WorkExperienceCard.Root>
+              );
+            })}
           </div>
-        </ScrollSection>
-        <ScrollSection color={color} year={"2015"}>
+        </div>
+      </div>
+      <Scroller>
+        <ScrollSection color={color} year={"2015"} isOnStart>
           <div className="w-full h-full flex flex-col items-center justify-center gap-12">
             <h1 className="text-2xl text-center md:text-3xl lg:text-4xl lg:text-left font-bold text-zinc-200">
               {dict.historyTime[2015].title}

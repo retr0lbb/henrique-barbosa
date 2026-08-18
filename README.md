@@ -50,3 +50,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - [ ] Refactor the Slide and on-Scroll animate to make it better 
 - [ ] Refactor the Navigation Bar to work on mobile
 
+
+Masonry Layout [] ideia
