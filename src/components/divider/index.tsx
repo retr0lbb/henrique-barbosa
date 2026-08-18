@@ -7,10 +7,16 @@ const COLOR_OVERLAY_GRADIENTS: Record<ColorOfDivision, string> = {
   RED: "via-rose-600",
 };
 
-export function Divider({ color = "CYAN" }: { color?: ColorOfDivision }) {
+export function Divider({
+  color = "CYAN",
+  className,
+}: {
+  color?: ColorOfDivision;
+  className?: string;
+}) {
   return (
     <div
-      className={`w-full h-1 bg-linear-to-r from-zinc-950 ${COLOR_OVERLAY_GRADIENTS[color]} to-zinc-950`}
+      className={`w-full h-1 bg-linear-to-r from-zinc-950 ${COLOR_OVERLAY_GRADIENTS[color]} to-zinc-950 ${className}`}
     ></div>
   );
 }

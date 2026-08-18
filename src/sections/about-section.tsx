@@ -135,7 +135,8 @@ export function AboutSection({ dict, lang, color }: AboutSectionProps) {
           </Link>
         </div>
 
-        <Divider />
+        <Divider className="md:hidden block" />
+
         <div className="flex flex-1 items-center flex-col gap-2 shrink-0">
           <h1 className="text-2xl md:text-4xl text-zinc-200 py-4">
             {dict.aboutSection.workExperience.title}
