@@ -39,4 +39,8 @@ Também é recomendado separar os 2 codigos pois um requer um src externo e é d
 > Lembre-se de substituir SUA_CHAVE pela sua chave do google adds que iremos disponibilizar.
 
 ### 1.2 Criar função para disparar eventos.
-Apos carregar o script globalmente vamos criar uma util para facilitar a criação de tags para o google tags. 
+Apos carregar o script globalmente vamos criar uma util para facilitar a criação de tags para o google tags. É preferivel criar um arquivo dentro de libs para assim depois re-usar de forma eficiente.
+
+```tsx
+//src/lib/google-ads.ts
+```
