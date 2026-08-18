@@ -93,6 +93,23 @@ export default async function RootLayout({
             })(window, document, "clarity", "script", "wx8moknakl");
           `}
         </Script>
+
+        <Script
+          id="google-adds-init"
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-96GNHJJTK2"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-adds-tags" strategy="afterInteractive">
+          {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-96GNHJJTK2');
+          `}
+        </Script>
       </body>
     </html>
   );

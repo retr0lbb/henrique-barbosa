@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import type { Dicitionary } from "@/app/[lang]/dictionaries";
 import Me from "@/assets/images/profile.jpeg";
@@ -14,6 +15,7 @@ import { type ColorOfDivision, Divider } from "@/components/divider";
 import { Scroller } from "@/components/scrollingHistory/scroller";
 import { ScrollSection } from "@/components/scrollingHistory/scrollSection";
 import { WorkExperienceCard } from "@/components/work-experience-card";
+import { reportConversion } from "@/lib/google-ads";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,6 +31,12 @@ export function AboutSection({ dict, lang, color }: AboutSectionProps) {
   const profileRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const bioRef = useRef<HTMLDivElement>(null);
+  const navigator = useRouter();
+
+  async function handleConversionClick() {
+    reportConversion({});
+    navigator.push(`/${lang}/#projects`);
+  }
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -123,16 +131,13 @@ export function AboutSection({ dict, lang, color }: AboutSectionProps) {
             {dict.aboutSection.moreAbout}
           </p>
 
-          <Link
-            className="w-full mt-3 flex items-center justify-center"
-            href={`/${lang}/#projects`}
-          >
-            <Button variant="terminal">
+          <div className="w-full mt-3 flex items-center justify-center">
+            <Button variant="terminal" onClick={handleConversionClick}>
               <p className="text-zinc-200 text-xl font-bold">
                 {dict.aboutSection.myProjectsButton}
               </p>
             </Button>
-          </Link>
+          </div>
         </div>
 
         <Divider className="md:hidden block" />
