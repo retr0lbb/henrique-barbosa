@@ -112,7 +112,7 @@ export function AboutSection({ dict, lang, color }: AboutSectionProps) {
       </h1>
 
       <div className="flex flex-1 pb-4 gap-8 md:gap-4 mx-4 md:mx-8 flex-col md:flex-row">
-        <div className="flex flex-col pb-2 md:pb-0 mt-0 md:mt-16 w-full items-center md:w-86 md:items-start shrink-0">
+        <div className="flex flex-col  pb-2 md:pb-0 md:pl-4 mt-0 md:mt-16 w-full items-center md:w-86 md:items-start shrink-0">
           <Image
             alt="Men with black curly hair using black shirt posing in a grass like background looking straight at the camera"
             className="object-cover rounded-4xl aspect-square size-86 p-4"
