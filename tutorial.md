@@ -15,27 +15,22 @@ procure em sua aplicação um ponto de carregamento global geralmente o arquivo 
 ao estar em um ponto de carregamento global podemos carregar esse script usando a tag `<Script>` do nextjs isso garante a melhor integração possivel e permite tambem não deixar mais pesado o content-paint
 Também é recomendado separar os 2 codigos pois um requer um src externo e é de boa pratica separar isso em 2 tags scripts
 ```tsx
-        <Script
-          id="google-adds-init"
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=SUA_CHAVE"
-          strategy="afterInteractive"
-        />
-
-        <Script id="google-adds-tags" strategy="afterInteractive">
-          {`
-          <!-- Google tag (gtag.js) -->
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'SUA CHAVE');
-            </script>
-          `}
-        </Script>
+      <Script
+        id="google-adds-init"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-SUA_CHAVE"
+        strategy="afterInteractive"
+      />
+      
+      <Script id="google-adds-tags" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'SUA_CHAVE');
+        `}
+      </Script>
 ```
-
 > Lembre-se de substituir SUA_CHAVE pela sua chave do google adds que iremos disponibilizar.
 
 ### 1.2 Criar função para disparar eventos.
