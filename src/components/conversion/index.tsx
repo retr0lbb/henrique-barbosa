@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 export function GoogleAdsConversion() {
   useEffect(() => {
+    console.log("SENT GOOGLE DATA");
     trackGoogleAdsConversion();
   }, []);
 

@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     viewTransition: true,
   },
   compiler: {
-    removeConsole: true,
+    removeConsole: false,
   },
 };
 
