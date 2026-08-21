@@ -1,31 +1,15 @@
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void;
+    dataLayer: Record<string, unknown>[];
   }
 }
 
-export function trackGoogleAdsConversion({
-  value,
-  currency = "BRL",
-  transactionId,
-}: {
-  value?: number;
-  currency?: string;
-  transactionId?: string;
-} = {}) {
+export function trackEvent(event: string, data?: Record<string, unknown>) {
   if (typeof window === "undefined") {
+    console.log("Not defined");
     return;
   }
 
-  if (!window.gtag) {
-    console.warn("Google Ads tag ainda não foi carregada.");
-    return;
-  }
-
-  window.gtag("event", "conversion", {
-    send_to: "AW-18264083412/QIXxCJKZx-UcENSX_4RE",
-    ...(value !== undefined && { value }),
-    ...(currency && { currency }),
-    ...(transactionId && { transaction_id: transactionId }),
-  });
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event, ...data });
 }

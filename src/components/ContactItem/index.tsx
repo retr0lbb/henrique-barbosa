@@ -1,3 +1,4 @@
+import { trackEvent } from "@/lib/google-ads";
 import Link from "next/link";
 import type { IconType } from "react-icons";
 

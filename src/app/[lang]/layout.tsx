@@ -66,15 +66,6 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${roboto_mono.variable} antialiased bg-zinc-950`}
       >
-        <noscript>
-          {/** biome-ignore lint/a11y/useIframeTitle: <Google tag manager> */}
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-TRCZGW4M"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
         <TopSideNavigation.Root>
           <TopSideNavigation.LocaleButton />
           <VerticalDivider />
@@ -102,6 +93,16 @@ export default async function RootLayout({
           </TopSideNavigation.Nav>
         </TopSideNavigation.Root>
         {children}
+
+        <noscript>
+          {/** biome-ignore lint/a11y/useIframeTitle: <Google tag manager> */}
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TRCZGW4M"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
       </body>
     </html>
   );
