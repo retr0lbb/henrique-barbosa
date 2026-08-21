@@ -11,6 +11,9 @@ import { useDictionary } from "@/hooks/use-dictionary-context";
 import { projectsConfig, type ProjectId } from "@/config/projects-config";
 import { getProject } from "@/lib/get-project";
 import type { Locale } from "../../i18n-config";
+import { useEffect } from "react";
+import { trackGoogleAdsConversion } from "@/lib/google-ads";
+import { GoogleAdsConversion } from "@/components/conversion";
 
 export default function ProjectPage() {
   const { id, lang } = useParams<{ id: string; lang: Locale }>();
@@ -29,6 +32,7 @@ export default function ProjectPage() {
 
   return (
     <div className="w-full min-h-dvh flex flex-col gap-10">
+      <GoogleAdsConversion />
       <ProjectComponent.Root>
         <ProjectComponent.Header
           title={project.metadata.title}

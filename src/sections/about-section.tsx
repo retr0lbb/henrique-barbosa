@@ -15,7 +15,6 @@ import { type ColorOfDivision, Divider } from "@/components/divider";
 import { Scroller } from "@/components/scrollingHistory/scroller";
 import { ScrollSection } from "@/components/scrollingHistory/scrollSection";
 import { WorkExperienceCard } from "@/components/work-experience-card";
-import { reportConversion } from "@/lib/google-ads";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,7 +33,6 @@ export function AboutSection({ dict, lang, color }: AboutSectionProps) {
   const navigator = useRouter();
 
   async function handleConversionClick() {
-    reportConversion({});
     navigator.push(`/${lang}/#projects`);
   }
 

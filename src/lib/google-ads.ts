@@ -4,19 +4,28 @@ declare global {
   }
 }
 
-export function reportConversion({
+export function trackGoogleAdsConversion({
   value,
+  currency = "BRL",
   transactionId,
 }: {
   value?: number;
+  currency?: string;
   transactionId?: string;
-}) {
-  if (typeof window === "undefined") return;
-  console.log("CVT");
+} = {}) {
+  if (typeof window === "undefined") {
+    return;
+  }
 
-  window.gtag?.("event", "purchase", {
-    value,
-    currency: "BRL",
-    transaction_id: transactionId,
+  if (!window.gtag) {
+    console.warn("Google Ads tag ainda não foi carregada.");
+    return;
+  }
+
+  window.gtag("event", "conversion", {
+    send_to: "AW-18264083412/QIXxCJKZx-UcENSX_4RE",
+    ...(value !== undefined && { value }),
+    ...(currency && { currency }),
+    ...(transactionId && { transaction_id: transactionId }),
   });
 }
